@@ -1,0 +1,21 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { SharedDataService } from '../../providers/shared-data/shared-data.service';
+
+@Pipe({
+  name: 'translate'
+})
+export class TranslateAppPipe implements PipeTransform {
+
+  constructor(public shared: SharedDataService) {
+
+  }
+  transform(value: string) {
+    //console.log(value + " " + this.shared.translationListArray[value.toString()]);
+    if (this.shared.translationListArray[value] == undefined) {
+      this.shared.updateMissingTranslationValues(value);
+      return value;
+    }
+    return this.shared.translationListArray[value];
+  }
+
+}

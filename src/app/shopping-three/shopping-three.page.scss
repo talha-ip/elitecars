@@ -1,0 +1,167 @@
+.content-shopping-one {
+  h1 {
+    font-size: 29px;
+    font-family: "arial-rounded";
+    text-align: center;
+    font-weight: bold;
+    color: #db3e3e;
+    margin-bottom: 0;
+  }
+  .para-fur {
+    font-size: 14px;
+    font-family: "arial-rounded";
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .div-star-upper {
+    width: 100%;
+    text-align: center;
+    ion-icon {
+      color: #fca800;
+      &:last-child {
+        color: #727c8e !important;
+      }
+    }
+  }
+  ion-slides {
+    padding-bottom: 40px;
+    --bullet-background: #ababab;
+    --bullet-background-active: #808080;
+    ion-slide {
+      ion-button {
+        color: #707070;
+      }
+    }
+  }
+  .grid-price-color {
+    padding-left: 11px;
+    .price-para {
+      font-family: "arial-rounded";
+      text-align: left;
+      font-weight: bold;
+      font-size: 22px;
+      margin-top: 0;
+      p {
+        margin-bottom: 12px;
+      }
+    }
+    .col-color {
+      .div-upper {
+        display: flex;
+        float: right;
+        .div-color {
+          border-radius: 4px;
+          height: 22px;
+          width: 22px;
+        }
+        .dis {
+          width: 10px;
+        }
+      }
+    }
+  }
+  .desc-para-heading {
+    font-family: "arial-rounded";
+    text-align: left;
+    font-weight: bold;
+    font-size: 21px;
+    color: #db3e3e;
+    margin-left: 16px;
+    margin-top: 0;
+  }
+  .desc-para {
+    font-family: "Arial";
+    text-align: left;
+    font-size: 14px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .grid-btm {
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    .col-qty {
+      border-right: solid 1px white;
+      background: #ffa3a3;
+      height: 58px;
+      ion-item {
+        --background: transparent;
+        div {
+          width: 100%;
+          ion-select {
+            font-size: 16px;
+            font-family: "Arial";
+            margin-left: auto;
+            margin-right: auto;
+            color: black;
+            min-width: 100px;
+            padding-bottom: 3px;
+          }
+        }
+      }
+    }
+    .col-cart {
+      background: #ffa3a3;
+      text-align: center;
+      height: 58px;
+      div {
+        display: flex;
+        margin-top: 17px;
+        p {
+          font-size: 16px;
+          font-family: "Arial";
+          color: black;
+          opacity: 0.33;
+          margin-left: 10%;
+          margin-top: 0;
+        }
+        ion-icon {
+          color: white;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+// For Customized Popover
+ion-popover {
+  .popover-wrapper {
+    .popover-content {
+      --width: auto !important;
+      ion-select-popover {
+        ion-list {
+          padding: 0;
+          padding-bottom: 16px;
+          background: #f6f6f6;
+          ion-radio-group {
+            ion-item {
+              --padding-start: 0;
+              --inner-padding-end: 0;
+              --background: #f6f6f6;
+              --color: #db3e3e;
+              width: 120px;
+              max-height: 30px;
+              ion-label {
+                text-align: center;
+                margin: 0;
+              }
+            }
+            ion-radio {
+              width: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.select-item {
+  color: white !important;
+}
+.select-text {
+  opacity: 1 !important;
+}

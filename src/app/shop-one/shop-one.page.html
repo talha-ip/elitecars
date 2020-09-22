@@ -1,0 +1,197 @@
+<ion-header class="products-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon  class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">Shop One </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar class="segmentToolbar">
+    <ion-segment [(ngModel)]="scrollSegments" scrollable>
+      <ion-segment-button value="all">All</ion-segment-button>
+      <ion-segment-button value="tops">Tops </ion-segment-button>
+      <ion-segment-button value="bottoms">Bottoms</ion-segment-button>
+      <ion-segment-button value="Shirtss"> Shirts</ion-segment-button>
+      <ion-segment-button value="winter">Winter Wear</ion-segment-button>
+      <ion-segment-button value="shoes">Shoes</ion-segment-button>
+      <ion-segment-button value="watches">Watches</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="products-content">
+  <!-- scrollable segment divisions -->
+  <div [ngSwitch]="scrollSegments">
+    <div *ngSwitchCase="'all'">
+      <ion-list class="list-view" class="animated fadeIn fast">
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn fast">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+    <div *ngSwitchCase="'tops'">
+      <ion-list class="list-view">
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn fast">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'bottoms'">
+
+
+      <ion-list class="list-view">
+
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn fast">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'Shirtss'">
+      <ion-list class="list-view">
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn fast">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'winter'">
+
+      <ion-list class="list-view">
+
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'shoes'">
+      <ion-list class="list-view">
+
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+    <div *ngSwitchCase="'watches'">
+      <ion-list class="list-view">
+        <ion-item *ngFor="let p of products" class="list" lines="none" class="animated fadeIn">
+          <ion-thumbnail slot="start">
+            <ion-img class="badge-img" src="assets/template-themes/becrux/badge_new.png"></ion-img>
+            <img src="{{p.img}}">
+          </ion-thumbnail>
+          <ion-label>
+            <p>{{p.name}}</p>
+            <p class="name-para"><del>{{p.dPrice}}$</del></p>
+            <p class="name-para"> {{p.price}}$</p>
+          </ion-label>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="!p.fav" name="heart-empty"></ion-icon>
+          <ion-icon class="theme-icon" (click)="onIconClick(p)" *ngIf="p.fav" name="heart"></ion-icon>
+          <div class="sale">SALE</div>
+          <div class="featured">FEATURED</div>
+        </ion-item>
+      </ion-list>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+  </div>
+  <!-- infinite scroll -->
+  <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

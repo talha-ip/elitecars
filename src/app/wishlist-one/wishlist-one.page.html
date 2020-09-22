@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">
+      Wishlist One
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <!-- whan data found -->
+  <ion-grid class="data-grid" no-padding *ngIf="gridVisiable">
+    <ion-row no-padding>
+      <ion-col *ngFor="let p of products" size="6" no-padding>
+        <app-product (click)="removeProduct(p.p_id)" [data]="p" [type]="'recent'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- when no data found -->
+  <ion-grid no-padding *ngIf="!gridVisiable">
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <h4>Your Wishlist is empty</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <p>Continue shopping</p>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col size="12" no-padding>
+        <ion-button>Explore</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

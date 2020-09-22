@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 3
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-two-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <app-banner></app-banner>
+  <app-sliding-tabs [type]="'image'"></app-sliding-tabs>
+
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+  <ion-fab-button color="secondary" (click)="scrollToTop()">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

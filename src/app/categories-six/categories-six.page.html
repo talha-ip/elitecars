@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Category Six</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-list>
+    <ion-card *ngFor="let product of categories" routerLink="/bs-products" routerDirection="forward" class="animated flipInX delay-900ms">
+      <ion-img src="{{product.img}}"></ion-img>
+      <ion-text>
+        <h2>{{product.name }}</h2>
+        <p>{{product.count}} {{'Products'| translate }}</p>
+      </ion-text>
+    </ion-card>
+  </ion-list>
+</ion-content>

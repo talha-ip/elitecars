@@ -1,0 +1,25 @@
+ion-content{
+    ion-searchbar{
+        --background: white;
+    }
+    ion-item{
+        ion-avatar{
+            width: 50px !important;
+            height: 50px !important;
+        }
+        ion-label{
+            padding-bottom: 0;
+            padding-top: 0;
+            padding-left: 0;
+            h2{
+                font-size: 20px;
+                font-family: 'roboto-regular' !important
+            }
+            p{
+                color: gray;
+                font-size: 14px;
+                font-family: 'roboto-regular' !important
+            }
+        }
+    }
+}

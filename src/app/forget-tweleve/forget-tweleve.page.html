@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register Twelve</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h1>RESET PASSWORD</h1>
+  <h3>Welcome to your account</h3>
+  <div *ngFor="let item of Items">
+    <div class="div-item">
+      <ion-item class="animated fadeInRight item-input" lines="none">
+        <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+        <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+  <div class="div-btn-login">
+    <ion-button shape="round" class="btn-login">
+      Reset Password
+    </ion-button>
+  </div>
+</ion-content>

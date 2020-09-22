@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Login Thirteen</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img class="img-header" src="assets/images/login/login-seven-bg-top.png"></ion-img>
+  <div class="div-icon-img">
+    <ion-img src="assets/images/login/fox-icon.png"></ion-img>
+  </div>
+  <div *ngFor="let item of Items">
+    <div class="div-item">
+      <ion-item class="animated fadeInRight item-input" lines="none">
+        <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+        <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+  <ion-item lines="none" class="item-btns">
+    <ion-button shape="round" class="btn-login">
+      <p>
+        <ion-icon src="assets/CustomIcons/login-five-arrow-right.svg"></ion-icon>
+      </p>
+    </ion-button>
+  </ion-item>
+  <ion-img class="img-bottom" src="assets/images/login/login-seven-bg-bottom.png"></ion-img>
+</ion-content>

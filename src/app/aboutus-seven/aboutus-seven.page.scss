@@ -1,0 +1,109 @@
+.content {
+  .header-img {
+    filter: brightness(0.6);
+  }
+  h1 {
+    font-size: 30px;
+    font-family: "Arial";
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50px;
+    u {
+      color: white;
+    }
+  }
+  .grid-vision {
+    padding: 20px 16px 20px 16px;
+    ion-row {
+      .col-text {
+        h2 {
+          font-size: 16px;
+          font-family: "lato";
+          text-align: left;
+          font-weight: bold;
+          color: black;
+          margin-top: 28px;
+          margin-bottom: 20px;
+          margin-left: 16px;
+        }
+        p {
+          font-size: 10px;
+          font-family: "lato";
+          text-align: left;
+          color: black;
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  .grid-mission {
+    padding: 0 16px 20px 16px !important;
+    ion-row {
+      .col-text {
+        h2 {
+            text-align: right !important;
+            margin-right: 16px !important;
+        }
+        p {
+            text-align: right !important;
+
+        }
+      }
+    }
+  }
+  .grid-person {
+    background: #e8e8e8;
+    padding: 0 16px 47px 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    ion-row {
+      .col-text {
+        h2 {
+          text-align: right;
+        }
+        p {
+          text-align: right;
+        }
+      }
+    }
+    .team-para {
+      font-size: 16px;
+      font-family: "Arial";
+      text-align: center;
+      width: 100%;
+      font-weight: bold;
+      margin-top: 27px;
+      margin-bottom: 0;
+      color: black;
+    }
+    .row-items2 {
+      margin-top: 10px;
+    }
+    ion-col {
+      text-align: center;
+      ion-avatar {
+        height: 100px;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .name-para {
+        font-size: 14px;
+        font-family: "Arial";
+        margin-top: -10px;
+        margin-bottom: 0;
+        color: black;
+      }
+      .des-para {
+        margin-top: 2px;
+        font-size: 12px;
+        font-family: "Arial";
+        color: #6d6d6d;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

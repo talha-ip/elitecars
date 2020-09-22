@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 2
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-one-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" class="home-page-1">
+  <app-banner></app-banner>
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="topSeller">{{ 'Newest' | translate }}</ion-segment-button>
+    <ion-segment-button value="deals">{{ 'On Sale' | translate }} </ion-segment-button>
+    <ion-segment-button value="mostLiked"> {{ 'Featured' | translate }}</ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="segments">
+    <!-- first swipe slider -->
+    <ion-slides *ngSwitchCase="'topSeller'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('latest')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 2nd swipe slider -->
+    <ion-slides *ngSwitchCase="'deals'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab2">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('latest')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 3rd swipe slider -->
+    <ion-slides *ngSwitchCase="'mostLiked'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab3">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('featured')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+  <!-- for scrollable segment and all products -->
+  <app-sliding-tabs [type]="'text'"></app-sliding-tabs>
+
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+  <ion-fab-button color="secondary" (click)="scrollToTop()">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

@@ -1,0 +1,78 @@
+ion-content {
+  .card-img {
+    margin: 20px 16px 18px 16px;
+    border-radius: 20px;
+  }
+  h2 {
+    font-size: 16px;
+    font-family: "roboto-bold";
+    margin-left: 16px;
+    color: #011b32;
+  }
+  .header-card-pay {
+    text-align: center;
+    margin-left: 20px !important;
+  }
+  .input-item {
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 10px;
+    border: solid 1px #0aa4dc;
+    ion-input {
+      --placeholder-opacity: 1;
+    }
+  }
+  .card-input {
+    border-radius: 30px;
+    background: linear-gradient(to right, #011b32, #00417a);
+    form {
+      margin: 26px 16px 26px 16px;
+      .item-outter-div {
+        margin-bottom: 45px;
+      }
+      ion-item {
+        --background: transparent;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+        border-bottom: 0.1px #aaa;
+        border-bottom-color: #eee;
+        border-bottom-width: solid;
+        border-bottom-style: groove;
+        ion-input {
+          --color: white;
+          --placeholder-opacity: 0.7;
+        }
+      }
+      .div-input {
+        .item-cvv {
+          --padding-start: 10px;
+        }
+        display: flex;
+        .item-div {
+          border-right: 0.1px #aaa;
+          border-right-color: #eee;
+          border-right-width: solid;
+          border-right-style: groove;
+        }
+        .item-div-last {
+          --padding-start: 10px;
+        }
+      }
+    }
+    margin-bottom: 260px;
+  }
+  .div-btn {
+    position: fixed;
+    bottom: -38px;
+    width: 100%;
+    z-index: 99;
+    ion-button {
+      text-transform: capitalize;
+      height: 86px;
+      margin: 0;
+      p {
+        margin-top: -35px;
+      }
+    }
+  }
+}

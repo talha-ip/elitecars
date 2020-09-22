@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/scripts" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Social Logins
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card (click)="loginFacebook()">
+    <img src="assets/images/plugin-images/Social-logins/facebook.jpg" />
+  </ion-card>
+  <ion-card (click)="loginLine()">
+    <img src="assets/images/plugin-images/Social-logins/line.jpg" />
+  </ion-card>
+  <ion-card (click)="loginDropbox()">
+    <img src="assets/images/plugin-images/Social-logins/dropbox.png" />
+  </ion-card>
+  <ion-card (click)="loginGooglePlus()">
+    <img src="assets/images/plugin-images/Social-logins/google-plus.jpg" />
+  </ion-card>
+  <ion-card (click)="loginLinkedin()">
+    <img src="assets/images/plugin-images/Social-logins/linkedIn.png" />
+  </ion-card>
+</ion-content>

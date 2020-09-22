@@ -1,0 +1,264 @@
+<ion-header class="header-home">
+  <ion-toolbar>
+  <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-item lines="none">
+      <ion-select interface="popover" *ngIf="getParentCategories()[0]!=1" [(ngModel)]="mainCategory" (ionChange)="selectMainCategory(mainCategory)"
+        [placeholder]="getCategoryName(mainCategory)">
+        <ion-select-option *ngFor="let c of getParentCategories()" [value]="c.id">{{c.name}}
+        </ion-select-option>
+      </ion-select>
+      <ion-spinner name="lines" class="spinner-center" *ngIf="getParentCategories()[0]==1"></ion-spinner>
+    </ion-item>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/mini-lesath-cart" routerDirection="forward">
+        <ion-icon src="assets/CustomIcons/Bag.svg"></ion-icon>
+        <ion-badge>{{shared.cartTotalItems()}}</ion-badge>
+        <ion-badge>{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-segment [(ngModel)]="segments" (ionChange)="segmentChanged(segments)">
+    <ion-segment-button value="categories" checked>{{ 'Categories' | translate }}</ion-segment-button>
+    <ion-segment-button value="explore">{{ 'Explore' | translate }}</ion-segment-button>
+    <ion-segment-button value="newArrivals">{{ 'New Arrivals' | translate }}</ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="content-home">
+
+  <div [ngSwitch]="segments">
+    <!-- main categories segment -->
+    <div *ngSwitchCase="'categories'">
+      <ion-text *ngIf="allSubcategories.length!=0">
+        <h2 class="all-category"> {{ 'All Categories' | translate }}</h2>
+      </ion-text>
+      <ion-grid class="ion-no-padding" *ngIf="allSubcategories.length!=0">
+        <ion-row *ngFor="let c of allSubcategories" class="category-row" (click)="selectSubCategory(c.id)">
+          <ion-col size="6" class="ion-no-padding">
+            <ion-img class="animated fadeIn fast" *ngIf="c.image" src="{{c.image.src}}"></ion-img>
+            <ion-img class="animated fadeIn fast" *ngIf="!c.image" src="assets/placeholder.png"></ion-img>
+          </ion-col>
+          <ion-col size="6" class="category-col">
+            <h2 class="category-items">{{c.name}}</h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- main explore segment -->
+    <div *ngSwitchCase="'explore'">
+
+      <ion-img *ngIf="mainCategoryData!=null && mainCategoryData.image" [src]="mainCategoryData.image.src">
+      </ion-img>
+
+      <div class="inner-div-explore">
+        <ion-text>
+          <h2 class="latest">{{ 'On Sale' | translate }}</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig" *ngIf="shared.saleProductArray.length!=0">
+          <ion-slide class="animated fadeIn fast" *ngFor="let item of shared.saleProductArray">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail(item)" [src]="getProductImage(item)">
+                  </ion-img>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <div *ngIf="shared.saleProductArray.length==0" class="ion-text-center">
+          <ion-avatar style="margin: auto;">
+            <ion-icon name="sad" style="font-size: 64px;"></ion-icon>
+          </ion-avatar>
+          <ion-label>{{ 'No Product Found' | translate }}</ion-label>
+        </div>
+
+        <div *ngIf="shared.saleProductArray.length!=0">
+          <ion-item lines="none" class="btn-viewall">
+            <ion-button (click)="moveToAllProducts()">{{'View All'| translate}} </ion-button>
+          </ion-item>
+        </div>
+        <ion-text>
+          <h2 class="feature-news">{{ 'Featured' | translate }}</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig" class="slides-view" *ngIf="shared.featuredProductArray.length!=0">
+          <ion-slide class="animated fadeIn fast " *ngFor="let item of shared.featuredProductArray">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail(item)" [src]="getProductImage(item)">
+                  </ion-img>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <div *ngIf="shared.featuredProductArray.length==0" class="ion-text-center">
+          <ion-avatar style="margin: auto;">
+            <ion-icon name="sad" style="font-size: 64px;"></ion-icon>
+          </ion-avatar>
+          <ion-label>{{ 'No Product Found' | translate }}</ion-label>
+        </div>
+        <ion-item lines="none" class="btn-viewall" *ngIf="shared.featuredProductArray.length!=0">
+          <ion-button (click)="moveToAllProducts()">{{'View All'| translate}} </ion-button>
+        </ion-item>
+
+
+        <div *ngIf="subCategoryExplore1!=null">
+          <ion-card class="card-casual">
+            <img class="animated fadeIn fast image-filter" *ngIf="subCategoryExplore1.image" src="{{subCategoryExplore1.image.src}}" />
+            <ion-text>
+              <h2>{{subCategoryExplore1.name}}</h2>
+              <h6>{{subCategoryExplore1.count}} {{'Products'| translate}}</h6>
+            </ion-text>
+            <div class="sale-featured pull-left-featured">
+              <div class="featured">{{'Featured'|translate}}</div>
+            </div>
+          </ion-card>
+          <div class="btn-div">
+            <ion-button (click)="selectSubCategory(subCategoryExplore1.id)" fill="outline">
+              {{ 'Shop Now' | translate }}
+            </ion-button>
+          </div>
+        </div>
+        <ion-text>
+          <h2 class="feature-news">{{ 'Newest' | translate }}</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig" class="slides-view" *ngIf="shared.newestProductArray.length!=0">
+          <ion-slide class="animated fadeIn fast" *ngFor="let item of shared.newestProductArray">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail(item)" [src]="getProductImage(item)">
+                  </ion-img>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <div *ngIf="shared.newestProductArray.length==0" class="ion-text-center">
+          <ion-avatar style="margin: auto;">
+            <ion-icon name="sad" style="font-size: 64px;"></ion-icon>
+          </ion-avatar>
+          <ion-label>{{ 'No Product Found' | translate }}</ion-label>
+        </div>
+        <ion-item lines="none" class="btn-viewall" *ngIf="shared.newestProductArray.length!=0">
+          <ion-button (click)="moveToAllProducts()">{{'View All'| translate}} </ion-button>
+        </ion-item>
+        <div *ngIf="subCategoryExplore2!=null">
+          <ion-card class="card-casual">
+            <img class="animated fadeIn fast image-filter" *ngIf="subCategoryExplore2.image" src="{{subCategoryExplore2.image.src}}" />
+            <ion-text>
+              <h2>{{subCategoryExplore2.name}}</h2>
+              <h6>{{subCategoryExplore2.count}} {{'Products'| translate}}</h6>
+            </ion-text>
+            <div class="sale-featured pull-left-featured">
+              <div class="featured">{{'Featured'|translate}}</div>
+            </div>
+          </ion-card>
+          <div class="btn-div">
+            <ion-button (click)="selectSubCategory(subCategoryExplore2.id)" fill="outline">
+              {{ 'Shop Now' | translate }}
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- main new arrival segment -->
+    <div *ngSwitchCase="'newArrivals'">
+      <ion-grid class="newarrival-inner-grid ion-no-padding">
+        <ion-row class="align-items-center">
+          <ion-col size="4">
+            <ion-item lines="none" *ngIf="shared.getCategoriesPageItems(mainCategory).length!=0">
+              <ion-select interface="popover" [(ngModel)]="subCategoryModel" (ionChange)="changeTab(subCategoryModel)">
+                <ion-select-option [value]="0">{{'All'|translate}}</ion-select-option>
+                <ion-select-option *ngFor="let c of shared.getCategoriesPageItems(mainCategory)" [value]="c.id">
+                  {{c.name}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.66">
+            <ion-button fill="clear" class="list-btn" size="small" (click)="openViewTypes(0)">
+              <ion-icon src="assets/custom-icons/list.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2.66">
+            <ion-button class="list-btn" fill="clear" size="small" (click)="openViewTypes(1)">
+              <ion-icon src="assets/custom-icons/listView.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2.66">
+            <ion-button class="btn-sort" fill="clear" size="small" (click)="openSortBy()">{{'Sort'|translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-item class="ion-text-center" *ngIf="products.length==0 && productsLoaderShow">
+        <ion-label>
+          <ion-spinner name="lines"></ion-spinner>
+        </ion-label>
+      </ion-item>
+      <div *ngIf="products.length==0 && !productsLoaderShow" class="ion-text-center">
+        <ion-avatar style="margin: auto;">
+          <ion-icon name="sad" style="font-size: 64px;"></ion-icon>
+        </ion-avatar>
+        <ion-label>{{ 'No Product Found' | translate }}</ion-label>
+      </div>
+      <!-- for explore list with col size 12  -->
+      <div *ngIf="visiableExplore">
+        <ion-grid class="ion-no-padding">
+          <ion-row *ngFor="let item of products" class="row-list ion-no-padding">
+            <ion-col size="4" class="ion-no-padding">
+              <ion-img class="animated fadeIn fast" [src]="getProductImage(item)" class="slider-img" (click)="goToProductDetail(item)">
+              </ion-img>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <h3 class="list-heading">{{item.name}}</h3>
+              <p class="grid-card-para" [innerHTML]="item.price_html"></p>
+            </ion-col>
+            <ion-col size="2" class="ion-no-padding">
+              <div class="sale-featured sale-featured-item">
+                <div class="sale" *ngIf="item.on_sale">{{'Sale'|translate}}</div>
+                <div class="featured" *ngIf="item.featured">{{'Featured'|translate}}</div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- for list with col size 6 -->
+      <div *ngIf="visiableListView">
+        <ion-grid class="ion-no-padding card-fix-heigth">
+          <ion-row class="ion-no-padding">
+            <ion-col *ngFor="let item of products" size="6" class="ion-no-padding">
+              <ion-card class="grid-card">
+                <img class="animated fadeIn fast" [src]="getProductImage(item)" class="slider-img" (click)="goToProductDetail(item)" />
+                <h3>{{item.name}}</h3>
+                <p class="grid-card-para" [innerHTML]="item.price_html"></p>
+                <div class="sale-featured">
+                  <div class="sale" *ngIf="item.on_sale">{{'Sale'|translate}}</div>
+                  <div class="featured" *ngIf="item.featured">{{'Featured'|translate}}</div>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- infinite scroll -->
+      <ion-infinite-scroll loadingSpinner="lines" #infinite (ionInfinite)="getFilterdProducts()">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </div>
+  </div>
+
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" *ngIf="applyFilter && segments=='newArrivals'">
+  <ion-fab-button color="secondary" (click)="resetFilters()">
+    <ion-icon name="refresh"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

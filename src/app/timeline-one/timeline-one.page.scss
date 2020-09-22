@@ -1,0 +1,100 @@
+ion-content {
+  .div-img-header {
+    position: relative;
+    .header-img {
+      filter: brightness(0.5);
+    }
+    div {
+      position: absolute;
+      bottom: 30px;
+      left: 16px;
+      h2 {
+        font-size: 31px;
+        font-family: "lato-bold";
+        font-weight: bold;
+        color: white;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 14px;
+        font-family: "lato-regular";
+        color: white;
+        margin-bottom: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+  ion-grid {
+    ion-row {
+      .col-img-circle {
+        padding-top: 0;
+        padding-bottom: 0;
+        ion-img {
+          width: 100%;
+        }
+      }
+      .col-para-time {
+        p {
+          width: 19vw;
+          margin-top: 0;
+          font-size: 11px;
+          font-family: "lato-regular";
+          color: #6514d8;
+        }
+      }
+      .col-img {
+        padding-top: 10px;
+        padding-bottom: 0;
+        ion-img {
+          width: 65%;
+        }
+        div {
+          background: black;
+          width: 10px;
+          height: 1px;
+        }
+      }
+      .col-avatar {
+        div {
+          width: 28vw;
+          .para-head {
+            margin: 0;
+            font-size: 11px;
+            font-family: "lato-regular";
+            text-align: center;
+          }
+          .para-head-lunch {
+            margin: 0;
+            font-size: 11px;
+            font-family: "lato-regular";
+            text-align: center;
+            color: #ff0000;
+          }
+          .para-desc {
+            font-size: 9px;
+            font-family: "lato-regular";
+            text-align: center;
+          }
+        }
+        .div-avatar {
+          //margin-top: 20%;
+          .div-inner-avatar {
+            display: flex;
+            ion-avatar {
+              width: 6.5vw;
+              height: 6.5vw;
+            }
+            div {
+              width: 10px;
+            }
+          }
+        }
+      }
+      .para-team {
+        font-size: 9px;
+        font-family: "lato-regular";
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<ion-content (pinch)="pinchEvent($event)" class="intro-content" fullscreen>
+  <ion-slides [options]="sliderConfig" pager="true" #IonSlides loop="true" class="ion-no-padding"
+    (ionSlideWillChange)="slideChanged()">
+    <ion-slide #IonSlides *ngFor="let slide of slides" class="ion-no-padding">
+      <ion-grid class="ion-no-padding grid-fix-heigth">
+        <ion-row class="ion-no-padding">
+          <ion-col size="10" class="ion-no-padding col-latest">
+            <ion-card>
+              <ion-img src="{{slide.image}}" alt="Slide Images">
+              </ion-img>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+  <h1>{{slidesHeader}}</h1>
+  <p class="para">{{slidesPara}}</p>
+  <ion-row>
+    <ion-button class="next-btn" *ngIf="!visiable" shape="round" (click)="nextSlide()">
+      Next
+    </ion-button>
+    <ion-button class="next-btn" *ngIf="visiable" shape="round" routerLink="/ls-home" routerDirection="forward">
+      Start Shopping
+    </ion-button>
+  </ion-row>
+  <ion-row>
+    <ion-button class="skip-btn" *ngIf="!visiable" fill="clear" shape="round" routerLink="/ls-home"
+      routerDirection="forward">
+      <p>
+        Skip
+      </p>
+    </ion-button>
+    <ion-button class="skip-btn" *ngIf="visiable" fill="clear" shape="round">
+    </ion-button>
+  </ion-row>
+</ion-content>

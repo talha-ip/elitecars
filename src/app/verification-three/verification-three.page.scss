@@ -1,0 +1,52 @@
+.content {
+  .img-header {
+    width: 100%;
+  }
+  h2 {
+    font-size: 26px;
+    font-family: "lato-bold";
+    font-weight: bold;
+    color: #0092bd;
+    text-align: center;
+  }
+  p {
+    color: #0092bd;
+    font-size: 20px;
+    font-family: "lato-regular";
+    text-align: center;
+    margin-left: 37px;
+    margin-right: 37px;
+    margin-bottom: 0;
+  }
+  .enter-para {
+    margin-top: 5px;
+    margin-bottom: 90px;
+  }
+  .div-verifty-btn {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+    ion-button {
+      height: 50px;
+      font-size: 18px;
+      font-family: "lato-regular";
+      text-transform: capitalize;
+      --background: #0092bd;
+      --color: white;
+    }
+  }
+  .otp-text {
+    color: #0092bd;
+  }
+  ion-input {
+    margin-right: 25px;
+    color: #0092bd;
+    font-size: 25px;
+    text-align: center;
+    border: solid 1px #0092bd;
+    --padding-start: 0 !important;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-button slot="end" fill="clear" (click)="goToSearch()">
+      <ion-icon class="icon" name="search"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" fill="clear" (click)="goToCart()">
+      <ion-icon class="icon-cart" src="assets/CustomIcons/Bag.svg"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <ion-img src="assets/template-themes/lesath/images/suit.png"></ion-img>
+  <div></div>
+  <h2 class="account-info">Account Info</h2>
+  <h2 class="account">My Account</h2>
+  <ion-item lines="full" class="item-login content-bg-becrux" routerLink="/lb-sign-in" rounterDirection="forward">
+    <ion-icon src="assets/custom-icons/login.svg" slot="start"></ion-icon>
+    <p>Login/Sign Up</p>
+    <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item lines="full" class="item-login content-bg-becrux" routerLink="/lb-my-account" rounterDirection="forward">
+    <ion-icon src="assets/custom-icons/profile.svg" slot="start"></ion-icon>
+    <p>My Profile</p>
+    <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item lines="full" class="item-login content-bg-becrux" routerLink="/lb-my-order" rounterDirection="forward">
+    <ion-icon src="assets/custom-icons/my-orders.svg" slot="start"></ion-icon>
+    <p>My Order</p>
+    <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item lines="full" class="item-login content-bg-becrux" (click)="toast('signOut')">
+    <ion-icon src="assets/custom-icons/sign-out.svg" slot="start"></ion-icon>
+    <p>Sign Out</p>
+    <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+  </ion-item>
+  <h2 class="account">Help & Support</h2>
+  <ion-list>
+    <ion-item lines="full" *ngFor="let item of listItems; let i=index" (click)="goToHelpAndSupport(i)" class="content-bg-becrux">
+      <ion-icon src="{{item.icon}}" slot="start"></ion-icon>
+      <p>{{item.name}}</p>
+      <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item lines="full" (click)="exit()" class="content-bg-becrux">
+        <ion-icon name="exit" slot="start"></ion-icon>
+        <p>Exit</p>
+        <ion-icon src="assets/custom-icons/drop-right.svg" slot="end"></ion-icon>
+      </ion-item>
+  </ion-list>
+</ion-content>

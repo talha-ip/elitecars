@@ -1,0 +1,36 @@
+<ion-content class="home-content">
+  <ion-item lines="none">
+    <ion-button routerLink="/scripts" routerDirecrtion="backward" class="menu-btn" slot="start">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-label>
+      <p>Home</p>
+    </ion-label>
+  </ion-item>
+  <!-- for banner -->
+  <ion-slides #slideIntro pager="true" class="animated fadeIn">
+    <ion-slide (click)="goToShop()" *ngFor="let slide of slides">
+      <ion-card>
+        <ion-thumbnail>
+          <img src="{{slide}}" />
+        </ion-thumbnail>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <div class="div-category">
+    <h1>Popular Categories</h1>
+    <div class="div-line"></div>
+  </div>
+  <!-- category items -->
+  <ion-grid>
+    <ion-row *ngFor="let item of categoryItems; let i = index">
+      <ion-col class="category-col">
+        <ion-thumbnail class="animated fadeIn">
+          <ion-img class="category-img" (click)="goToShop(item.id)" src="{{item.image.src}}">
+          </ion-img>
+        </ion-thumbnail>
+        <h2 class="category-text">{{item.name}}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

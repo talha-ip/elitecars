@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile One</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <div class="div-bg-top"></div>
+  <div class="div-card-avatar">
+    <ion-card class="card-avatar">
+      <ion-avatar>
+        <img src="assets/images/profile/avatar-profile-one.png" />
+      </ion-avatar>
+      <p>John Smith</p>
+      <p>Creative Director</p>
+    </ion-card>
+    <div class="btn-profile">
+      <ion-button>
+        Verified
+        <ion-icon src="assets/CustomIcons/profile-one-tick.svg"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <form>
+    <ion-list>
+      <ion-card *ngFor="let item of Items" class="card-input">
+        <ion-item class="animated fadeInRight item-input" lines="none">
+          <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}"></ion-input>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-button>
+    Edit
+    <ion-icon src="assets/CustomIcons/profile-one-edit.svg"></ion-icon>
+  </ion-button>
+</ion-footer>

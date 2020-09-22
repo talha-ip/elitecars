@@ -1,0 +1,113 @@
+.content {
+  --background: black !important;
+  .div-bg-black {
+    --background: none !important;
+    background: url("../../assets/images/player/audio/2/bg-black-white.png") !important;
+    background-position: top center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60%;
+    //filter: brightness(0.3);
+  }
+  .div-bg {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 50%;
+    background: black !important;
+    ion-thumbnail {
+      width: 100%;
+      height: 86vw;
+    }
+  }
+  .div-content {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    .item-header {
+      --background: transparent !important;
+      --color: white;
+      p {
+        width: 100%;
+        color: white;
+        font-family: "proximaNova";
+        font-size: 20px;
+        text-align: center;
+      }
+      ion-icon {
+        margin: 0;
+        color: white;
+      }
+    }
+    .div-img {
+      margin-top: 150px;
+      width: 100%;
+      ion-img {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .item-text {
+      --background: transparent;
+      --padding-start: 10px;
+      ion-label {
+        h2 {
+          font-family: "proximanova";
+          font-size: 27px;
+          color: white;
+        }
+        p {
+          font-family: "proximanova";
+          font-size: 20px;
+          color: #80828a;
+        }
+      }
+    }
+    .item-range {
+      margin-top: 80px;
+      --background: transparent;
+      ion-range {
+        --bar-background-active: linear-gradient(to right, #20baba, #0e2df8);
+        --bar-background: #d8d8d8;
+        --knob-background: #20bbbb;
+        ion-label {
+          color: #80828a;
+          font-family: "titilliumweb";
+          font-size: 12px;
+        }
+      }
+    }
+    .div-bar {
+      margin-top: 50px;
+      width: 100%;
+      .grid-bar {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        ion-row {
+          width: 100%;
+        }
+        .btn-play {
+          --background: black;
+          border: solid 2px #1fbbbb;
+          border-radius: 50%;
+          ion-icon {
+            margin-left: 7px;
+          }
+        }
+        ion-button {
+          --color-focused: black;
+          --color-activated: black;
+          --color-hover: black;
+        }
+        .icon {
+          margin-top: auto;
+          margin-bottom: auto;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

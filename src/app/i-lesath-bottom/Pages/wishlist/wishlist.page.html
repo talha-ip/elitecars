@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="div">
+      <ion-buttons slot="start">
+        <ion-button fill="clear" routerLink="/lb-home" routerDirection="backward">
+          <ion-icon src="assets/custom-icons/back.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="ion-no-padding">Wishlist
+        <ion-icon name="heart"></ion-icon>
+      </ion-title>
+    </div>
+    <div *ngIf="!gridVisiable" class="div-two">
+      <ion-buttons slot="end" *ngIf="wishLIstVisiable">
+        <ion-button>
+          <ion-icon class="icon-rem"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="CheckOpen('edit')">
+          <ion-icon src="assets/CustomIcons/edit.svg"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end" *ngIf="!wishLIstVisiable">
+        <ion-button fill="clear" (click)="CheckOpen('delete')">
+          <ion-icon class="icon-rem" name="close"></ion-icon>
+        </ion-button>
+        <ion-button (click)="RemoveItem()" fill="clear">
+          <ion-icon class="icon-rem" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux'">
+  <div *ngIf="gridVisiable">
+    <div class="div-img">
+      <ion-img src="assets/template-themes/lesath/images/bucket.png"></ion-img>
+    </div>
+    <ion-text>
+      <h1>
+        Your Wishlist is Empty
+      </h1>
+      <p>
+        Press heart icon on products to add them in wishlist
+      </p>
+    </ion-text>
+    <ion-button (click)="goToHome()">Continue Shopping</ion-button>
+  </div>
+
+  <div *ngIf="!gridVisiable">
+    <ion-button (click)="goToHome()" class="square-btn">All Items</ion-button>
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-no-padding explore-row" *ngIf="rowVisiable">
+        <ion-col *ngFor="let item of wishlist" size="12" class="ion-no-padding">
+          <ion-card class="grid-card">
+            <ion-img class="slider-img" src="{{item.img}}"></ion-img>
+            <h3>{{item.name}}</h3>
+            <p>$ {{item.price}}</p>
+            <div class="sale-featured">
+              <div class="sale" *ngIf="item.sale">Sale</div>
+              <div class="featured" *ngIf="item.feature">Featured</div>
+            </div>
+            <ion-img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge"></ion-img>
+
+            <div>
+              <ion-button (click)="goToCart()">Add To Cart</ion-button>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <div *ngIf="!rowVisiable">
+        <ion-row class="ion-no-padding explore-row" *ngFor="let item of wishlist">
+          <ion-col size="0.5" class="ion-align-self-center checkbox-col">
+            <ion-checkbox (ionChange)="checkEvent(item)" [(ngModel)]="item.isChecked"></ion-checkbox>
+          </ion-col>
+          <ion-col size="11.5" class="ion-no-padding">
+            <ion-card class="grid-card-small">
+              <ion-img class="slider-img" src="{{item.img}}"></ion-img>
+              <h3>{{item.name}}</h3>
+              <p>$ {{item.dPrice}}&nbsp;$ {{item.price}}</p>
+              <div class="sale-featured">
+                <div class="sale" *ngIf="item.sale">Sale</div>
+                <div class="featured" *ngIf="item.feature">Featured</div>
+              </div>
+              <ion-img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge"></ion-img>
+
+              <div>
+                <ion-button (click)="goToCart()">Add To Cart</ion-button>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+
+  </div>
+</ion-content>

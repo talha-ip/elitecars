@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cart Seven</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-cart-seven">
+  <ion-grid class="grid" *ngFor="let item of items; let i=index">
+    <ion-row>
+      <ion-col>
+        <div>
+          <p class="name-para">{{item.name}}</p>
+          <p class="price-para">${{item.price}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <p class="cat-para">{{item.catName}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2" class="ion-align-self-center col-btns">
+        <ion-button (click)="add(i)" fill="clear" class="btn-add">
+          <p>+</p>
+        </ion-button>
+        <p class="para-count">{{item.count}}</p>
+        <ion-button class="btn-minus" fill="clear" (click)="minus(i)">
+          <p>-</p>
+        </ion-button>
+      </ion-col>
+      <ion-col size="10" class="ion-align-self-center">
+        <ion-img src="{{item.img}}"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <div class="div-footer">
+    <div class="div-price">
+      <p>Subtotal Price</p>
+      <p class="para-price">$240</p>
+    </div>
+    <ion-button shape="round">
+      Checkout
+    </ion-button>
+  </div>
+</ion-footer>

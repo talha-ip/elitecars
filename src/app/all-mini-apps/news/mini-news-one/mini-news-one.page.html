@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>News One</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-news-one">
+  <p class="header-para">Latest Articles</p>
+  <ion-slides class="slides-header" [options]="sliderConfiglatestItems">
+    <ion-slide *ngFor="let item of items" (click)="goToPostDetails(item)">
+      <ion-card class="animated fadeInRight">
+        <ion-thumbnail>
+          <img class="person-img" src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+        </ion-thumbnail>
+      </ion-card>
+      <h2>{{item.title.rendered}}</h2>
+      <ion-item lines="none" class="item-header-slider">
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label>
+          <p class="para-post">{{ item.date | date:'mediumDate'}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <p class="header-para">Trending Articles</p>
+  <ion-slides class="slides-trending" [options]="sliderConfigTrendingItems">
+    <ion-slide *ngFor="let item of items" (click)="goToPostDetails(item)">
+      <ion-card class="animated fadeInRight">
+        <ion-thumbnail>
+          <img class="person-img" src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+        </ion-thumbnail>
+      </ion-card>
+      <h2>{{item.title.rendered}}</h2>
+      <ion-item lines="none" class="item-header-slider-trending">
+        <ion-icon name="calendar" class="iconTrending" slot="start"></ion-icon>
+        <ion-label>
+          <p class="para-post-trend">{{ item.date | date:'mediumDate'}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <p class="header-para">All Articles</p>
+  <ion-grid class="grid-all-items ion-no-padding">
+    <ion-row *ngFor="let item of items"  (click)="goToPostDetails(item)">
+      <ion-col size="5" class="col-thumbnail ion-no-padding">
+        <ion-card class="animated fadeInRight">
+          <ion-thumbnail>
+            <img class="person-img" src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+          </ion-thumbnail>
+        </ion-card>
+      </ion-col>
+      <ion-col size="7" class="col-details ion-no-padding">
+        <h2>{{item.title.rendered}}</h2>
+        <ion-item lines="none" class="item-grid">
+          <ion-icon name="calendar" class="iconAll" slot="start"></ion-icon>
+          <ion-label>
+            <p class="para-post">{{ item.date | date:'mediumDate'}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

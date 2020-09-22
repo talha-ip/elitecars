@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Dashboard One</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <h2>Result</h2>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide>
+      <ion-card style="background:linear-gradient(to right,#7F00FF,#E100FF);">
+        <ion-item>
+          <ion-icon slot="start" src="assets/CustomIcons/favorite-heart-dashboard.svg"></ion-icon>
+          <ion-label>
+            <p class="para-val">96</p>
+            <p class="para-name">Heart Beat</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card style="background:linear-gradient(to right,#00C6FF,#0072FF);">
+        <ion-item>
+          <ion-icon slot="start" src="assets/CustomIcons/graph-dashboard.svg"></ion-icon>
+          <ion-label>
+            <p class="para-val">123</p>
+            <p class="para-name">Shimmer</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card style="background:linear-gradient(to right,#FC4A1A,#F7B733);">
+        <ion-item>
+          <ion-icon slot="start" src="assets/CustomIcons/e-graph-dashboard.svg"></ion-icon>
+          <ion-label>
+            <p class="para-val">212</p>
+            <p class="para-name">Jitter</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-img class="img-graph" src="assets/images/dashboard/dashboard-graph.png"></ion-img>
+  <p class="para-score">Score</p>
+  <p class="para-percent">75 %</p>
+</ion-content>

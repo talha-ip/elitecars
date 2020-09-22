@@ -1,0 +1,21 @@
+ion-content{
+  ion-item{
+      ion-avatar{
+          height: 50px;
+          width: 50px;
+      }
+      ion-label{
+          padding-bottom: 0;
+          padding-top: 0;
+          h2{
+              color: black;
+              font-size: 20px;
+              font-family: 'roboto-medium' !important;
+          }
+          p{
+              font-size: 12px;
+              font-family: 'roboto-medium' !important;
+          }
+      }
+  }
+}

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Forget Nine</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img class="animated fadeIn" src="assets/images/login/fossa-icon.png"></ion-img>
+  <div *ngFor="let item of Items" class="div-rel">
+    <span>
+      <div class="div-item">
+        <ion-item class="animated fadeInRight item-input" lines="none">
+          <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+          <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+        </ion-item>
+      </div>
+    </span>
+    <div class="div-item-bg">
+      <ion-item>
+      </ion-item>
+    </div>
+  </div>
+  <div class="div-login-btn">
+    <ion-button shape="round" class="btn-login">
+     Reset Password
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/scripts" routerDirection="backward">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>YouTube Playlists </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p><u>Channel ID</u></p>
+  <div class="div-item-search">
+    <ion-item lines="none" class="item-input">
+      <ion-input shape="round" [(ngModel)]="channelId" placeholder="search here"></ion-input>
+      <ion-button shape="round" (click)="getPlaylistsForChannel(channelId)">
+        <ion-icon src="assets/images/plugin-images/custom-icons/search-youtube.svg">
+        </ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+  <div *ngIf="visItems" class="div-empty">
+    <ion-icon src="assets/images/plugin-images/Youtube-chanels/video-play-list.svg"></ion-icon>
+    <h2>Your Play LIst is empty</h2>
+  </div>
+  <ion-card class="item-card" *ngFor="let list of playLists">
+    <ion-item (click)="getListVideos(list)">
+      <ion-thumbnail slot="start">
+        <img [src]="list.snippet.thumbnails.default.url" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ list.snippet.title }}</h2>
+        <p class="date">{{ list.snippet.publishedAt | date:'mediumDate'}}</p>
+        <p>{{ list.snippet.publishedAt | date:'shortTime'}}</p>
+      </ion-label>
+      <ion-icon slot="end" name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-card>
+</ion-content>

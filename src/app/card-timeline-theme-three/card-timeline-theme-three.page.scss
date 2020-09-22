@@ -1,0 +1,20 @@
+ion-content{
+  ion-card{
+    background: transparent;
+    margin:0;
+    ion-row{
+      ion-col{
+        text-align: center;
+        ion-icon{
+          margin-right: 5px;
+        }
+      }
+      ion-col:last-child{
+        text-align: center;
+      }
+      ion-col:first-child{
+        text-align: end;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/scripts" routerDirection="backward">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Analytics Integrations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card (click)="googleAnalytics()">
+    <img src="assets/images/plugin-images/Analytics/google-analytics.png" />
+  </ion-card>
+  <ion-card (click)="firebaseAnalytics()">
+    <img src="assets/images/plugin-images/Analytics/firebase-analytics.png" />
+  </ion-card>
+  <ion-card (click)="flurryAnalytics()">
+    <img src="assets/images/plugin-images/Analytics/flurry-analytics.png" />
+  </ion-card>
+</ion-content>

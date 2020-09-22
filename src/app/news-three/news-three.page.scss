@@ -1,0 +1,53 @@
+.content-news-three {
+    .header-text {
+      font-family: "lato-bold";
+      font-size: 25px;
+      margin: 20px 16px 20px 16px;
+    }
+    .grid-all-items {
+      padding-left: 8px;
+      .col-thumbnail {
+        ion-card {
+          border-radius: 24px;
+          ion-thumbnail {
+            width: 100%;
+            height: 35vw;
+          }
+        }
+      }
+      .col-details {
+        h2 {
+          font-family: "lato-regular";
+          font-weight: bold;
+          font-size: 18px;
+          margin-right: 16px;
+        }
+        p {
+          font-family: "lato-regular";
+          font-weight: bold;
+          font-size: 10px;
+          margin-right: 16px;
+        }
+        ion-button {
+          --color: black;
+          font-family: "lato-regular";
+          font-weight: bold;
+          font-size: 12px;
+          text-transform: capitalize;
+          margin: 0;
+          --padding-start: 0;
+          .angle-para {
+            margin-left: 10px;
+            font-size: 4vw !important;
+            margin-bottom: 1px;
+          }
+          .line-para {
+            width: 20vw;
+            border-bottom: solid 1px black;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  

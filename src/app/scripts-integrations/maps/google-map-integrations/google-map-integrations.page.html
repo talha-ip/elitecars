@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/maps-integration" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Google Map
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <div id='map' style="width:100%;height:60%;"></div>
+  <h2><b>Latitude:</b>{{latitude}}</h2>
+  <h2><b>Longitude:</b>{{longitude}}</h2>
+  <h2><b>Timestamp:</b>{{timestamp}}</h2>
+</ion-content>

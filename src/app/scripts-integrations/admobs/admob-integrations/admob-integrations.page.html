@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/scripts" routerDirection="backward">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> AdMob Free</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img (click)="showBanner()" src="assets/images/plugin-images/AdMob/show-add.jpg"></ion-img>
+  <ion-img (click)="hideBanner()" src="assets/images/plugin-images/AdMob/hide-add.jpg"></ion-img>
+  <ion-img (click)="showInterstitialVideo()" src="assets/images/plugin-images/AdMob/show-vid.jpg"></ion-img>
+  <ion-img (click)="showRewardVideo()" src="assets/images/plugin-images/AdMob/show-reward-vid.jpg"></ion-img>
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      News
+    </ion-title >
+    <ion-button slot="end" fill="clear" size="small" (click)="goToSearch()">
+      <ion-icon class="search_icon" name="search"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" fill="clear" size="small" (click)="goToCart()">
+      <ion-icon src="assets/CustomIcons/Bag.svg"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="latest" checked>Latest</ion-segment-button>
+    <ion-segment-button value="categories">Categories</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="segments">
+    <!-- latest segment -->
+    <div *ngSwitchCase="'latest'">
+      <ion-grid class="ion-no-padding">
+        <ion-row *ngFor="let item of items" class="ion-no-padding">
+          <ion-img class="ion-no-padding" src="{{item.img}}"></ion-img>
+          <p>{{item.date}}</p>
+          <h2>{{item.heading}}</h2>
+          <p class="paragraph">{{item.paragraph}}</p>
+          <ion-button fill="clear" (click)="goToNewsDetail()">
+            Read More <ion-icon class="icon-forward" src='assets/custom-icons/back-icon.svg'></ion-icon>
+          </ion-button>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- categories segment -->
+    <div *ngSwitchCase="'categories'">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of itemsCategories" size="6">
+            <ion-card>
+              <ion-img src="{{item.img}}"></ion-img>
+              <h3>{{item.heading}}</h3>
+              <p class="count">{{item.count}} Posts</p>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

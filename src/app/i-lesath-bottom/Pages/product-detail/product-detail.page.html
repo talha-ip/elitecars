@@ -1,0 +1,184 @@
+<ion-content (pinch)="pinchEvent($event)" class="product-content ion-no-padding content-bg-becrux">
+  <ion-slides (click)="goToImage()" pager="true" class="ion-no-padding">
+    <ion-slide *ngFor="let slide of slides" class="ion-no-padding">
+      <ion-grid class="ion-no-padding grid-fix-heigth">
+        <ion-row class="ion-no-padding">
+          <ion-col size="12" class="ion-no-padding col-latest">
+            <ion-img src="{{slide.image}}"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+  <ion-item class="item-header-slide content-bg-becrux" lines="none">
+    <ion-button fill="clear" slot=start routerLink="/lb-home" routerDirection="forward">
+      <ion-icon src="assets/custom-icons/back.svg"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" slot=end routerLink="/lb-search" routerDirection="forward">
+      <ion-icon class="search_icon" name="search"></ion-icon>
+    </ion-button>
+    <ion-button fill="clear" slot=end (click)="goToCart()">
+      <ion-icon src="assets/CustomIcons/Bag.svg"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col size="8" class="ion-text-left ion-no-padding">
+        <h2 class="price-header">
+          Rose Petel Shirt
+        </h2>
+      </ion-col>
+      <ion-col size="4" class="ion-text-right price-col ion-no-padding">
+        <p>$ 150</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-no-padding star-row">
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon name="star"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon name="star"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon name="star"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="4" class="ion-text-left review-col">
+        <small>25 Reviews</small>
+      </ion-col>
+      <ion-col size="5.5" class="ion-text-right ion-no-padding stock-col">
+        <small>In Stock</small>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-no-padding">
+        <h1>Select Size:</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="size-row">
+      <ion-col size="1">
+        <div *ngIf="!small" (click)="s(0)" class="div-size">
+          <p>S</p>
+        </div>
+        <div *ngIf="small" (click)="s(1)" class="div-size-filled">
+          <p>S</p>
+        </div>
+      </ion-col>
+      <ion-col size="1">
+        <div *ngIf="!medium" (click)="m(0)" class="div-size">
+          <p>M</p>
+        </div>
+        <div *ngIf="medium" (click)="m(1)" class="div-size-filled">
+          <p>M</p>
+        </div>
+      </ion-col>
+      <ion-col size="1">
+        <div *ngIf="!large" (click)="l(0)" class="div-size">
+          <p>L</p>
+        </div>
+        <div *ngIf="large" (click)="l(1)" class="div-size-filled">
+          <p>L</p>
+        </div>
+      </ion-col>
+      <ion-col size="1">
+        <div *ngIf="!extraLarge" (click)="xl(0)" class="div-size">
+          <p>XL</p>
+        </div>
+        <div *ngIf="extraLarge" (click)="xl(1)" class="div-size-filled">
+          <p>XL</p>
+        </div>
+      </ion-col>
+      <ion-col size="1">
+        <div *ngIf="!doubleExtraLarge" (click)="xxl(0)" class="div-size">
+          <p>XXL</p>
+        </div>
+        <div *ngIf="doubleExtraLarge" (click)="xxl(1)" class="div-size-filled">
+          <p>XXL</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding">
+        <h1>Select Color:</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="size-row">
+      <ion-col>
+        <ion-list>
+          <ion-radio-group>
+            <ion-item lines="none" class="content-bg-becrux">
+              <ion-radio style="--color: blue;--color-checked: blue;" slot="start" value="blue" checked></ion-radio>
+              <ion-radio style="--color: purple;--color-checked: purple;" slot="start" value="purple"></ion-radio>
+              <ion-radio style="--color: black;--color-checked: black;" slot="start" value="black"></ion-radio>
+              <ion-radio style="--color: brown;--color-checked: brown;" slot="start" value="brown"></ion-radio>
+              <ion-radio style="--color: lightgreen;--color-checked: lightgreen;" slot="start" value="lightgreen">
+              </ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="2.48" class="ion-no-padding">
+        <h1>QTY:</h1>
+      </ion-col>
+      <ion-col class="ion-text-right" size="1">
+        <ion-button (click)="minusQuantity()" class="qty-btn" size="small" fill="clear">
+          <ion-icon class='minus-icon' name="remove-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1" class="ion-text-center ion-no-padding ion-align-self-center">
+        <p class="count-para">{{qtyy}}</p>
+      </ion-col>
+      <ion-col size="1" class="ion-text-left ion-no-padding">
+        <ion-button (click)="addQuantity()" class="qty-btn qty-btn-add" size="small" fill="clear">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding">
+        <h1>Product Description</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding">
+        <p class="desc-para">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore
+          magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+          kasd
+          gubergren, no</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="div-inline-btn">
+    <ion-button shape="round">Add to Cart</ion-button>
+    <ion-button shape="round" class="wish-btn">Add to Wishlist</ion-button>
+  </div>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding">
+        <h3 class="like-heading">You May Also Like</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let item of newArrival" class="swiper-slide-products">
+      <ion-card class="grid-card">
+        <ion-img src="{{item.img}}" (click)="goToProductDetail()"></ion-img>
+        <img class="badge" src="assets/template-themes/lesath/images/new.svg">
+        <ion-icon (click)="onIconClick(item)" class="heart-empty" *ngIf="item.heartIcon" name="heart"></ion-icon>
+        <ion-icon (click)="onIconClick(item)" class="heart-filled" *ngIf="!item.heartIcon" name="heart"></ion-icon>
+        <ion-img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge"></ion-img>
+        <h3 class="like-name">{{item.name}}</h3>
+        <p class="like-para"><del>$ {{item.price}}</del> $ {{item.price}}</p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

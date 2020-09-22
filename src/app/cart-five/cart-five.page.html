@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cart Five</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-cart-five">
+  <ion-card *ngFor="let item of items; let i=index" class="card">
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img src="{{item.img}}" />
+      </ion-thumbnail>
+      <ion-label>
+        <p class="text-para">{{item.text}}</p>
+        <p class="text-cat-name">{{item.catName}}</p>
+        <div class="div-btn">
+          <ion-button class="btn-minus" fill="clear" (click)="minus(i)">
+            <p>-</p>
+          </ion-button>
+          <p class="para-count">{{item.count}}</p>
+          <ion-button (click)="add(i)" fill="clear" class="btn-add">
+            <p>+</p>
+          </ion-button>
+        </div>
+        <div class="div-price">
+          <p class="para-d-price"><del>$ {{item.dPrice}}</del></p>
+          <p class="para-price">$ {{item.price}}</p>
+        </div>
+      </ion-label>
+    </ion-item>
+    <div class="div-trash-heart">
+      <ion-icon name="trash"></ion-icon>
+      <p>Remove This Item</p>
+      <div class="div-heart">
+        <ion-icon name="heart"></ion-icon>
+        <p>Add Item to Wishlist</p>
+      </div>
+    </div>
+  </ion-card>
+</ion-content>
+<ion-footer class="footer">
+  <ion-button>
+    Proceed To Checkout
+  </ion-button>
+</ion-footer>

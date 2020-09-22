@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title">
+      Search Three
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <form #loginForm="ngForm">
+    <ion-searchbar name="search" placeholder="Search">
+    </ion-searchbar>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let product of categories" routerLink="/product-detail" routerDirection="forward">
+      <ion-avatar slot="start" class="animated flipInX delay-900ms">
+        <img src="{{product.img}}" />
+      </ion-avatar>
+      <ion-label padding>
+        <ion-text>
+          <h2>{{product.name|translate}}</h2>
+          <p>{{product.count}} {{'Products'| translate }}</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

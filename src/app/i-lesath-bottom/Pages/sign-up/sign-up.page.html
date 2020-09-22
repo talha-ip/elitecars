@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux ion-padding">
+  <form>
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">Email</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="formData.email" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">Password</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="formData.password" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">First Name</ion-label>
+      <ion-input type="text" name="firstname" [(ngModel)]="formData.firstname" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">Last Name</ion-label>
+      <ion-input type="email" name="lastname" [(ngModel)]="formData.lastname" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">Mobile Phone</ion-label>
+      <ion-input type="mobile" name="phone" [(ngModel)]="formData.phone" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none" class="content-bg-becrux">
+      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label>
+        <p>I would like to recieve the latest news from the company by email</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-button shape="round"> Sign Up </ion-button>
+
+  </form>
+</ion-content>

@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar style="padding-right:10px; padding-left:10px; position: relative; top:10px;">
+      <ion-img slot="start" [src]="logo">
+
+      </ion-img>
+    <ion-buttons slot="end" class="header_right_buttons">
+      <ion-button fill="clear" (click)="goToSearchPage()" class="search_button">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" [scrollEvents]="true" (ionScroll)="onScroll($event)" class="content content-bg-becrux">
+  <div class="inner_content_elite" style="min-height: 100%;">
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+
+    <div *ngIf="!is_loading" >
+      <ion-card class="skeleton-card" *ngFor="let skl of [1,2,3,4,5,6,7,8]">
+          <ion-col size="7" style="float: left;">
+              <ion-skeleton-text animated style="padding: 10px;">
+              </ion-skeleton-text>
+              <ion-skeleton-text animated style="padding: 10px;">
+              </ion-skeleton-text>
+              <ion-skeleton-text animated style="padding: 10px;">
+              </ion-skeleton-text>
+          </ion-col>
+          <ion-col size="5" style="float: left;">
+              <ion-skeleton-text animated style="height:100px; padding: 10px; border-radius: 10px;">
+              </ion-skeleton-text>
+          </ion-col>
+      
+      </ion-card>
+  </div>
+  <div *ngIf="is_loading">
+    <!-- if data loaded -->
+    <ion-segment [(ngModel)]="scrollSegments" class="main_tab_bar" scrollable>
+      <ion-segment-button class="main_tabs" value="popular">{{ 'Popular' | translate }}</ion-segment-button>
+      <ion-segment-button class="main_tabs" value="new">{{ 'New Cars' | translate }} </ion-segment-button>
+      <ion-segment-button class="main_tabs" value="used"> {{ 'Used Cars' | translate }}</ion-segment-button>
+      <ion-segment-button class="main_tabs" value="all"> {{ 'All Cars' | translate }}</ion-segment-button>    
+    </ion-segment>
+    <h3 class="home_headings">New Arrived!</h3>
+      
+    <ion-slides class="animated fadeIn fast" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let item of items">
+        <app-product [data]="item" [type]="'list'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" routerLink="/bb-products" routerDirection="forward"> {{'More Cars'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+ 
+    <h3 class="home_headings">All Awesome Collection</h3>
+    <!-- for scrollable segment and all products -->
+    <!-- scrollable segment divisions -->
+    <div [ngSwitch]="scrollSegments">
+      <div *ngSwitchCase="'popular'">
+          <ion-grid  class="animated fadeIn fast ion-no-padding">
+              <ion-row>
+                  <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                      <app-product [data]="item" [type]="'normal'" ></app-product>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+      <div *ngSwitchCase="'new'">
+          <ion-grid no-padding class="animated fadeIn fast">
+              <ion-row no-padding>
+                  <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                      <app-product [data]="item" [type]="'normal'" *ngIf="item.metadata._al_listing_condition == 'New'"></app-product>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+
+      </div>
+      <div *ngSwitchCase="'used'">
+          <ion-grid no-padding  class="animated fadeIn fast">
+              <ion-row no-padding>
+                  <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                      <app-product [data]="item" [type]="'normal'"  *ngIf="item.metadata._al_listing_condition == 'Used'"></app-product>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+      <div *ngSwitchCase="'all'">
+          <ion-grid no-padding  class="animated fadeIn fast">
+              <ion-row no-padding>
+                  <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                      <app-product [data]="item" [type]="'normal'"></app-product>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </div>
+
+    </div>
+
+  <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  </div>
+
+    
+    <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+      <ion-fab-button size="small"  (click)="scrollToTop()">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>

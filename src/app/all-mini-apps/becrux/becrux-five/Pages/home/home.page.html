@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 6
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-five-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let c of shared.categories" (click)="openSubCategories(c)" class="animate-item">
+      <ion-img *ngIf="c.image" src="{{c.image.src}}"></ion-img>
+      <ion-text>
+        <h2>{{c.name }}</h2>
+        <p>{{c.count}} {{'Products'| translate }}</p>
+      </ion-text>
+    </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,89 @@
+ion-content {
+  p {
+    font-family: "roboto-medium";
+    font-size: 16px;
+    text-align: center;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  //for subcribe content
+  .div-item-search {
+    margin-left: 16px;
+    margin-right: 16px;
+    background: #ebebeb;
+    border-radius: 40px !important;
+    .item-input {
+      margin-left: 16px;
+      margin-top: 10px;
+      --background: transparent;
+      --inner-padding-end: 0;
+      ion-input {
+        --background: #ebebeb;
+        margin-right: 16px;
+        --padding-start: 0;
+        --inner-padding-end: 0;
+      }
+      ion-button {
+        width: 64px;
+        z-index: 99;
+        margin: 0;
+        height: 48px;
+        text-transform: capitalize;
+        --box-shadow: none !important;
+      }
+    }
+  }
+  .item-card {
+    border-radius: 20px;
+    margin: 20px 16px 20px 16px;
+    ion-item {
+      --padding-start: 0;
+      --inner-padding-end: 10.5px;
+      ion-thumbnail {
+        margin: 0;
+        height: 100px;
+        width: 115px;
+        img{
+          border-radius: 20px;
+        }
+      }
+      ion-label {
+        color: black;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+        h2 {
+          font-family: "roboto-medium";
+          font-size: 16px;
+          margin-bottom: 19px;
+          margin-top: 0;
+        }
+        p {
+          font-family: "roboto-light";
+          font-size: 12px;
+          margin-top: 0;
+          text-align: left;
+          color: black;
+        }
+        .date {
+          margin-bottom: 3px;
+        }
+      }
+      ion-icon {
+        color: black;
+        font-size: 16px;
+      }
+    }
+  }
+  .div-empty {
+    text-align: center;
+    margin-top: 30%;
+    ion-icon {
+      zoom: 13;
+    }
+    h2 {
+      font-family: "roboto-bold";
+      margin-top: -10px;
+    }
+  }
+}

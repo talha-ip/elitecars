@@ -1,0 +1,95 @@
+.content {
+  .grid-vision {
+    padding: 20px 16px 0 16px;
+    ion-row {
+      .col-text {
+        h2 {
+          font-size: 16px;
+          font-family: "lato";
+          text-align: left;
+          font-weight: bold;
+          color: #755200;
+          margin-top: 3px;
+          margin-bottom: 10px;
+          margin-left: 16px;
+        }
+        p {
+          font-size: 10px;
+          font-family: "lato";
+          text-align: left;
+          color: #755200;
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  .grid-mission {
+    padding: 0 16px 20px 16px !important;
+    ion-row {
+      .col-text {
+        h2 {
+          text-align: right !important;
+          margin-right: 16px !important;
+        }
+        p {
+          text-align: right !important;
+        }
+      }
+    }
+  }
+  .div-img-contact {
+      position: relative;
+    .div-contact-us-bottom {
+        position: absolute;
+        bottom: 16%;
+      .div-inner {
+        margin-left: 16px;
+        margin-right: 16px;
+        background: rgba(119, 83, 0, 0.7);
+        .header-para {
+          font-size: 16px;
+          font-family: "Arial";
+          text-align: center;
+          width: 100%;
+          font-weight: bold;
+          margin-top: 20px;
+          color: white;
+          margin-bottom: 0;
+          padding-top: 10px;
+        }
+        .grid-contact-us {
+          .grid-contact-details {
+            ion-col {
+              ion-item {
+                --background: transparent !important;
+                ion-icon {
+                  font-size: 12px;
+                  color: #311400;
+                  margin-right: 10px;
+                }
+                .pin-icon {
+                  font-size: 18px !important;
+                }
+                p {
+                  font-size: 12px;
+                  font-family: "Arial";
+                  color: white;
+                }
+              }
+            }
+          }
+          .card-img {
+            border-radius: 20px;
+            margin-right: 27px;
+            margin-top: 0;
+            ion-img {
+              margin-left: -10px;
+              width: 130%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

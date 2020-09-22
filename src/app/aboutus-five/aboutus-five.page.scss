@@ -1,0 +1,72 @@
+.content {
+  .grid-vision {
+    padding: 20px 16px 20px 16px;
+    ion-row {
+      .col-text {
+        background: #030023;
+        h2 {
+          font-size: 16px;
+          font-family: "lato";
+          text-align: center;
+          font-weight: bold;
+          color: white;
+          margin-top: 28px;
+          margin-bottom: 30px;
+        }
+        p {
+          font-size: 10px;
+          font-family: "lato";
+          text-align: center;
+          color: white;
+          margin-left: 16px;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+  .grid-mission {
+    padding: 0 16px 20px 16px !important;
+  }
+  .grid-person {
+    background: #030023;
+    padding: 0 16px 47px 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    .team-para {
+      font-size: 16px;
+      font-family: "Arial";
+      text-align: center;
+      width: 100%;
+      font-weight: bold;
+      margin-top: 27px;
+      margin-bottom: 0;
+      color: white;
+    }
+    .row-items2 {
+      margin-top: 10px;
+    }
+    ion-col {
+      text-align: center;
+      ion-avatar {
+        height: 100px;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .name-para {
+        font-size: 14px;
+        font-family: "Arial";
+        margin-top: -10px;
+        margin-bottom: 0;
+        color: white;
+      }
+      .des-para {
+        margin-top: 2px;
+        font-size: 12px;
+        font-family: "Arial";
+        color: #6d6d6d;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

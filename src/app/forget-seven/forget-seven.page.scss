@@ -1,0 +1,91 @@
+.content {
+  --background: none !important;
+  // assets/images/login/login-one-bg.Kpng
+  background: url("../../assets/images/login/login-one-bg.jpg") !important;
+  background-position: top center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  .avatar-bg {
+    height: 165px;
+    width: 165px;
+  }
+  .div-avatar-bg {
+    margin-top: 30px;
+    height: 165px;
+    width: 165px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.24;
+    margin-bottom: 50px;
+  }
+  .div-avatar {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    ion-avatar {
+      height: 165px;
+      width: 165px;
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+      }
+    }
+  }
+  .div-item {
+    opacity: 0.3;
+    .item-input {
+      margin-left: 43px;
+      margin-right: 43px;
+      --border-radius: 3px;
+      --background: black;
+      margin-bottom: 10px;
+      ion-input {
+        --placeholder-color: white;
+        --placeholder-opacity: 1;
+        --color: white;
+      }
+      ion-icon {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      p {
+        font-size: 16px;
+        font-family: "roboto-regular";
+        margin-top: auto;
+        margin-bottom: auto;
+        color: black;
+      }
+    }
+  }
+  .forget-pass {
+    width: 100%;
+    font-size: 11px;
+    font-family: "Helvetica";
+    --color: white;
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 90px;
+  }
+  .div-btn-reset{
+    margin-left: 43px;
+    margin-right: 43px;
+    .btn-login {
+      --background: #ff347a;
+      text-transform: capitalize;
+      --color: white;
+      margin-bottom: 10px;
+      --border-radius: 5px;
+      --box-shadow: none;
+      width: 100%;
+      height: 42px;
+    }
+  }
+  .div-login-btn {
+    height: 150px;
+  }
+}

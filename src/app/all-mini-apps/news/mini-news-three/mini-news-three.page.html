@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>News Three</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-news-three">
+  <h2 class="header-text">Our Latest Items</h2>
+  <ion-grid class="grid-all-items ion-no-padding">
+    <ion-row *ngFor="let item of items">
+      <ion-col size="5" class="col-thumbnail ion-no-padding">
+        <ion-card class="animated fadeInRight">
+          <ion-thumbnail>
+            <img class="person-img" src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+          </ion-thumbnail>
+        </ion-card>
+      </ion-col>
+      <ion-col size="7" class="col-details ion-no-padding ion-align-self-center">
+        <h2>{{item.title.rendered}}</h2>
+        <p [innerHTML]="item.excerpt.rendered"></p>
+        <ion-button fill="clear" (click)="goToPostDetails(item)">
+          <p class="line-para"></p>
+          Explore<p class="angle-para">></p>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

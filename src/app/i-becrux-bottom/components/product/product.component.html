@@ -1,0 +1,71 @@
+<!-- skeleton text until data not loaded -->
+<div *ngIf="!item">
+  <ion-card class="skeleton-card">
+    <ion-skeleton-text animated>
+    </ion-skeleton-text>
+    <p>
+      <ion-skeleton-text animated>
+      </ion-skeleton-text>
+    </p>
+    <p>
+      <ion-skeleton-text animated class="skeleton-para">
+      </ion-skeleton-text>
+    </p>
+  </ion-card>
+</div>
+
+<div *ngIf="item">
+  <ion-card *ngIf="type=='normal'">
+    <div class="sale-featured">
+      <div  class="sale price_badge" *ngIf="item.metadata._al_listing_price" [innerHTML]="addComma(item.metadata._al_listing_price)+ ' OMR'"></div>
+    </div>
+    
+    
+    
+    <ion-grid no-padding style="padding: 0px;">
+      <ion-row no-padding style="padding: 0px; margin:0px;">
+        <ion-col size="7" style="padding: 15px;">
+          <p style="margin-top:15px;" class="product_title" *ngIf="item.metadata._al_listing_make_display" [innerHTML]="item.metadata._al_listing_make_display"></p>
+          <p class="product_title" *ngIf="item.metadata._al_listing_model_name" [innerHTML]="item.metadata._al_listing_model_name"></p>
+          <br>
+          <ion-col size="6" style="padding:5px;">
+            <img class="img-list" src="assets/template-themes/becrux/images/logo/speed.png" />
+            <ion-label class="product_inner_label" *ngIf="item.metadata._al_listing_odometer" [innerHTML]="addComma(item.metadata._al_listing_odometer)+ ' KM'"></ion-label>
+          </ion-col>
+          <ion-col size="6" style="padding:5px;">
+            <img class="img-list" src="assets/template-themes/becrux/images/logo/transmission.png" />
+            <ion-label class="product_inner_label" *ngIf="item.metadata._al_listing_model_transmission_type" [innerHTML]="item.metadata._al_listing_model_transmission_type"></ion-label>
+          </ion-col>
+          <br>
+          <ion-col size="12" style="padding:5px;">
+            <img class="img-list" src="assets/template-themes/becrux/images/logo/locations.png" />
+            <ion-label class="product_inner_label" *ngIf="item.metadata._al_listing_city" [innerHTML]="item.metadata._al_listing_city"></ion-label>
+          </ion-col>     
+        </ion-col>
+        <ion-col size="5" no-padding style="padding: 0px;">
+          <img style="height:140px; width:100%;"  *ngIf="item.vehicle_image" src="{{item.vehicle_image}}" (click)="goToProductDetail(item.id)" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card  lines="none" *ngIf="type=='list'" class="animated fadeIn">
+    <div class="sale-featured">
+      <div  class="sale price_badge"  *ngIf="item.metadata._al_listing_price" [innerHTML]="addComma(item.metadata._al_listing_price) + ' OMR'"></div>
+    </div>
+    
+    
+    
+    <ion-grid no-padding style="padding: 0px;">
+      <ion-row no-padding style="padding: 0px;">
+        <ion-col size="12" no-padding style="padding: 0px;">
+          <img style="height:140px; width:100%;" src="{{item.vehicle_image}}" (click)="goToProductDetail(item.id)" />
+        </ion-col>
+        <ion-col size="12" style="padding: 6px; padding-top: 0px;">
+          <p class="product_title"  *ngIf="item.metadata._al_listing_make_display" [innerHTML]="item.metadata._al_listing_make_display"></p>
+          <p class="product_title"  *ngIf="item.metadata._al_listing_model_name" [innerHTML]="item.metadata._al_listing_model_name"></p>   
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</div>

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 7
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-six-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-banner></app-banner>
+  <!-- categories swipe slider -->
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="apps"></ion-icon>
+      {{'Categories' | translate }}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openCategoryPage()">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+  <!-- categories component -->
+  <app-categories [type]="'withName'"></app-categories>
+  <!-- On Sale Header -->
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="bookmark"></ion-icon>
+      {{'On Sale' | translate }}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('sale')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+  <!-- On Sale Products swipe slider -->
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let p of shared.tab2">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- banner image -->
+  <!-- <ion-img *ngIf="shared.banners.length!=0" src="{{shared.banners[shared.banners.length-1].banners_image}}"></ion-img> -->
+  <!-- All Products Header -->
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="albums"></ion-icon>
+      {{'Featured' | translate }}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('featured')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+  <!-- scrolling products component -->
+  <app-scrolling-featured-products></app-scrolling-featured-products>
+
+  <!-- fab button to move at top of page  -->
+
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+  <ion-fab-button (click)="scrollToTop()">
+    <ion-icon name="arrow-round-up"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

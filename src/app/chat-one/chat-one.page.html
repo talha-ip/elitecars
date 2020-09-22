@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon slot="start" routerLink="/multipurpose-screens-details" routerDirection="backward" src="assets/CustomIcons/ios-arrow-back.svg"></ion-icon>
+    <div class="div-flex">
+      <ion-avatar>
+        <img src="assets/images/chat/avatar.png" />
+      </ion-avatar>
+      <div>
+        <ion-title>Smith</ion-title>
+        <p>Online</p>
+      </div>
+    </div>
+    <ion-icon class="icon-more" slot="end" name="more"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="div-dot-upper-top">
+    <div class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <div class="div-card">
+    <ion-card>
+      <p>Monday</p>
+    </ion-card>
+  </div>
+  <div class="div-dot-upper-bottom">
+    <div class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <ion-card class="chat-card-right">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Integer feugiat scelerisque varius morbi. Faucibus
+        interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.</p>
+      <ion-icon src="assets/CustomIcons/double-tick.svg"></ion-icon>
+    </div>
+    <p class="para-date">12-Nov-2019</p>
+  </ion-card>
+  <ion-card class="chat-card-left">
+    <p class="para-date">12-Nov-2019</p>
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Integer feugiat scelerisque varius morbi. Faucibus
+        interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.</p>
+      <ion-icon src="assets/CustomIcons/double-tick.svg"></ion-icon>
+    </div>
+  </ion-card>
+  <div class="div-dot-upper-top">
+    <div style="background:#7589DB" class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <div class="div-card">
+    <ion-card style="background:#7589DB">
+      <p>Tuesday</p>
+    </ion-card>
+  </div>
+  <div class="div-dot-upper-bottom">
+    <div style="background:#7589DB" class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <ion-card style="background:#7589DB" class="chat-card-right">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Integer feugiat scelerisque varius morbi. Faucibus
+        interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.</p>
+      <ion-icon src="assets/CustomIcons/double-tick.svg"></ion-icon>
+    </div>
+    <p style="background:#4A68DE" class="para-date">12-Nov-2019</p>
+  </ion-card>
+  <div class="div-dot-upper-top">
+    <div style="background:#A86EFF" class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <div class="div-card">
+    <ion-card style="background:#A86EFF">
+      <p>Tuesday</p>
+    </ion-card>
+  </div>
+  <div class="div-dot-upper-bottom">
+    <div style="background:#A86EFF" class="div-dots" *ngFor="let item of [1,2,3,4,5]"></div>
+  </div>
+  <ion-card style="background:#A86EFF" class="chat-card-right">
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Integer feugiat scelerisque varius morbi. Faucibus
+        interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.</p>
+      <ion-icon src="assets/CustomIcons/double-tick.svg"></ion-icon>
+    </div>
+    <p style="background:#8433FF" class="para-date">12-Nov-2019</p>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-item >
+    <ion-icon slot="start" src="assets/CustomIcons/smile.svg"></ion-icon>
+    <ion-input placeholder="Message" type="text"></ion-input>
+    <ion-icon slot="end" src="assets/CustomIcons/album.svg"></ion-icon>
+    <ion-icon slot="end" src="assets/CustomIcons/microphone.svg"></ion-icon>
+  </ion-item>
+</ion-footer>

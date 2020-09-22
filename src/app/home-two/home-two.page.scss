@@ -1,0 +1,18 @@
+ion-content{
+  .swiper-slide {
+      width: 40%;
+    }
+  app-product{
+      width: 100%;
+  }
+  ion-fab{
+      position: fixed;
+      ion-fab-button{
+          // --background: black;
+          --color: white;
+          ion-icon{
+              font-size: 20px;
+          }
+      }
+  }
+}

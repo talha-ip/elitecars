@@ -1,0 +1,228 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Home Eleven</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-home">
+
+  <div [ngSwitch]="segments">
+    <!-- main categories segment -->
+    <div *ngSwitchCase="'categories'">
+      <ion-text>
+        <h2 class="feature-category">Featured Categories</h2>
+      </ion-text>
+      <ion-card class="card-height-img" (click)="goToSubCat()" *ngFor="let product of featuredItems">
+        <img class="animated fadeIn fast img-featured" src="{{product.img}}" />
+        <ion-text>
+          <h2>{{product.name}}</h2>
+        </ion-text>
+      </ion-card>
+      <ion-text>
+        <h2 class="all-category">All Categories</h2>
+      </ion-text>
+      <ion-grid class="ion-no-padding">
+        <ion-row *ngFor="let item of allItems" class="category-row">
+          <ion-col size="6" class="ion-no-padding">
+            <ion-img class="animated fadeIn fast" src="{{item.img}}"></ion-img>
+          </ion-col>
+          <ion-col (click)="goToSubCat()" size="6" class="category-col">
+            <h2 class="category-items">{{item.name}}</h2>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- main explore segment -->
+    <div *ngSwitchCase="'explore'">
+      <ion-img src="assets/template-themes/lesath/images/explore/1.png"></ion-img>
+      <div class="inner-div-explore">
+
+        <ion-text>
+          <h2 class="latest">Latest in Winterwear</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig">
+          <ion-slide class="animated fadeIn fast" *ngFor="let item of latestItems">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail()" src="{{item.img}}"></ion-img>
+                  <img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge" />
+                  <ion-icon class="heart-empty-list-slider" (click)="onIconClick(item)" *ngIf="item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                  <ion-icon (click)="onIconClick(item)" class="heart-filled-list-slider" *ngIf="!item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <div>
+          <ion-item lines="none" class="btn-viewall">
+            <ion-button (click)="goToSubCat()">View All </ion-button>
+          </ion-item>
+        </div>
+        <ion-text>
+          <h2 class="feature-news">Featured Collection</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig" class="slides-view">
+          <ion-slide class="animated fadeIn fast " *ngFor="let item of featuredCollection">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail()" src="{{item.img}}"></ion-img>
+                  <img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge" />
+                  <ion-icon class="heart-empty-list-slider" (click)="onIconClick(item)" *ngIf="item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                  <ion-icon (click)="onIconClick(item)" class="heart-filled-list-slider" *ngIf="!item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <ion-item lines="none" class="btn-viewall">
+          <ion-button (click)="goToSubCat()">View All </ion-button>
+        </ion-item>
+        <ion-card class="card-casual">
+          <img class="animated fadeIn fast image-filter" src="assets/template-themes/lesath/images/badge/2.jpg" />
+          <ion-text>
+            <h2>Shirts</h2>
+          </ion-text>
+        </ion-card>
+        <div class="btn-div">
+          <ion-button (click)="goToSubCat()" fill="outline">
+            Shop Now
+          </ion-button>
+        </div>
+        <ion-text>
+          <h2 class="feature-news">New Arrivals</h2>
+        </ion-text>
+        <ion-slides pager="true" [options]="sliderConfig" class="slides-view">
+          <ion-slide class="animated fadeIn fast" *ngFor="let item of arrivalItems">
+            <ion-grid class="ion-no-padding grid-fix-heigth">
+              <ion-row class="ion-no-padding">
+                <ion-col size="10" class="ion-no-padding col-latest">
+                  <ion-img (click)="goToProductDetail()" src="{{item.img}}"></ion-img>
+                  <img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge" />
+                  <ion-icon class="heart-empty-list-slider" (click)="onIconClick(item)" *ngIf="item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                  <ion-icon (click)="onIconClick(item)" class="heart-filled-list-slider" *ngIf="!item.heartIcon"
+                    name="heart">
+                  </ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-slide>
+        </ion-slides>
+        <ion-item lines="none" class="btn-viewall">
+          <ion-button (click)="goToSubCat()">View All </ion-button>
+        </ion-item>
+        <ion-card (click)="goToProductDetail()" class="card-casual">
+          <img class="animated fadeIn fast image-filter" src="assets/template-themes/lesath/images/badge/3.jpg" />
+          <ion-text>
+            <h2>Winter Wear</h2>
+          </ion-text>
+        </ion-card>
+        <div class="btn-div">
+          <ion-button (click)="goToSubCat()" fill="outline">
+            Shop Now
+          </ion-button>
+        </div>
+      </div>
+    </div>
+    <!-- main new arrival segment -->
+    <div *ngSwitchCase="'newArrivals'">
+      <ion-grid class="newarrival-inner-grid ion-no-padding">
+        <ion-row class="align-items-center">
+          <ion-col size="4">
+            <ion-item lines="none">
+              <ion-select interface="popover" placeholder="Select One">
+                <ion-select-option value="all">All</ion-select-option>
+                <ion-select-option value="tops">Tops</ion-select-option>
+                <ion-select-option value="bottom">Bottom</ion-select-option>
+                <ion-select-option value="winterWear">Winter Wear</ion-select-option>
+                <ion-select-option value="accessories">Accessories</ion-select-option>
+                <ion-select-option value="sports">Sports wear</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" class="list-btn" size="small" (click)="openViewTypes(0)">
+              <ion-icon src="assets/custom-icons/list.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button class="list-btn" fill="clear" size="small" (click)="openViewTypes(1)">
+              <ion-icon src="assets/custom-icons/listView.svg"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" class="list-btn" size="small" (click)="goToFilter()">Filter</ion-button>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button fill="clear" size="small" (click)="sortFun()">Sort</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!-- for explore list with col size 12  -->
+      <div *ngIf="visiableExplore">
+        <ion-grid class="ion-no-padding">
+          <ion-row *ngFor="let item of listItem" class="row-list ion-no-padding">
+            <ion-col size="4" class="ion-no-padding">
+              <ion-img class="animated fadeIn fast" src="{{item.img}}" class="slider-img" (click)="goToProductDetail()">
+              </ion-img>
+              <ion-img class="badge-sze-full" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge">
+              </ion-img>
+              <ion-icon class="heart-empty-list" (click)="onIconClick(item)" *ngIf="item.heartIcon" name="heart">
+              </ion-icon>
+              <ion-icon (click)="onIconClick(item)" class="heart-filled-list" *ngIf="!item.heartIcon" name="heart">
+              </ion-icon>
+            </ion-col>
+            <ion-col size="5" class="ion-no-padding">
+              <h3 class="list-heading">{{item.name}}</h3>
+              <p class="grid-card-para"><del>${{item.dPrice}}</del><small class="small">${{item.price}}</small></p>
+            </ion-col>
+            <ion-col size="3" class="ion-no-padding">
+              <div class="sale-featured sale-featured-item">
+                <div class="sale" *ngIf="item.sale">Sale</div>
+                <div class="featured" *ngIf="item.feature">Featured</div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <!-- for list with col size 6 -->
+      <div *ngIf="visiableListView">
+        <ion-grid class="ion-no-padding card-fix-heigth">
+          <ion-row class="ion-no-padding">
+            <ion-col *ngFor="let item of newArrival" size="6" class="ion-no-padding">
+              <ion-card class="grid-card">
+                <img class="animated fadeIn fast" src="{{item.img}}" class="slider-img" (click)="goToProductDetail()" />
+                <img class="badge" src="assets/template-themes/lesath/images/new.svg" *ngIf="item.badge" />
+                <ion-icon (click)="onIconClick(item)" *ngIf="item.heartIcon" name="heart"></ion-icon>
+                <ion-icon (click)="onIconClick(item)" class="heart-filled" *ngIf="!item.heartIcon" name="heart">
+                </ion-icon>
+                <h3>{{item.name}}</h3>
+                <p class="grid-card-para"><del>${{item.dPrice}}</del><small>${{item.price}}</small></p>
+                <div class="sale-featured">
+                  <div class="sale" *ngIf="item.sale">Sale</div>
+                  <div class="featured" *ngIf="item.feature">Featured</div>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+</ion-content>

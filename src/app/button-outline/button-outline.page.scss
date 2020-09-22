@@ -1,0 +1,14 @@
+ion-content{
+  ion-grid{
+    ion-item{
+      --inner-padding-end:0;
+    }
+  }
+  h2{
+    margin-left: 16px;
+  }
+  p{
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

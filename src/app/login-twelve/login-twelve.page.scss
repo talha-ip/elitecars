@@ -1,0 +1,131 @@
+ion-content {
+  --background: none !important;
+  background: url("../../assets/images/login/login-six-bg.jpg") !important;
+  background-position: top center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  h1 {
+    font-size: 80px;
+    text-align: center;
+    font-family: "Arial";
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 16px;
+    text-align: center;
+    font-family: "Arial";
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 200px;
+  }
+  .div-item {
+    margin-bottom: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 25px;
+    background: white;
+    .item-input {
+      --border-radius: 3px;
+      --background: transparent;
+      z-index: 999;
+      ion-input {
+        --placeholder-color: black;
+        --placeholder-opacity: 1;
+        --color: black;
+      }
+      ion-icon {
+        font-size: 14px;
+        margin-right: 10px;
+        margin-top: 9px;
+      }
+      p {
+        font-size: 16px;
+        font-family: "roboto-regular";
+        margin-top: auto;
+        margin-bottom: auto;
+        color: black;
+      }
+    }
+  }
+  .div-btn-login {
+    margin-left: 38px;
+    margin-right: 38px;
+    .btn-login {
+      --background: black;
+      --color: white;
+      margin-bottom: 10px;
+      font-weight: bold;
+      --box-shadow: none;
+      width: 100%;
+      height: 48px;
+    }
+  }
+  .btn-forget {
+    width: 83.5%;
+    height: 48px;
+    margin-left: 39px;
+    margin-right: 39px;
+    font-size: 13px;
+    font-family: "Arial";
+    text-transform: capitalize;
+    --color: white;
+    p {
+      width: 100%;
+      text-align: right;
+      margin-top: 0;
+    }
+  }
+  .btn-acc {
+    margin-top: 25px;
+    --color: white;
+    margin-left: 39px;
+    margin-right: 39px;
+    margin-bottom: 20px;
+    --border-radius: 5px;
+    --box-shadow: none;
+    width: 82%;
+    height: 42px;
+    font-family: "Arial";
+    font-size: 13px;
+    .para-acc {
+      text-transform: capitalize;
+      margin-right: 10px;
+      font-weight: lighter;
+    }
+  }
+  .social-para {
+    font-size: 13px;
+    text-align: center;
+    font-family: "Arial";
+    margin: 25px;
+    color: white;
+  }
+  .grid-icons {
+    margin-bottom: 30px;
+    ion-col {
+      &:first-child {
+        ion-avatar {
+          margin-left: auto !important;
+        }
+      }
+      &:last-child {
+        ion-avatar {
+          margin-right: auto !important;
+        }
+      }
+      ion-avatar {
+        height: 33px;
+        width: 33px;
+
+        ion-icon {
+          font-size: 33px;
+        }
+      }
+      .avatar-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+ion-header{
+    ion-toolbar{
+    ion-buttons{
+        ion-button{
+            ion-icon{
+        font-size: 16px;
+            }
+        }
+    }
+    ion-title{
+        color: white;
+        text-align: center;
+        padding-right: 48px;
+    ion-icon{
+        position: absolute;
+        margin-left: 5px;
+        font-size: 26px;
+        margin-top: 2px;
+    }
+    }
+    }
+    }
+    ion-content{
+
+        ion-text{
+            h2{
+                font-family: 'roboto-medium';
+                font-size: 20px;
+                margin-left: 16px; 
+            }
+        }
+        ion-item{
+            --background:#fafafa;
+            border: none;
+            ion-range{
+                --knob-size: 35px;
+                padding-top: 40px;
+                --pin-color: white;
+
+            }
+        }
+        ion-list{
+            padding: 0px;
+            ion-radio-group{
+                ion-item{
+                    ion-radio{
+                        height: 32px;
+                        width: 32px;
+                        margin: 0;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+        .radio-sizes{
+            ion-item{
+                ion-radio{
+                    height: 32px;
+                    width: 32px;
+                    --color: gray;
+                    --color-checked:gray
+                }
+            }
+
+        }
+        
+        ion-grid{
+            padding-left: 16px;
+        }
+
+    }
+    .div-size{
+        &:first-child{
+            margin-left: 0px;
+        }
+        border: solid 1.5px gray;
+        color: gray;
+        height: 32px;
+        width: 32px;
+        border-radius: 50px;
+        margin-left: 15px;
+     p{
+        margin-top: 3px;
+        text-align: center;
+     }       
+    }
+    .div-size-filled{
+        &:first-child{
+            margin-left: 0px;
+        }
+        border: solid 1.5px gray;
+        background: gray;
+        color: white;
+        height: 32px;
+        width: 32px;
+        border-radius: 50px;
+        margin-left: 15px;
+     p{
+        margin-top: 3px;
+        text-align: center;
+     }  
+    }
+    .range-item{
+        --padding-start: 0 !important;
+        --inner-padding-end: 0 !important;
+    }
+
+    .size-padding{
+        padding: 0 !important;
+    }

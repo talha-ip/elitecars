@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">My Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <div class="ion-text-center segment-div">
+<ion-segment [(ngModel)]="segments">
+      <ion-segment-button value="current">current</ion-segment-button>
+      <ion-segment-button value="history">History</ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="6">
+          Order Id:
+        </ion-col>
+        <ion-col class="detail" class="ion-text-right" size="6">
+          123-456-789
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Date
+        </ion-col>
+        <ion-col class="detail" class="ion-text-right" size="6">
+          12-July-2019
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Numer of items
+        </ion-col>
+        <ion-col class="detail" class="ion-text-right" size="6">
+          2
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Total Price
+        </ion-col>
+        <ion-col class="detail" class="ion-text-right" size="6">
+          $ 230
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Status
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          <strong>Delivered</strong>
+        </ion-col>
+      </ion-row>
+      <div class="proceed-div">
+        <ion-button (click)="goToOrderDetails()" class="proceed-btn" shape="round"> See Details </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

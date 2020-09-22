@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register Seven</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <div class="div-avatar-bg">
+
+  </div>
+  <div class="div-avatar">
+    <ion-avatar>
+      <img src="assets/images/login/uiux-icon.png" />
+    </ion-avatar>
+  </div>
+  <div *ngFor="let item of Items" class="div-item">
+    <ion-item class="animated fadeInRight item-input" lines="none">
+      <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button fill="clear" class="forget-pass">
+      Forget Your Password ?
+  </ion-button>
+  <ion-button class="btn-login">
+    Login
+  </ion-button>
+  <ion-button class="btn-reg">
+    Register
+  </ion-button>
+  <ion-grid class="grid-or">
+      <ion-row>
+        <ion-col class="ion-align-self-center">
+          <div></div>
+        </ion-col>
+        <ion-col size="1">
+          <p>Or</p>
+        </ion-col>
+        <ion-col class="ion-align-self-center">
+          <div></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="grid-icons">
+      <ion-row>
+        <ion-col>
+          <ion-avatar class="animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-one-facebook.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-avatar class="avatar-center animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-one-twitter.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-avatar class="animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-one-google-plus.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

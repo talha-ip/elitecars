@@ -1,0 +1,217 @@
+.content-news-one {
+    // --background: #FEF9F9 !important;
+    .header-para {
+      font-size: 20px;
+      font-family: "lato-regular";
+      color: #ec9600;
+      margin-top: 35px;
+      margin-left: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .header-para-trending {
+      font-size: 20px;
+      font-family: "lato-regular";
+      color: #ec9600;
+      margin-top: 20px;
+      margin-left: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .header-para-all {
+      font-size: 20px;
+      font-family: "lato-regular";
+      color: #ec9600;
+      margin-top: 20px;
+      margin-left: 16px;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+    .slides-header {
+      padding-left: 13px;
+      ion-slide {
+        &:last-child {
+          ion-card {
+            margin-right: 15px;
+          }
+        }
+        ion-card {
+          margin: 0;
+          border-radius: 30px;
+          box-shadow: none;
+          ion-thumbnail {
+            height: 63vw;
+            width: 63vw;
+            img {
+              width: 100%;
+              height: 100%;
+              filter: brightness(0.6);
+            }
+          }
+        }
+      }
+      h2 {
+        font-size: 14px;
+        font-family: "lato-regular";
+        color: white;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 16px;
+        margin-right: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: left;
+      }
+      .item-header-slider {
+        position: absolute;
+        --background: transparent;
+        width: 100%;
+        bottom: 10px;
+        ion-avatar {
+          width: 44px;
+          height: 44px;
+        }
+        p {
+          color: white;
+          font-family: "aldhabi";
+        }
+        .para-name {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+        .div-icon-text {
+          display: flex;
+          .para-post {
+            font-size: 12px;
+            margin-left: 5px;
+            margin-top: 3px;
+          }
+          ion-icon {
+            font-size: 10px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .slides-trending {
+      padding-left: 13px;
+      ion-slide {
+        &:last-child {
+          ion-card {
+            margin-right: 15px;
+          }
+        }
+        ion-card {
+          margin: 0;
+          border-radius: 30px;
+          box-shadow: none;
+          ion-thumbnail {
+            height: 38vw;
+            width: 38vw;
+            img {
+              width: 100%;
+              height: 100%;
+              filter: brightness(0.6);
+            }
+          }
+        }
+      }
+      h2 {
+        font-size: 8px;
+        font-family: "lato-regular";
+        color: white;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 16px;
+        margin-right: 16px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: left;
+      }
+      .item-header-slider {
+        --padding-start: 6px;
+        position: absolute;
+        --background: transparent;
+        width: 100%;
+        bottom: 0;
+        ion-avatar {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+        p {
+          color: white;
+          font-family: "aldhabi";
+        }
+        .para-name {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+        .div-icon-text {
+          display: flex;
+          .para-post {
+            font-size: 10px;
+            margin-left: 15px;
+          }
+          ion-icon {
+            position: absolute;
+            font-size: 10px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+    .grid-all-items {
+      --backgorund: transparent;
+      ion-row {
+        .col-thumbnail {
+          ion-card {
+            box-shadow: none;
+            border-radius: 20px;
+            ion-thumbnail {
+              height: 35vw;
+              width: 100%;
+            }
+          }
+        }
+        .col-details {
+          h2 {
+            font-family: "lato-regular";
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 25px;
+            margin-right: 16px;
+            color: black;
+          }
+          .item-grid {
+            --background: transparent;
+            margin-top: 30px;
+            p {
+              font-family: "aldhabi";
+            }
+            .para-name {
+              font-size: 18px;
+              margin-bottom: 5px;
+            }
+            .para-post {
+              font-size: 12px;
+              margin-bottom: 0;
+              color: #686868;
+            }
+            --padding-start: 0;
+            .div-icon-text {
+              margin-top: -6px;
+              display: -webkit-box;
+              ion-icon {
+                margin-right: 5px;
+                font-size: 10px;
+                margin-bottom: 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,97 @@
+.intro-content {
+  --background: linear-gradient(to bottom, #eee,white) !important;
+  ion-slides {
+    ion-slide {
+      ion-grid {
+        ion-row {
+          ion-col {
+            margin-left: auto;
+            margin-right: auto;
+            ion-card {
+              border-radius: 10px !important;
+            }
+          }
+        }
+      }
+    }
+    .swiper-slide-active {
+      margin-top: 70px !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--ion-color-primary)  !important;
+      border: none !important;
+    }
+    .swiper-pagination-bullets {
+      position: relative !important;
+    }
+    .swiper-pagination-bullet {
+      margin: 0 10px !important;
+      width: 11px !important;
+      height: 5px !important;
+      border-radius: 10px !important;
+      border: solid 1px var(--ion-color-primary) !important;
+      background: none;
+      opacity: 1 !important;
+    }
+    span {
+      margin-top: -10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+
+      border-top: none !important;
+    }
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 23px;
+    font-family: "roboto-bold";
+    margin-bottom: 10px !important;
+    margin-top: 25px !important;
+  }
+  p {
+    text-align: center;
+    margin-top: 2px;
+    font-size: 10px;
+    margin-bottom: 16px;
+    font-family: "roboto-regular";
+  }
+  ion-row {
+    ion-button {
+      text-transform: capitalize;
+      height: 29.78px;
+      width: 89.34px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      font-size: 10px;
+      font-family: "roboto-light";
+      p {
+        border-bottom: solid 1px;
+      }
+    }
+
+    &:first-child {
+      width: auto;
+      margin-top: 60px;
+    }
+  }
+}
+.next-btn {
+  --color: white !important;
+  margin-bottom: 10px !important;
+  margin-top: 25px !important;
+}
+.skip-btn {
+  font-family: "roboto-regular";
+  margin-top: 0 !important;
+}
+.div-btn {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.para {
+  margin-bottom: 2px !important;
+}

@@ -1,0 +1,54 @@
+.content-payment-two{
+    --background: linear-gradient(to bottom, #232526, #414345) !important;
+    ion-img {
+      margin: 35px 16px 20px 16px;
+    }
+    ion-card {
+      margin-top: 0;
+      border-radius: 13px;
+      margin-left: 16px;
+      margin-right: 16px;
+      background: linear-gradient(to right, #393939, #7a7a7a);
+      form {
+        margin: 27px;
+        ion-item {
+          --background: transparent;
+          border-bottom: solid 1px #989;
+          --padding-start: 0;
+          --inner-padding-end: 0;
+          margin-bottom: 25px;
+          ion-input {
+            --padding-bottom: 0;
+            --placeholder-color:#aaa;
+          }
+        }
+        .div-date-code {
+          display: flex;
+          ion-item {
+            &:first-child {
+              border-right: solid 1px #989;
+            }
+            &:last-child {
+              --padding-start: 6px;
+            }
+          }
+        }
+      }
+    }
+    .div-submit {
+      margin-left: 100px;
+      margin-right: 100px;
+      ion-button {
+        font-size: 12px;
+        font-family: "lato-regular";
+        text-transform: capitalize;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        width: 100%;
+        border: solid 1px #6d17e1;
+        --color: #6d17e1;
+        border-radius: 25px;
+      }
+    }
+  }
+  

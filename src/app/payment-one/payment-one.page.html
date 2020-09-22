@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+          <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Payment One</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="content-payment-one">
+  <ion-img class="animated fadeIn" src="assets/images/payment/payment-one-card.png">
+  </ion-img>
+  <ion-card>
+      <form>
+          <ion-item class="animated fadeInRight" lines="none">
+              <ion-input placeholder="Email" type="email"></ion-input>
+          </ion-item>
+          <ion-item class="animated fadeInRight" lines="none">
+              <ion-input placeholder="Card Number" type="number"></ion-input>
+          </ion-item>
+          <div class="div-date-code">
+              <ion-item class="animated fadeInRight" lines="none">
+                  <ion-input placeholder="Expiration Date" type="text"></ion-input>
+              </ion-item>
+              <ion-item class="animated fadeInRight" lines="none">
+                  <ion-input placeholder="Security Code" type="code"></ion-input>
+              </ion-item>
+          </div>
+      </form>
+  </ion-card>
+  <div class="div-submit">
+      <ion-button fill="clear">Use This Payment</ion-button>
+  </div>
+</ion-content>

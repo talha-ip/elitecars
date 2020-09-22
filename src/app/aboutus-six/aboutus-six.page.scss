@@ -1,0 +1,47 @@
+.content {
+  .grid-bg {
+    padding: 10px 16px 10px 16px;
+  }
+  .row-text {
+    background: rgba(44, 148, 0, 0.8);
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    left: 35px;
+    padding-bottom: 65px;
+    .col-text {
+      color: white;
+      h2 {
+        font-size: 16px;
+        font-family: "lato-regular";
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: center;
+        color: #dbdbdb;
+        margin-left: 16px;
+        margin-right: 16px;
+        font-size: 10px;
+        font-family: "lato-regular";
+      }
+    }
+    .col-two-colm {
+      ion-row {
+        padding-bottom: 10px;
+        .col-icon {
+          text-align: right;
+          color: white;
+        }
+        p {
+          text-align: left;
+          color: white;
+          font-family: "Arial";
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

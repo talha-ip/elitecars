@@ -1,0 +1,264 @@
+.product-content {
+  del {
+    color: #707070;
+  }
+  ion-item {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    ion-button {
+      margin-left: 0;
+      --color: white;
+      ion-icon {
+        font-size: 16px;
+      }
+    }
+  }
+
+  // For Slides
+  ion-slides {
+    // For Customize Bullets
+    .swiper-pagination-bullet {
+      margin: 0 10px !important;
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 10px !important;
+      border: solid 1px var(--ion-color-primary) !important;
+      background: white;
+      opacity: 1 !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--ion-color-primary) !important;
+      border: none !important;
+    }
+  }
+  ion-grid {
+    padding-top: 0;
+    ion-row {
+      ion-col {
+        padding-top: 0;
+        h2 {
+          font-family: "roboto-light";
+          font-size: 4.5vw;
+        }
+        p {
+          margin-bottom: 0;
+          margin-top: 0;
+          font-family: "roboto-medium";
+          font-size: 4vw;
+        }
+        small {
+          font-family: "roboto-regular";
+          font-size: 3.2vw;
+        }
+        ion-icon {
+          color: #fca800;
+        }
+        h1 {
+          margin-top: 6px;
+          font-family: "roboto-medium";
+          font-size: 5.56vw;
+          padding-left: 16px;
+        }
+        h3 {
+          font-size: 16px;
+          font-family: "roboto-regular";
+        }
+      }
+    }
+  }
+  ion-list {
+    padding-top: 18.5px;
+    ion-radio-group {
+      ion-item {
+        border: none;
+        --padding-start: 0;
+        ion-radio {
+          height: 4.9vw;
+          width: 4.9vw;
+          margin: 0;
+          margin-right: 15px;
+          margin-top: -21px;
+        }
+      }
+    }
+  }
+  .item-header-slide {
+    --background: transparent !important;
+  }
+  .search_icon {
+    font-size: 22px !important;
+  }
+  .div-size {
+    &:first-child {
+      margin-left: 0px;
+    }
+    border: solid 1.5px gray;
+    height: 4.9vw;
+    width: 4.9vw;
+    border-radius: 50px;
+    margin-left: 15px;
+    p {
+      margin-top: 1.2vw !important;
+      text-align: center;
+      font-family: "roboto-Condensed" !important;
+      font-size: 1.9vw !important;
+    }
+  }
+  .div-size-filled {
+    &:first-child {
+      margin-left: 0px;
+    }
+    border: solid 1.5px gray;
+    background: gray;
+    color: white !important;
+    height: 4.9vw;
+    width: 4.9vw;
+    border-radius: 50px;
+    margin-left: 15px;
+    p {
+      margin-top: 1.2vw !important;
+      text-align: center;
+      font-family: "roboto-Condensed" !important;
+      font-size: 1.9vw !important;
+    }
+  }
+  .qty-btn {
+    --padding-start: 0;
+    ion-icon {
+      color: var(--ion-color-primary) !important;
+      font-size: 25px;
+    }
+  }
+  .qty-btn-add {
+    margin-left: -1px !important;
+  }
+  .desc-para {
+    font-family: "roboto-regular" !important;
+    font-size: 16px !important;
+    margin-top: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-bottom: 22px !important;
+    color: black !important;
+  }
+  .count-para {
+    border-bottom: solid 1px black !important;
+    font-family: "roboto-regular" !important;
+    font-size: 4vw;
+    color: black !important;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .div-inline-btn {
+    width: 100%;
+    text-align: center;
+    ion-button {
+      width: 134px;
+      height: 38px;
+      text-transform: capitalize;
+      &:first-child {
+        --color: white;
+      }
+      &:last-child {
+        --color: var(--ion-color-primary);
+        --background: white;
+      }
+    }
+  }
+  .grid-card {
+    &:first-child {
+      margin-left: 16px !important;
+    }
+    height: auto;
+    margin-top: 0 !important;
+    margin-left: 4px !important;
+    margin-right: 0 !important;
+    ion-icon {
+      z-index: 1;
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-size: 20px;
+    }
+    .heart-filled {
+      color: var(--ion-color-primary);
+    }
+    .heart-empty {
+      color: white;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-family: "roboto-light";
+      margin-left: 6px;
+      text-align: left;
+    }
+    p {
+      font-family: "roboto-medium";
+      font-size: 14px;
+      margin-left: 6px;
+      text-align: left;
+    }
+  }
+  .swiper-slide-products {
+    width: 42% !important;
+  }
+  .badge {
+    height: 50px !important;
+    position: absolute;
+    top: 0;
+    z-index: 111;
+    width: auto !important;
+  }
+
+  .price-col {
+    padding-top: 8px !important;
+    padding-right: 16px !important;
+    p {
+      font-family: "roboto-regular" !important;
+      font-family: 20px !important;
+    }
+  }
+  .price-header {
+    margin-bottom: 10px !important;
+    margin-top: 8px !important;
+    padding-left: 16px !important;
+  }
+  .star-row {
+    padding-left: 8px !important;
+  }
+  .review-col {
+    padding-left: 10px !important;
+    margin-top: -3px !important;
+  }
+  .stock-col {
+    margin-top: -3px !important;
+    padding-right: 16px !important;
+  }
+  .size-row {
+    padding-left: 11px !important;
+  }
+  .like-heading {
+    margin-top: 28px !important;
+    margin-left: 16px !important;
+  }
+  .like-name {
+    margin-top: 5px !important;
+    margin-bottom: 8.2px !important;
+    margin-left: 8px !important;
+  }
+  .like-para {
+    margin-top: 0 !important;
+    margin-bottom: 15px !important;
+    margin-left: 8px !important;
+  }
+  .wish-btn {
+    --border-color: #707070;
+    --border-width: 1px;
+    --box-shadow: none;
+    --border-style: solid;
+    --border-radius: 25px;
+  }
+}

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>About Us Seven
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <ion-img class="header-img" src="assets/images/about-us/about-us-seven-header.png"></ion-img>
+  <h1><u>About Us</u></h1>
+  <ion-grid class="grid-vision">
+    <ion-row>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-seven-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-text ion-no-padding" size="6">
+        <h2>Our Vision</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Mauris semper
+          nisl sit amet arcu lacinia tempor.
+          In hac habitasse platea dictumst. Sed varius erat orci, ac fringilla tortor lobortis ac. Sed eleifend nisi
+          nisl, ac vulputate nisi accumsan a.
+          Integer quam neque, </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-vision grid-mission">
+    <ion-row>
+      <ion-col class="col-text ion-no-padding" size="6">
+        <h2>Our Mission</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Mauris semper
+          nisl sit amet arcu lacinia tempor.
+          In hac habitasse platea dictumst. Sed varius erat orci, ac fringilla tortor lobortis ac. Sed eleifend nisi
+          nisl, ac vulputate nisi accumsan a.
+          Integer quam neque, </p>
+      </ion-col>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-seven-img.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid-person">
+    <ion-row>
+      <p class="team-para">Our Team</p>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let item of items1" size="4" class="ion-no-padding">
+        <ion-avatar>
+          <img src="{{item.img}}" />
+        </ion-avatar>
+        <p class="name-para">{{item.name}}</p>
+        <p class="des-para">{{item.designation}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

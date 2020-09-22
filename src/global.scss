@@ -1,0 +1,282 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700");
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+
+:root,
+:root[mode="md"],
+:root[mode="ios"] {
+  // --ion-font-family: 'Lato', sans-serif;
+  // font-family: var(--ion-font-family) !important;
+  --ion-font-family: "Roboto", "noto-sans";
+  font-family: var(--ion-font-family) !important;
+}
+ion-header {
+  ion-badge {
+    background: red;
+    color: white;
+    font-size: 10px;
+    height: 16px;
+    right: 6px !important;
+  }
+}
+
+ion-toolbar {
+  --color: white;
+}
+ion-content {
+  // --background: #fafafa !important;
+  ion-item {
+    //--background: #fafafa;
+  }
+  ion-list {
+    // background: #fafafa !important;
+  }
+  ion-searchbar {
+    --background: #fafafa !important;
+  }
+  ion-checkbox {
+    --background: #fafafa !important;
+  }
+  ion-tab-button {
+    --color-selected: white !important;
+  }
+}
+.action-sheet {
+  --color: black !important;
+  .as-cancel-color {
+    --color: red !important;
+  }
+}
+.cart-badge {
+  font-size: 22px !important;
+}
+.ecom-title {
+  padding-left: 0;
+}
+.theme-icon {
+  color: var(--ion-color-primary);
+}
+.multi-purpose-toolbar-icon {
+  font-size: 22px !important;
+}
+.back-icon {
+  font-size: 16px !important;
+}
+//for shoe apps
+.home-modal {
+  top: 15%;
+  width: 343px;
+  height: 378px;
+  border-radius: 20px;
+  --border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.product-price-modal {
+  top: 36%;
+  width: 343px;
+  height: 213px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  --border-radius: 20px;
+}
+// .menu-content-open {
+//   margin: 60px;
+//   margin-right: 0;
+//   margin-left: 30px;
+//   transition-duration: 0.3s;
+// }
+// .menu-content-push {
+//   transition-duration: 0.3s;
+// }
+//For Becrux MIni Apps
+.mini-top-icon-header {
+  padding-top: 10px;
+  ion-button {
+    text-transform: capitalize;
+    --padding-start: 7px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    ion-icon {
+      font-size: 12px;
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+  }
+
+  #mini-second {
+    --padding-end: 5px;
+    font-size: 10px;
+    color: var(--ion-color-secondary);
+    text-transform: uppercase;
+    margin-left: auto;
+    ion-icon {
+      font-size: 10px;
+      margin: 0;
+    }
+  }
+}
+// For Pop up
+ion-alert {
+  .alert-button-group.sc-ion-alert-md {
+    justify-content: center;
+    --background: white !important;
+  }
+  .sc-ion-alert-md {
+    --background: white !important;
+  }
+}
+.becrux-badge {
+  background: white;
+  color: black;
+  padding: 2px 3px 4px 4px;
+  font-size: 8px;
+  height: 12px;
+  position: absolute;
+  top: 0;
+  right: 3px !important;
+}
+ion-select-popover {
+  ion-list {
+    background: white !important;
+    ion-item {
+      --background: white !important;
+    }
+  }
+}
+.action-sheet-group.sc-ion-action-sheet-md{
+  background: white !important;
+}
+//for heading para
+.col-heading-para{
+  background: #eee;
+}
+//for becrux background
+.content-bg-becrux{
+  --background: black !important;
+}
+
+
+.ion-page
+{
+    background: black !important;
+}
+
+
+.segment-button-indicator-background
+{
+    display:none !important;
+}
+
+ion-segment-button {
+  --indicator-color: transparent !important;
+  --indicator-color-checked: transparent !important;
+}
+
+.price_badge
+{
+    width: 100% !important;
+    background: #0094FF!important;
+    padding: 6px !important;
+    height: 24px !important;
+    font-size: 10px !important;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.main_tab_bar {
+  background: #f9fcff !important;
+  padding-right: 20px;
+  padding-left:  20px;    
+  margin-bottom: 32px;
+}
+.main_tabs
+{
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  text-transform: capitalize;
+  line-height: 18px;
+  letter-spacing: 0.15px;
+  color: #7F8F98;
+
+}
+
+.segment-button-checked
+{
+  background: #FFB800  !important;
+  border-radius:15px;
+  color:white !important;
+  background: -webkit-linear-gradient(to right,#FFB800, #FFCC49) !important;
+  background: linear-gradient(to right, #FFB800, #FFCC49) !important;
+  
+}
+
+.inner_content_elite{
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  background-color: #F9FCFF!important;
+  padding-top: 32px;
+  width: 100.2%;
+}
+
+.product_inner_label
+{
+    margin-left: 5px;
+    position: relative;
+    top: -3px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.15px;
+    color: #777777;
+}
+
+
+.header_right_buttons
+{
+    height:32px; 
+    width:32px;
+    background:#252525; 
+    border-radius: 100%;
+}
+.search_button
+{
+    color: #FFE500;
+    position: relative;
+    right: 5px;
+    height: 42px !important;
+    width: 42px !important;
+}
+
+ion-toolbar .toolbar-background
+{
+  background: black;
+}

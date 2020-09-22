@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title"> Timeline One</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="div-img-header">
+    <ion-img class="header-img" src="assets/images/timeline/header-img.png"></ion-img>
+    <div>
+      <h2>Monday</h2>
+      <p>12-November-2019</p>
+    </div>
+  </div>
+  <ion-grid>
+    <ion-row *ngFor="let item of items">
+      <ion-col class="col-img-circle" size="1">
+        <ion-img src="assets/images/timeline/circle-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-para-time" size="3">
+        <p>{{item.startTime}} AM - {{item.endTime}} AM</p>
+      </ion-col>
+      <ion-col class="col-img" size="1">
+        <ion-img src="assets/images/timeline/verticle-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-avatar">
+        <div>
+          <p class="para-head">Finish Intro Screen</p>
+          <p class="para-desc">in Apps</p>
+        </div>
+        <div class="div-avatar">
+          <div class="div-inner-avatar">
+            <ion-avatar>
+              <img src="assets/images/timeline/2.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/3.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/4.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/5.png" />
+            </ion-avatar>
+          </div>
+          <p class="para-team">Team Members</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-img-circle" size="1">
+        <ion-img src="assets/images/timeline/circle-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-para-time" size="3">
+        <p>2 AM - 4 AM</p>
+      </ion-col>
+      <ion-col class="col-img ion-align-self-center" size="1">
+        <div></div>
+      </ion-col>
+      <ion-col class="col-avatar ion-align-self-center">
+        <div>
+          <p class="para-head-lunch">Office Lunch Time</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of items2">
+      <ion-col class="col-img-circle" size="1">
+        <ion-img src="assets/images/timeline/circle-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-para-time" size="3">
+        <p>{{item.startTime}} AM - {{item.endTime}} AM</p>
+      </ion-col>
+      <ion-col class="col-img" size="1">
+        <ion-img src="assets/images/timeline/verticle-img.png"></ion-img>
+      </ion-col>
+      <ion-col class="col-avatar">
+        <div>
+          <p class="para-head">Finish Intro Screen</p>
+          <p class="para-desc">in Apps</p>
+        </div>
+        <div class="div-avatar">
+          <div class="div-inner-avatar">
+            <ion-avatar>
+              <img src="assets/images/timeline/2.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/3.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/4.png" />
+            </ion-avatar>
+            <div></div>
+            <ion-avatar>
+              <img src="assets/images/timeline/5.png" />
+            </ion-avatar>
+          </div>
+          <p class="para-team">Team Members</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,18 @@
+ion-content{
+    ion-col{
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        p,h4{
+            color: white;
+            padding-left: 5px;
+            margin: 0;
+        }
+        ion-icon{
+            color: white;
+            float: right;
+            padding: 0px 5px 0px 0px;
+            margin-top: -20px;
+        }
+    }
+}

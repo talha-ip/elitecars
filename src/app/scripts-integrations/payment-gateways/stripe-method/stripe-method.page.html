@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/payment-integration" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Stripe Method</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-img">
+    <ion-img src="assets/images/plugin-images/Payment-gateways/stripe.png"></ion-img>
+  </ion-card>
+  <h2>Stripe Sample</h2>
+  <ion-card class="card-pay">
+    <ion-row>
+      <ion-col class="col-pay">
+        Total Payment
+      </ion-col>
+      <ion-col class="col-pay-price">
+        {{currencyIcon}}{{paymentAmount}}
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <h2 class="header-card-pay">Enter Your Card to Pay</h2>
+  <ion-card class="card-input">
+    <form>
+      <ion-item class="item-outter-div">
+        <ion-input type="text" placeholder="Card Number" name="cardNumber" [(ngModel)]="cardDetails.number" required>
+        </ion-input>
+      </ion-item>
+      <ion-item class="item-outter-div">
+        <ion-input type="text" placeholder="Expiry Month" name="cardNumber" [(ngModel)]="cardDetails.expMonth" required>
+        </ion-input>
+      </ion-item>
+      <div class="div-input">
+        <ion-item class="item-div">
+          <ion-input type="text" placeholder="Expiry Year" name="cardNumber" [(ngModel)]="cardDetails.expYear" required>
+          </ion-input>
+        </ion-item>
+        <ion-item class="item-cvv">
+          <ion-input type="text" placeholder="CVV" name="cardNumber" [(ngModel)]="cardDetails.cvc" required>
+          </ion-input>
+        </ion-item>
+      </div>
+    </form>
+  </ion-card>
+
+  <div class="div-btn">
+    <ion-button shape="round" expand="full" (click)="payWithStripe()">
+      <p>Pay with Stripe</p>
+    </ion-button>
+  </div>
+</ion-content>

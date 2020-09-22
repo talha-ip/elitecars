@@ -1,0 +1,53 @@
+<ion-content (pinch)="pinchEvent($event)" class="ion-no-padding content-bg-becrux">
+  <ion-item lines="none" class="back-nav" (click)="dismiss()">
+      <ion-icon src="assets/CustomIcons/back.svg" slot="start"></ion-icon>
+  </ion-item>
+  <div>
+    <h1>Login</h1>
+    <div class="border-div"></div>
+    <form>
+      <ion-item lines="none" class='item-input-has-focus item-input content-bg-becrux'>
+        <ion-label class='label-md' position="floating">Email</ion-label>
+        <ion-input type="text" email name="email" [(ngModel)]="formData.email" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item lines="none"  class='item-input-has-focus item-input content-bg-becrux'>
+        <ion-label class='label-md' position="floating">Password</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="formData.password" required>
+        </ion-input>
+      </ion-item>
+      <ion-item (click)="goToForgotPage()" class="forgot item-input content-bg-becrux" lines="none">
+        <a >Forgot Password?</a>
+      </ion-item>
+      <ion-item lines="none" class="content-bg-becrux">
+        <span>
+          <ion-button (click)="goToSignUpPage()" size="large" shape="round" > Sign Up </ion-button>
+          <ion-button size="large" shape="round" > LOGIN </ion-button>
+        </span>
+      </ion-item>
+    </form>
+  </div>
+  <p>or login with</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <ion-button class="google-icon">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="2.4" class="ion-text-center">
+        <ion-button class="facebook-icon">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-button class="twitter-icon">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p class="signUp">Don't have an account?<a (click)="goToSignUpPage()" class="signUp-color">SIGN UP</a></p>
+</ion-content>

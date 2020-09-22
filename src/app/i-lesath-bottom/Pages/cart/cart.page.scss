@@ -1,0 +1,228 @@
+ion-header {
+  ion-toolbar {
+    .div {
+      display: inline-flex;
+      width: 80%;
+    }
+    .div-two {
+      display: inline-flex;
+    }
+    ion-buttons {
+      ion-button {
+        ion-icon {
+          font-size: 4vw;
+        }
+      }
+    }
+    ion-title {
+      color: white;
+      text-align: center;
+      padding-right: 48px;
+    }
+  }
+}
+
+ion-content {
+  .div-img {
+    margin-top: 50%;
+    width: 100%;
+    text-align: center;
+    ion-img {
+      width: 23%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  ion-text {
+    text-align: center;
+    h1 {
+      font-family: "roboto-light";
+      font-size: 27px;
+      font-weight: bold;
+    }
+    p {
+      font-family: "roboto-regular";
+      font-size: 12px;
+    }
+  }
+  ion-button {
+    --color: #ffffff !important;
+    border-radius: 50px;
+    font-family: "roboto-medium";
+    height: 50px;
+    --border-radius: 25px;
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+  ion-item {
+    --background: #fafafa !important;
+  }
+  ion-checkbox {
+    --background: #fafafa;
+    width: 16px;
+    height: 16px;
+    --checkmark-color: white;
+  }
+  ion-card {
+    border-radius: 0 !important;
+    ion-grid {
+      margin-top: 0;
+      padding: 0;
+      ion-row {
+        ion-col {
+          --ion-grid-column-padding: 0;
+          ion-img {
+            width: 100%;
+            filter: none !important;
+          }
+          p {
+            color: black;
+            margin-bottom: 12px;
+            font-family: "roboto-light";
+            font-size: 4vw;
+            margin-top: 8px;
+            b {
+              font-family: "roboto-bold";
+            }
+          }
+          ion-button {
+            --padding-start: 0px;
+            margin-left: -4px;
+            --padding-end: 0;
+            margin-bottom: -8px;
+          }
+        }
+      }
+    }
+  }
+
+  ion-grid {
+    margin-top: -30px;
+    padding: 16px;
+    h1 {
+      font-size: 5vw;
+      font-family: "roboto-medium";
+    }
+    ion-row {
+      ion-col {
+        font-size: 3.5vw;
+        font-family: "roboto-regular";
+      }
+    }
+  }
+}
+
+#color {
+  width: 29px;
+  height: 29px;
+  border-radius: 100px;
+  background: red;
+  margin-top: -30px;
+  margin-left: 33px;
+}
+
+.detail-col {
+  padding-left: 10px;
+}
+.price {
+  font-family: "roboto-medium" !important;
+  font-size: 4vw !important;
+  color: gray !important;
+  margin-bottom: 0 !important;
+}
+
+.proceed-div {
+  padding-top: 25vw;
+  text-align: center;
+  width: 100%;
+  .proceed-btn {
+    height: 38px;
+    width: 134px;
+    font-size: 14px;
+    font-family: "roboto-medium";
+    text-transform: capitalize;
+    --color: white !important;
+  }
+  span {
+    margin-left: auto;
+    margin-right: auto;
+    ion-button {
+      text-transform: capitalize;
+      font-size: 14px;
+      font-family: "roboto-medium";
+      height: 38px;
+      width: 134px;
+
+      &:last-child {
+        --background: white;
+        --color: var(--ion-color-primary) !important;
+      }
+    }
+  }
+}
+.qty-btn {
+  margin-top: 0 !important;
+  --padding-start: 0;
+  ion-icon {
+    color: var(--ion-color-primary) !important;
+    font-size: 25px;
+  }
+}
+.qty-btn-add {
+  margin-left: -1px;
+}
+.count-para {
+  border-bottom: solid 1px black !important;
+  color: black !important;
+  margin-bottom: 0px !important;
+  font-family: "roboto-light" !important;
+  font-size: 12px;
+  margin-top: 18px !important;
+  margin-right: 4px;
+  text-align: center;
+}
+.div-sizes {
+  display: inline-flex;
+  .div-size-filled {
+    margin-right: 10px;
+    p {
+      font-size: 2vw !important;
+      margin-top: 4px !important;
+    }
+    &:first-child {
+      margin-left: 0px;
+    }
+    border: solid 1.5px #707070;
+    background: #707070;
+    color: white;
+    height: 5.01vw;
+    width: 5.01vw;
+    border-radius: 50px;
+    p {
+      color: white !important;
+      margin-top: 3px !important;
+      text-align: center;
+    }
+  }
+  ion-radio {
+    height: 5.01vw;
+    width: 5.01vw;
+  }
+}
+.total-bold {
+  font-size: 3vw !important;
+  color: black;
+}
+.row-btns {
+  margin-top: 6vw !important;
+}
+.col-left {
+  padding-left: 0 !important;
+}
+// .cancel-btn{
+//   --color: black !important;
+// }
+.shop-btn {
+  width: 100%;
+  text-align: center;
+}

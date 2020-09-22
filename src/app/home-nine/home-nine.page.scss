@@ -1,0 +1,56 @@
+ion-content{
+  ion-button{
+      text-transform: capitalize;
+      margin-right: 0;
+  }
+  .swiper-slide {
+      width: 40%;
+    }
+// if data load
+ion-segment{
+  background: #f9f9f9;
+  ion-segment-button{
+      --indicator-color:lightgray;
+      font-size: 14px;
+      --color: #707070;
+  }
+}
+ion-slides{
+  ion-slide{
+      &:last-child{
+      height: auto;
+      }
+  }
+}
+app-product{
+width: 100%;
+}
+ion-item{
+  --inner-padding-end: 0;
+  --padding-start: 4px;
+  padding-top: 3px;
+  margin-bottom: -15px;
+  ion-icon{
+      margin-right: 5px;
+      font-size: 14.5px;
+      margin-top: 14px;
+      margin-left: 5px;
+  }
+  ion-label{
+      p{
+          margin-top: 0;
+          margin-bottom: -2px;
+          font-size: 16px !important;
+          font-family: "roboto-medium" !important;
+          margin-left: 5px;
+      }
+  }
+  }
+}
+.icon-shop-more{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.icon-shop{
+  margin-top: 0 !important;
+}

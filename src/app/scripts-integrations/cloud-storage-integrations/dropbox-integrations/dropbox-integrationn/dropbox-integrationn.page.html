@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/cloud-storage" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="depth" (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon> Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Dropbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <div *ngIf="visItems" class="div-empty">
+    <ion-img src="assets/images/plugin-images/Cloud-storage/drop-box-icon.png"></ion-img>
+    <h2>Your Dropbox LIst is empty</h2>
+  </div>
+
+  <ion-list>
+    <div *ngFor="let folder of folders">
+      <ion-item lines="inset" *ngIf="folder['.tag'] == 'folder'" detail-push (click)="openFolder(folder.path_lower)">
+        <ion-icon slot="start" name="folder"></ion-icon>
+        <ion-label>
+          <p class="para-name">{{folder.name}}</p>
+          <p class="para-date">{{folder.client_modified | date:'mediumDate'}}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item *ngIf="folder['.tag'] == 'file'">
+        <ion-icon slot="start" name="document"></ion-icon>
+        <ion-label>
+          <p class="para-name">{{folder.name}}</p>
+          <p class="para-date">{{folder.client_modified | date:'mediumDate'}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer class="footer">
+  <ion-button expand="full" (click)=uploadFile()>Upload File</ion-button>
+</ion-footer>

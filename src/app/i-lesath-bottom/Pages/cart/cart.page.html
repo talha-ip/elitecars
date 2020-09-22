@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cart
+      <ion-icon src="assets/CustomIcons/Bag.svg"></ion-icon>
+    </ion-title>
+    <ion-button slot="end" fill="clear" (click)="edit()" *ngIf="!gridVisiable">
+      <ion-icon src="assets/CustomIcons/edit.svg"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <div *ngIf="gridVisiable">
+    <div class="div-img">
+      <ion-img src="assets/template-themes/lesath/images/bucket.png"></ion-img>
+    </div>
+    <ion-text>
+      <h1>
+        Your Cart is Empty
+      </h1>
+      <p>
+        Press select products to add them in cart
+      </p>
+    </ion-text>
+    <div class="shop-btn">
+      <ion-button >Continue Shopping</ion-button>
+    </div>
+  </div>
+  <div *ngIf="!gridVisiable">
+    <ion-card *ngFor="let item of cartItems">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-align-self-center ion-text-center" *ngIf="visibleCheck==true" size="1">
+            <ion-checkbox (ionChange)="checkEvent(item)" [(ngModel)]="item.isChecked"></ion-checkbox>
+          </ion-col>
+          <ion-col size="3.5">
+            <ion-img [src]="item.image"></ion-img>
+          </ion-col>
+          <ion-col class="detail-col" size="7.5">
+            <p>
+              {{item.title}}
+            </p>
+            <div class="div-sizes">
+              <div class="div-size-filled">
+                <p>{{item.size}}</p>
+              </div>
+              <ion-radio class="radio-filled" color="{{item.color}}"></ion-radio>
+            </div>
+            <!-- <div id="color"></div> -->
+            <ion-row class="ion-no-padding row-btns">
+              <ion-col class="ion-align-self-center" size="1" text-right>
+                <ion-button (click)="minusQuantity()" class="qty-btn" size="small" fill="clear">
+                  <ion-icon class='minus-icon' name="remove-circle-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="1.5" class="ion-align-self-center ion-text-center">
+                <p class="count-para">{{qtyy}}</p>
+              </ion-col>
+              <ion-col class="ion-align-self-center ion-text-left" size="1">
+                <ion-button (click)="addQuantity()" class="qty-btn qty-btn-add" size="small" fill="clear">
+                  <ion-icon name="add-circle-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="8" class="ion-text-right ion-align-self-end">
+                <p class="price">
+                  <b class="total-bold">Total= </b>{{item.price}}
+                </p>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-grid>
+      <h1>
+        Sub Total
+      </h1>
+      <ion-row>
+        <ion-col size="6" class="col-left">
+          Discount
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          0%
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="col-left">
+          Delivery
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          Free
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="col-left">
+          <b>
+            Total Price
+          </b>
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          <b>
+            $ 230
+          </b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="proceed-div">
+      <ion-button (click)="goToShipping()" *ngIf="visibleCheck==false" class="proceed-btn" shape="round"> Proceed
+      </ion-button>
+      <ion-item lines="none" class="content-bg-becrux"> 
+        <span>
+          <ion-button *ngIf="visibleCheck==true" (click)="RemoveItem()" size="large" shape="round"> Delete </ion-button>
+          <ion-button class="cancel-btn" (click)="setVisibleCancel()" *ngIf="visibleCheck==true" size="large"
+            shape="round"> Cancel
+          </ion-button>
+        </span>
+      </ion-item>
+    </div>
+  </div>
+
+</ion-content>

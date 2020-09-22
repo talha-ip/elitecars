@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/component-details" routerDirection="backward">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Text Buton</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid *ngFor="let item of items">
+    <ion-text>
+      <h2>{{item.heading}}</h2>
+    </ion-text>
+    <ion-img src="{{item.image}}"></ion-img>
+    <ion-row >
+      <ion-col size="8" class="ion-align-self-center" >
+        <ion-text>
+          <h4>{{item.subheading}}</h4>
+        </ion-text>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="4">
+        <!-- button text -->
+        <ion-button class="view">Share</ion-button>
+      </ion-col>
+    </ion-row>
+    <p>
+      {{item.para}}
+    </p>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Home One</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" class="content">
+
+  <!-- if data loaded -->
+  <app-banner></app-banner>
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="topSeller">{{ 'Newest' | translate }}</ion-segment-button>
+    <ion-segment-button value="deals">{{ 'On Sale' | translate }} </ion-segment-button>
+    <ion-segment-button value="mostLiked"> {{ 'Featured' | translate }}</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="segments">
+
+    <!-- first swipe slider -->
+    <ion-slides *ngSwitchCase="'topSeller'" class="animated fadeIn fast" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" routerLink="/bs-products" routerDirection="forward"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 2nd swipe slider -->
+    <ion-slides *ngSwitchCase="'deals'" class="animated fadeIn fast" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" routerLink="/bs-products" routerDirection="forward"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 3rd swipe slider -->
+    <ion-slides *ngSwitchCase="'mostLiked'" class="animated fadeIn fast" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" routerLink="/bs-products" routerDirection="forward"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!-- recently view Heading -->
+  <ion-row class="recent-view">
+    <ion-col size="0.5">
+      <ion-icon src="assets/custom-icon-tc-shop/list.svg"></ion-icon>
+    </ion-col>
+    <ion-col size="11" class="ion-align-self-end">
+      <h5>
+        {{'Recently Viewed'|translate}}
+      </h5>
+    </ion-col>
+  </ion-row>
+
+  <!-- recently viewed swipe slider -->
+  <ion-slides class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let p of recentViewedProducts">
+      <app-product [data]="p" [type]="'recent'"></app-product>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- For Vendor List -->
+  <app-vendor-list></app-vendor-list>
+
+  <!-- for scrollable segment and all products -->
+  <app-sliding-tabs [type]="'notImage'"></app-sliding-tabs>
+
+
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+    <ion-fab-button size="small" (click)="scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

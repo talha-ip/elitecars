@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding>Contact Us</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <div>
+    <ion-card>
+      <form>
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Name</ion-label>
+          <ion-input placeholder="abcd" type="text" name="name" [(ngModel)]="formData.name" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Email</ion-label>
+          <ion-input placeholder="abc@gmail.com" type="email" name="email" [(ngModel)]="formData.email" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Message</ion-label>
+          <ion-input type="text" name="firstname" [(ngModel)]="formData.message" required>
+          </ion-input>
+        </ion-item>
+      </form>
+    </ion-card>
+  </div>
+  <ion-button shape="round"> Send </ion-button>
+
+
+</ion-content>

@@ -1,0 +1,51 @@
+ion-content {
+  --padding-top: 22px;
+  form {
+    text-align: center;
+    ion-item {
+      --background: #fafafa !important;
+      // padding-top: 25px;
+      ion-label {
+        font-family: "roboto-regular";
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      &:first-child {
+        padding-top: 0px;
+      }
+      p {
+        white-space: normal !important;
+        font-size: 12px !important;
+        font-family: "roboto-regular";
+      }
+      // --padding-start: 0;
+      ion-input {
+        --padding-top: 8px;
+        --padding-bottom: 8px;
+        --padding-start: 0;
+        font-size: 12px;
+        font-family: "roboto-regular";
+      }
+      ion-checkbox {
+        margin-right: 11px;
+        --background: #fafafa !important;
+      }
+    }
+    .item-has-focus.label-floating.sc-ion-label-md-h,
+    .item-has-focus .label-floating.sc-ion-label-md-h,
+    .item-has-placeholder.label-floating.sc-ion-label-md-h,
+    .item-has-placeholder .label-floating.sc-ion-label-md-h,
+    .item-has-value.label-floating.sc-ion-label-md-h,
+    .item-has-value .label-floating.sc-ion-label-md-h {
+      color: #000000;
+      font-size: 18px !important;
+    }
+    ion-button {
+      margin-top: 25px;
+      --color: white !important;
+      text-transform: capitalize;
+      font-family: "roboto-light";
+      height: 43.05px;
+    }
+  }
+}

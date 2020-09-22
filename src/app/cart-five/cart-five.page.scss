@@ -1,0 +1,104 @@
+.content-cart-five {
+  .card {
+    background: white;
+    box-shadow: 3px 3px 14px 2px #ddd;
+    margin-left: 16px;
+    margin-right: 16px;
+    width: 92%;
+    border-radius: 10px;
+    ion-item {
+      --padding-start: 10px;
+      --inner-padding-end: 10px;
+      --background: transparent;
+      ion-thumbnail {
+        width: 130px;
+        height: 130px;
+        margin-right: 10px;
+      }
+      ion-label {
+        .text-para {
+          font-family: "lato-bold";
+          font-size: 12px;
+          color: black;
+        }
+        .text-cat-name {
+          font-family: "lato-regular";
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  .div-btn {
+    margin-top: 10px;
+    display: flex;
+    border-radius: 4px;
+    width: 110px;
+    ion-button {
+      --color: #565656;
+      --color-activated: black;
+      border-radius: 100%;
+      border: solid 1px black;
+      height: 25px;
+      width: 25px;
+    }
+    .para-count {
+      align-self: center;
+      margin-right: 10px;
+      color: black;
+    }
+    .btn-minus {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    .btn-add {
+      margin-left: 0;
+    }
+  }
+  .div-price {
+    margin-top: 10px;
+    display: flex;
+    .para-d-price {
+      font-size: 12px;
+      font-family: "lato-regular";
+      color: #707070;
+      margin-right: 5px;
+    }
+    .para-price {
+      font-size: 12px;
+      font-family: "lato-bold";
+      color: black;
+    }
+  }
+  .div-trash-heart {
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    ion-icon {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+    p {
+      font-size: 10px;
+      font-family: "lato-regular";
+      margin: 0;
+      color: black;
+    }
+    .div-heart {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+}
+.footer{
+  ion-button {
+    margin: 0;
+    --background: linear-gradient(to right, #8e2de2, #4a00e0);
+    height: 50px;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: "lato-bold";
+  }
+}

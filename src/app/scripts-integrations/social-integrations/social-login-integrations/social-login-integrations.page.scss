@@ -1,0 +1,13 @@
+ion-content {
+  --padding-top: 10px;
+  ion-card {
+    box-shadow: none;
+    border-radius: 10px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background: transparent;
+    img{
+    width:100%;
+    }
+  }
+}

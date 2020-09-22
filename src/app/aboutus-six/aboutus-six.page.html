@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>About Us Six
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-grid class="ion-no-padding grid-bg">
+    <ion-row>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-six-bg-one.png"></ion-img>
+      </ion-col>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-six-bg-two.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-six-bg-three.png"></ion-img>
+      </ion-col>
+      <ion-col class="ion-no-padding" size="6">
+        <ion-img src="assets/images/about-us/about-us-six-bg-four.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-text">
+      <ion-col size="12" class="col-text">
+        <h2>Our Story</h2>
+        <p>Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+          Mauris semper nisl sit amet
+          arcu lacinia tempor. In hac
+          habitasse platea dictumst. Sed
+          varius erat orci, ac fringilla
+          tortor lobortis ac. Sed
+          eleifend nisi nisl, ac vulputate
+          nisi accumsan a. Integer quam
+          neque, fermentum eget tellus
+          non, tristique sodales turpis.
+          Nam diam ante, luctus nec nisl
+          vestibulum ullamcorper dolor.
+          Suspendisse at dictum magna,
+          a </p>
+      </ion-col>
+      <ion-col size="12" class="col-text">
+        <h2>Our Vision</h2>
+        <p>Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+          Mauris semper nisl sit amet
+          arcu lacinia tempor. In hac
+          habitasse platea dictumst. Sed
+          varius erat orci, ac fringilla
+          tortor lobortis ac. Sed
+          eleifend nisi nisl, ac vulputate
+          nisi accumsan a. Integer quam
+          neque, fermentum eget tellus
+          non, tristique sodales turpis.
+          Nam diam ante, luctus nec nisl
+          vestibulum ullamcorper dolor.
+          Suspendisse at dictum magna,
+          a </p>
+      </ion-col>
+      <ion-col size="12" class="col-text">
+        <h2>Our Mission</h2>
+        <p>Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+          Mauris semper nisl sit amet
+          arcu lacinia tempor. In hac
+          habitasse platea dictumst. Sed
+          varius erat orci, ac fringilla
+          tortor lobortis ac. Sed
+          eleifend nisi nisl, ac vulputate
+          nisi accumsan a. Integer quam
+          neque, fermentum eget tellus
+          non, tristique sodales turpis.
+          Nam diam ante, luctus nec nisl
+          vestibulum ullamcorper dolor.
+          Suspendisse at dictum magna,
+          a </p>
+      </ion-col>
+      <ion-col size="12" class="col-text">
+        <h2>Our Mission</h2>
+      </ion-col>
+      <ion-col class="col-two-colm" size="12">
+        <ion-row class="row-two-colm" *ngFor="let item of itemCol">
+          <ion-col class="col-icon" size="5">
+            <ion-icon name="{{item.icon}}"></ion-icon>
+          </ion-col>
+          <ion-col size="7">
+            <p>{{item.text}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-icon" size="5">
+            <ion-icon src="assets/custom-icons/pin-about-us-six.svg"></ion-icon>
+          </ion-col>
+          <ion-col size="7">
+            <p>9440 Birchwood Drive
+              Los Angeles, CA 90008</p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

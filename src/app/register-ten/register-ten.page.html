@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register Ten</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img class="animated fadeIn header-img" src="assets/images/login/login-four-header.png"></ion-img>
+  <h2 class="header-text">Sign Up</h2>
+  <p class="network-para">Enter via social networks</p>
+  <ion-button class="btn-twitter">
+    <ion-icon src="assets/CustomIcons/login-four-twitter.svg"></ion-icon>
+  </ion-button>
+  <ion-button class="btn-facebook">
+    <ion-icon src="assets/CustomIcons/login-four-facebook.svg"></ion-icon>
+  </ion-button>
+  <div *ngFor="let item of Items" class="div-item">
+    <ion-item class="animated fadeInRight item-input" lines="none">
+      <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+    </ion-item>
+  </div>
+  <div class="div-btn-acc ">
+    <ion-button fill="clear" class="btn-acc">
+      <p>Sign Up</p>
+    </ion-button>
+  </div>
+</ion-content>

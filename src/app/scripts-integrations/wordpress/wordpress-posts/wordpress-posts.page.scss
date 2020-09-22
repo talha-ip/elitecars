@@ -1,0 +1,48 @@
+ion-content {
+  ion-card {
+    &:first-child {
+      margin: 20px 16px 20px 16px;
+    }
+    margin: 0 16px 20px 16px;
+    border-radius: 20px;
+    img {
+      filter: brightness(50%);
+    }
+    p {
+      font-size: 16px;
+    }
+    .name {
+      font-family: "roboto-medium";
+      top: 0;
+      margin-left: 16px;
+      position: absolute;
+      color: white;
+      margin-top: 8px !important;
+    }
+    .date {
+      font-family: "roboto-bold";
+      margin-left: 16px;
+      margin-bottom: 0px;
+      color: black;
+      margin-top: 8px;
+    }
+    ion-card-content {
+      font-family: "roboto-regular";
+      font-size: 12px;
+      padding: 0;
+      margin: 5px 16px -5px 16px;
+    }
+    ion-button {
+      text-transform: capitalize;
+      font-family: "roboto-bold";
+      font-size: 12px;
+      --color: black;
+      margin-left: 4px;
+      ion-icon {
+        color: black;
+        margin-left: 5.7px;
+        font-size: 10px;
+      }
+    }
+  }
+}

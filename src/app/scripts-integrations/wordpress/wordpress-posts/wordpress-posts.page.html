@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/scripts" routerDirection="backward">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Wordpress Feeds
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let item of items">
+    <img src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+    <p class="name" [innerHTML]="item.title.rendered"></p>
+    <p class="date">{{ item.date | date:'mediumDate'}}</p>
+    <ion-card-content [innerHTML]="item.excerpt.rendered">
+    </ion-card-content>
+    <ion-button fill="clear" (click)="goToPostDetails(item)">Read More
+      <ion-icon src="assets/images/plugin-images/custom-icons/right-arrow-youtube.svg"></ion-icon>
+    </ion-button>
+  </ion-card>
+</ion-content>

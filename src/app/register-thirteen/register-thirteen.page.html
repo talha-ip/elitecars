@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register Thirteen</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img class="img-header" src="assets/images/login/login-seven-bg-top.png"></ion-img>
+  <div class="div-icon-img">
+    <ion-img src="assets/images/login/fox-icon.png"></ion-img>
+  </div>
+  <div class="div-item-outer">
+    <div *ngFor="let item of Items">
+      <div class="div-item">
+        <ion-item class="animated fadeInRight item-input" lines="none">
+          <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+          <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+  <ion-item lines="none" class="item-btns">
+   
+    <ion-button shape="round" class="btn-login">
+      <p>
+        <ion-icon src="assets/CustomIcons/login-five-arrow-right.svg"></ion-icon>
+      </p>
+    </ion-button>
+  </ion-item>
+  <div class="div-social">
+    <p class="social-para">Sign up with Social Networks</p>
+    <ion-grid class="grid-icons">
+      <ion-row>
+        <ion-col>
+          <ion-avatar class="animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-three-facebook.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="3">
+          <ion-avatar class="avatar-center animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-three-twitter.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-avatar class="animated fadeIn">
+            <ion-icon src="assets/CustomIcons/login-three-google-plus.svg"></ion-icon>
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-img class="img-bottom" src="assets/images/login/login-seven-bg-bottom.png"></ion-img>
+</ion-content>

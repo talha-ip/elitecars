@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-news-three" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>News Detail Three</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <ion-img src="{{item._embedded['wp:featuredmedia'][0].source_url}}" class="animated fadeIn"></ion-img>
+  <h2>{{item.title.rendered}}
+    <br>
+    <small>
+      <ion-icon class="clock" name="clock"></ion-icon>{{ item.date | date:'mediumDate'}}
+    </small>
+  </h2>
+  <p [innerHTML]="item.content.rendered"></p>
+</ion-content>

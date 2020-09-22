@@ -1,0 +1,99 @@
+ion-header{
+    ion-toolbar{
+        // --background:black;
+        --color:white;
+        ion-icon{
+            font-size: 16px;
+        }
+        ion-title{
+           padding-left: 0;
+        }
+        ion-buttons{
+            ion-icon{
+                font-size: 22px;
+            }
+            ion-badge{
+                position: absolute;
+                right: 3px;
+                bottom: 14px;
+            }
+        }
+    }
+}
+ion-content{
+    ion-searchbar{
+        --background: white;
+    }
+    ion-list{
+        background: #fafafa;
+    }
+    ion-item{
+        ion-avatar{
+            width: 50px !important;
+            height: 50px !important;
+        }
+        ion-label{
+            padding-bottom: 0;
+            padding-top: 0;
+            padding-left: 0;
+            h2{
+                font-size: 20px;
+                font-family: 'roboto-regular' !important
+            }
+            p{
+                color: gray;
+                font-size: 14px;
+                font-family: 'roboto-regular' !important
+            }
+        }
+    }
+}
+
+
+.home_headings
+{
+    font-family: DM Sans !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    line-height: 32px !important;
+    /* identical to box height, or 160% */
+
+    letter-spacing: 0.15px !important;
+    padding-right: 20px;
+    
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+}
+
+.checkbox_labels
+{
+    position: relative;
+    top:-3px;
+    margin-left:9px;
+}
+
+.full_search_button
+{
+    width: 99.8% !important;
+    position: fixed;
+    bottom: 0px;
+    height: 56px;
+    background: #0094FF;
+    border-radius: 30px;
+
+    font-family: DM Sans !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+
+    color: white !important;
+}
+
+.search_input
+{
+    background: white;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.03);
+    border-radius: 5px;
+}

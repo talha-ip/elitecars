@@ -1,0 +1,35 @@
+ion-content{
+    ion-card{
+        text-align: center;
+        ion-card-content{
+            ion-icon{
+                margin-top: 15px;
+                color: green;
+                font-size: 80px;
+            }
+            h3{
+                font-size: 20px !important;
+                margin-top: 15px !important;
+                font-family: 'roboto-regular' !important;
+                color: black;
+            }
+            p{
+                font-size: 14px !important;
+                font-family: 'roboto-regular' !important;
+                color: black;
+            }
+            ion-button{
+                margin-top: 15px;
+                // --background: black;
+                // --color: white !important;
+            }
+        }
+    }
+}
+.order-btn{
+    --color: white;
+}
+.con-btn{
+    // --background: white !important;
+    // --color: black !important;
+}

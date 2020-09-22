@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title" no-padding>{{'Forgot Password Four'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="content">
+  <ion-img src="assets/icons_stripe.svg"></ion-img>
+
+  <form>
+    <ion-item>
+      <ion-label position="floating">{{'Email'|translate}}</ion-label>
+      <ion-input type="text" name="customers_email_address" [(ngModel)]="formData.customers_email_address" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="errorMessage!=''" lines="none">
+      <ion-label>
+        {{errorMessage| translate}}
+      </ion-label>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">{{ 'SEND' | translate }}
+    </ion-button>
+  </form>
+</ion-content>

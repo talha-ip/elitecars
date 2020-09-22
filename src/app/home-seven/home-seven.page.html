@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Home Seven</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)" class="content">
+  <app-banner-two></app-banner-two>
+  <!-- categories component -->
+  <app-categories [type]="'name&count'"></app-categories>
+
+  <!-- top segments -->
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="topSeller">{{ 'Newest' | translate }}</ion-segment-button>
+    <ion-segment-button value="deals">{{ 'On Sale' | translate }} </ion-segment-button>
+    <ion-segment-button value="mostLiked"> {{ 'Featured' | translate }}</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="segments">
+    <!-- first swipe slider -->
+    <ion-slides *ngSwitchCase="'topSeller'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button routerLink="/bs-products" routerDirection="forward" fill="clear"> {{'Shop More'| translate}}
+          <ion-icon class="shop-icon" name="arrow-dropright"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 2nd swipe slider -->
+    <ion-slides *ngSwitchCase="'deals'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button routerLink="/bs-products" routerDirection="forward" fill="clear"> {{'Shop More'| translate}}
+          <ion-icon class="shop-icon" name="arrow-dropright"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 3rd swipe slider -->
+    <ion-slides *ngSwitchCase="'mostLiked'" class="animated bounceInRight delay-900ms" [options]="sliderConfig" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button routerLink="/bs-products" routerDirection="forward" fill="clear" > {{'Shop More'| translate}}
+          <ion-icon class="shop-icon" name="arrow-dropright"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!-- Newest Products Header -->
+  <ion-item lines="none">
+    <ion-icon slot="start" src="assets/custom-icon-tc-shop/tabs.svg"></ion-icon>
+    <ion-label>
+      <p>{{'Newest Products' | translate }}</p>
+    </ion-label>
+    <ion-button routerLink="/bs-products" routerDirection="forward" slot="end" fill="clear">Shop More
+      <ion-icon class="shop-icon" name="arrow-dropright"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <!-- Newest Products infinite scroll -->
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col *ngFor="let p of newestItems" size="6" no-padding>
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- For Vendor List -->
+  <app-vendor-list></app-vendor-list>
+  <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+    <ion-fab-button size="small"  (click)="scrollToTop()">
+      <ion-icon name="arrow-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

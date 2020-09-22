@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/payment-integration" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>RazorPay Method</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-img">
+    <ion-img src="assets/images/plugin-images/Payment-gateways/razorpay.jpeg"></ion-img>
+  </ion-card>
+  <h2>RazorPay Sample</h2>
+  <ion-card class="card-pay">
+    <ion-row>
+      <ion-col class="col-pay">
+        Total Payment
+      </ion-col>
+      <ion-col class="col-pay-price">
+        {{currencyIcon}}{{paymentAmount}}
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <div class="div-btn">
+    <ion-button shape="round" expand="full" (click)="payWithRazor()">
+      <p>Pay with RazorPay</p>
+    </ion-button>
+  </div>
+</ion-content>

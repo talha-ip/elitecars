@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Profile Two</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+  <ion-img src="assets/images/profile/profile-two.png"></ion-img>
+  <div class="div-card-avatar">
+    <ion-card class="card-avatar">
+      <p class="para-name">Andrew Johns</p>
+      <p class="para-designation">Business Manager</p>
+    </ion-card>
+  </div>
+  <h2 class="text-header-person">Personal Details</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of itemPerson" class="col-person">
+        <ion-card>
+          <ion-item lines="none">
+            <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+            <p>{{item.name}}</p>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let item of itemDob" class="col-dob-to-ms" size="6">
+        <ion-item lines="none">
+          <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+          <ion-label>
+            <p class="para-name-heading ">{{item.name}}</p>
+            <p class="para-name">{{item.acName}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <h2 class="text-header-contact">Contact Details</h2>
+  <ion-list class="list-input">
+    <ion-item *ngFor="let item of itemInput" class="animated fadeInRight item-input" lines="none">
+      <ion-icon slot="start" src="{{item.iconStart}}"></ion-icon>
+      <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}"></ion-input>
+      <ion-icon slot="end" src="{{item.iconLast}}"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <h2 class="text-header-info">More Info</h2>
+  <ion-grid class="grid-lang-interest">
+    <ion-row>
+      <ion-col *ngFor="let item of langInterest" class="col-dob-to-ms" size="6">
+        <ion-item lines="none">
+          <ion-icon slot="start" src="{{item.icon}}"></ion-icon>
+          <ion-label>
+            <p class="para-name-heading ">{{item.name}}</p>
+            <p class="para-name">{{item.acName}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button>
+    Edit Profile
+  </ion-button>
+</ion-footer>

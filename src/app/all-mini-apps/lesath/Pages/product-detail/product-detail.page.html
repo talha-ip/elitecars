@@ -1,0 +1,269 @@
+<ion-content class="product-content ion-no-padding">
+  <ion-slides #topSlider pager="true" class="ion-no-padding animated fadeIn" [options]="sliderConfigTop">
+    <ion-slide *ngFor="let b of product.images" class="ion-no-padding animated fadeIn" (click)="zoomImage(b.src)">
+      <ion-grid class="ion-no-padding grid-fix-heigth">
+        <ion-row class="ion-no-padding">
+          <ion-col size="12" class="ion-no-padding col-latest">
+            <ion-img src="{{b.src}}"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide *ngIf="product.images.length==0" class="ion-no-padding">
+      <ion-grid class="ion-no-padding grid-fix-heigth">
+        <ion-row class="ion-no-padding">
+          <ion-col size="12" class="ion-no-padding col-latest">
+            <ion-img src="assets/woocommerce-placeholder.png"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item class="item-header-slide" lines="none">
+    <ion-button fill="clear" slot=start (click)="goBack()">
+      <ion-icon src="assets/custom-icons/back.svg"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-text-left ion-no-padding">
+        <h2 class="price-header">
+          {{product.name}}
+        </h2>
+      </ion-col>
+      <ion-col class="ion-text-right price-col ion-no-padding" *ngIf="selectedVariation==null" size='auto'>
+        <p [innerHTML]="product.price_html"></p>
+      </ion-col>
+      <ion-col class="ion-text-right price-col ion-no-padding" *ngIf="selectedVariation!=null" size='auto'>
+        <p> {{selectedVariation.price*quantity|curency}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-spinner name="lines" class="ion-margin-start" *ngIf="ratingStarsValue==null"></ion-spinner>
+    <ion-row class="ion-no-padding star-row" *ngIf="product.reviews_allowed && ratingStarsValue!=null"
+      (click)="openReviewsPage()">
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon [name]="getRatingValue(1)"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon [name]="getRatingValue(2)"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon [name]="getRatingValue(3)"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon [name]="getRatingValue(4)"></ion-icon>
+      </ion-col>
+      <ion-col class="ion-align-self-center" size="0.5">
+        <ion-icon [name]="getRatingValue(5)"></ion-icon>
+      </ion-col>
+      <ion-col size="4" class="ion-text-left review-col">
+        <small>{{reviews.length}} {{'Reviews'|translate}}</small>
+      </ion-col>
+      <ion-col size="5.5" class="ion-text-right ion-no-padding stock-col">
+        <small *ngIf="product.stock_status!='instock'">{{'Out of Stock'|translate}}</small>
+        <small *ngIf="product.stock_status=='instock'">{{'In Stock'|translate}}</small>
+      </ion-col>
+    </ion-row>
+    <!-- group products -->
+    <ion-grid *ngIf="groupProducts.length==0 && product.type=='grouped'">
+      <ion-col>
+        <ion-spinner name="lines"></ion-spinner>
+      </ion-col>
+    </ion-grid>
+    <ion-list class="group-product-list" *ngIf="groupProducts.length!=0">
+      <ion-item lines="full" *ngFor="let g of groupProducts">
+        <ion-thumbnail slot="start">
+          <img *ngIf="g.images.length!=0" src="{{g.images[0].src}}">
+          <img *ngIf="g.images.length==0" src="assets/woocommerce-placeholder.png">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-row>
+            <ion-col class="ion-no-padding" size="7">
+              <ion-text>
+                <h3 class="ion-text-left">{{g.name}}</h3>
+              </ion-text>
+              <p>
+                <span class="ion-text-left price-col" [innerHTML]="g.price_html"></span>
+              </p>
+              <ion-row class="qty-box-total">
+                <ion-col size="auto" class="ion-no-padding">
+                  <h1>{{'QTY'|translate}}:</h1>
+                </ion-col>
+                <ion-col class="ion-text-right">
+                  <ion-button (click)="qunatityGroupMinus(g)" *ngIf="!g.sold_individually" class="qty-btn" size="small"
+                    fill="clear">
+                    <ion-icon class='minus-icon' name="remove-circle-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+                <ion-col class="ion-text-center ion-no-padding ion-align-self-start">
+                  <p class="count-para quantity-para">{{g.quantity}}</p>
+                </ion-col>
+                <ion-col class="ion-text-left">
+                  <ion-button (click)="qunatityGroupPlus(g)" *ngIf="!g.sold_individually" class="qty-btn qty-btn-add"
+                    size="small" fill="clear">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <ion-row class="ion-text-right">
+                <ion-col size="12">
+                  <p class="para-ttl">{{'Total' |translate}}&nbsp;{{'Price' |translate}}</p>
+                </ion-col>
+                <ion-col size="12">
+                  <p class="para-ttl">{{g.quantity*g.price|curency}}</p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- group products end -->
+
+    <span *ngIf="loaderProductVariations">
+      <br>
+      <ion-spinner name="lines" class="ion-margin-start"></ion-spinner>
+    </span>
+
+
+    <span *ngIf="product.type=='variable' && !loaderProductVariations">
+      <div *ngFor=" let att of attributes; let ind = index">
+        <span *ngIf="att.variation">
+          <span *ngIf="!showColors(att.name)">
+            <ion-row>
+              <ion-col class="ion-no-padding">
+                <h1 class="ion-text-capitalize">{{att.name}}:</h1>
+              </ion-col>
+            </ion-row>
+            <!-- <ion-row class="size-row">
+              <span *ngFor=" let val of att.options; let i = index" class="custom-badges">
+                <ion-badge mode="ios" [color]="checkOptionSelected(val,att.name)"
+                  (click)="fillAttributes(val,att.name,ind)" [class.disabled]="!availableOption(att.name,val)">
+                 [color]="checkAttributeSelectedReturnColor(a,v)" (click)="selectAttribute(a,v)" 
+            {{val}}
+            </ion-badge>
+          </span>
+          </ion-row> -->
+            <ion-row style="padding-bottom: 10px;">
+              <span *ngFor=" let val of att.options; let i = index" class="size-padding"
+                [class.disabled]="!availableOption(att.name,val)">
+                <div *ngIf="checkOptionSelected(val,att.name)=='primary'" (click)="fillAttributes(val,att.name,ind)"
+                  class="div-size">
+                  <p>{{val}}</p>
+                </div>
+                <div *ngIf="checkOptionSelected(val,att.name)!='primary'" (click)="fillAttributes(val,att.name,ind)"
+                  class="div-size-filled">
+                  <p>{{val}}</p>
+                </div>
+              </span>
+            </ion-row>
+
+          </span>
+          <span *ngIf="showColors(att.name)">
+            <ion-row class="ion-no-padding">
+              <ion-col class="ion-no-padding">
+                <h1 class="ion-text-capitalize">{{att.name}}:</h1>
+              </ion-col>
+            </ion-row>
+            <ion-row class="size-row">
+              <span class="custom-colors">
+                <!-- <ion-list> -->
+                <!-- <ion-item lines="none"> -->
+                <span *ngFor=" let val of att.options; let i = index" [class.disabled]="!availableOption(att.name,val)">
+                  <ion-icon name="radio-button-on" *ngIf="checkOptionSelected(val,att.name)!='primary'"
+                    style.color="{{val}}" (click)="fillAttributes(val,att.name,ind)">
+                  </ion-icon>
+                  <ion-icon name="radio-button-off" *ngIf="checkOptionSelected(val,att.name)=='primary'"
+                    style.color="{{val}}" (click)="fillAttributes(val,att.name,ind)">
+                  </ion-icon>
+                </span>
+                <!-- </ion-item> -->
+                <!-- </ion-list> -->
+              </span>
+            </ion-row>
+          </span>
+        </span>
+      </div>
+    </span>
+    <ion-row *ngIf="product.type!='grouped'">
+      <ion-col size="auto" class="ion-no-padding">
+        <h1>{{'QTY'|translate}}:</h1>
+      </ion-col>
+      <ion-col class="ion-text-right ion-no-padding" size="1">
+        <ion-button (click)="qunatityMinus(product,quantity);" *ngIf="!product.sold_individually" class="qty-btn"
+          size="small" fill="clear">
+          <ion-icon class='minus-icon' name="remove-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="1" class="ion-text-center ion-no-padding ion-align-self-center">
+        <p class="count-para">{{quantity}}</p>
+      </ion-col>
+      <ion-col size="1" class="ion-text-left ion-no-padding">
+        <ion-button (click)="qunatityPlus(product,quantity);" *ngIf="!product.sold_individually"
+          class="qty-btn qty-btn-add" size="small" fill="clear">
+          <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-grid *ngIf="loaderWcVendorInfo">
+      <ion-col>
+        <ion-spinner name="lines"></ion-spinner>
+      </ion-col>
+    </ion-grid>
+
+    <div *ngIf="product.description">
+      <ion-row class="ion-no-padding">
+        <ion-col class="ion-no-padding">
+          <h1 class="desc-header">{{'Product Description'|translate}}:</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding">
+        <ion-col class="ion-no-padding">
+          <p class="desc-para" [innerHTML]="product.description"></p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding" *ngIf="releatedItems.length!=0">
+        <h3 class="like-heading">{{'You May Also Like'|translate}}</h3>
+      </ion-col>
+      <ion-col class="ion-no-padding" *ngIf="releatedItems.length==0">
+        <ion-spinner name="lines" class="ion-margin-start"></ion-spinner>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-slides [options]="sliderConfigReleatedItems">
+    <ion-slide *ngFor="let item of releatedItems">
+      <ion-card class="grid-card">
+        <img (click)="goToProductDetail(item)" [src]="getProductImage(item)">
+        <ion-img class="badge" src="assets/images/new.svg" *ngIf="item.badge"></ion-img>
+        <h3 class="like-name">{{item.name}}</h3>
+        <p class="like-para" [innerHTML]="item.price_html"></p>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="selectAttributes.length!=0"
+    style="padding-bottom: 30px;">
+    <ion-fab-button color="danger" (click)="resetAttributes()">{{'Clear'|translate}}
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<div class="ion-footer-custom">
+  <div class="div-inline-btn">
+    <ion-button shape="round" [disabled]="disableCartButton" *ngIf="product.type!='external'"
+      (click)="addToCartProduct()">{{'Add to Cart'|translate}}</ion-button>
+    <ion-button shape="round" [disabled]="disableCartButton" *ngIf="product.type=='external'" (click)="openProduct()">
+      {{product.button_text|translate}}</ion-button>
+  </div>
+</div>

@@ -1,0 +1,234 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/ls-home" routerDirection="backward">
+        <ion-icon src="assets/custom-icons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div [ngSwitch]="segments">
+      <div *ngSwitchCase="'shipping'">
+        <ion-title class="ion-no-padding">Shipping</ion-title>
+      </div>
+      <div *ngSwitchCase="'payment'">
+        <ion-title class="ion-no-padding">Payment</ion-title>
+      </div>
+      <div *ngSwitchCase="'summary'">
+        <ion-title class="ion-no-padding">Summary</ion-title>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <ion-card>
+    <ion-segment [(ngModel)]="segments">
+      <ion-segment-button value="shipping">
+        <ion-icon src="assets/custom-icons/shipping.svg"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="payment">
+        <ion-icon src="assets/custom-icons/payment.svg"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="summary">
+        <ion-icon src="assets/custom-icons/summary.svg"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-card>
+  <div [ngSwitch]="segments">
+    <div *ngSwitchCase="'shipping'">
+
+      <form>
+        <ion-item class='item-input-has-focus content-bg-becrux '>
+          <ion-label class='label-md' position="floating">Email</ion-label>
+          <ion-input type="text" email name="email" [(ngModel)]="formData.email" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Address</ion-label>
+          <ion-input type="text" name="adderss" [(ngModel)]="formData.password" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">First Name</ion-label>
+          <ion-input type="text" name="firstname" [(ngModel)]="formData.firstname" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Last Name</ion-label>
+          <ion-input type="email" name="lastname" [(ngModel)]="formData.lastname" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">Mobile Phone</ion-label>
+          <ion-input type="number" name="phone" [(ngModel)]="formData.phone" required>
+          </ion-input>
+        </ion-item>
+        <ion-item class='item-input-has-focus content-bg-becrux'>
+          <ion-label class='label-md' position="floating">City</ion-label>
+          <ion-input type="text" name="city" [(ngModel)]="formData.city" required>
+          </ion-input>
+        </ion-item>
+      </form>
+      <ion-item lines="none" class="item-toggle content-bg-becrux">
+        <ion-toggle  slot="start"></ion-toggle>
+      </ion-item>
+      <p class="default-para">Use Default</p>
+      <div class="ion-text-center div-btn">
+        <ion-button shape="round" (click)="go()" class="cnfrm-order">Next</ion-button>
+      </div>
+    </div>
+    <div *ngSwitchCase="'payment'">
+      <div *ngIf="visiableItem">
+        <ion-item lines="none" class="cash-class content-bg-becrux">
+          <ion-icon class="theme-icon" slot="start" src="assets/custom-icons/c-o-d.svg"></ion-icon>
+          <ion-label>
+            <p>
+              Cash on Delivery
+            </p>
+          </ion-label>
+          <ion-icon slot="end" src="assets/custom-icons/drop-right-payment.svg"></ion-icon>
+        </ion-item>
+        <ion-item lines="none" (click)="goToMaster(0)" class="cash-class content-bg-becrux">
+          <ion-icon class="theme-icon" slot="start" src="assets/custom-icons/master-card.svg"></ion-icon>
+          <ion-label>
+            <p>
+              Master Card
+            </p>
+          </ion-label>
+          <ion-icon class="theme-icon" slot="end" src="assets/custom-icons/drop-right-payment.svg"></ion-icon>
+        </ion-item>
+      </div>
+      <div *ngIf="!visiableItem">
+        <form>
+          <ion-item class='item-input-has-focus content-bg-becrux'>
+            <ion-label class='label-md' position="floating">Name on Card</ion-label>
+            <ion-input type="text" email name="nameOnCard" [(ngModel)]="formDataPayment.nameOnCard" required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item class='item-input-has-focus content-bg-becrux'>
+            <ion-label class='label-md' position="floating">Card Number</ion-label>
+            <ion-input type="text" name="cardNumber" [(ngModel)]="formDataPayment.cardNumber" required>
+            </ion-input>
+          </ion-item>
+          <ion-grid class="grid-expire ion-no-padding">
+            <ion-row class="ion-no-padding">
+              <ion-col class="ion-no-padding" size="6">
+                <ion-item class='item-input-has-focus item-two-col-one expiration content-bg-becrux'>
+                  <ion-label class='label-md' position="floating">Expiration Date</ion-label>
+                  <ion-input type="text" name="expirationCode" [(ngModel)]="formDataPayment.expirationCard" required>
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item class='item-input-has-focus item-two-col-two content-bg-becrux'>
+                  <ion-label class='label-md' position="floating">Security Code</ion-label>
+                  <ion-input type="text" name="securityCode" [(ngModel)]="formDataPayment.securityCode" required>
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+        <ion-item lines="none" class="item-toggle content-bg-becrux">
+          <ion-toggle  slot="start"></ion-toggle>
+        </ion-item>
+        <p class="default-para">Use Default</p>
+        <div class="ion-text-center">
+          <ion-button class="card-btn cnfrm-order" (click)="goToMaster(1)">Use this Card</ion-button>
+        </div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'summary'">
+      <ion-item lines="none" class="cash-class content-bg-becrux">
+        <h2 class="h2-title">
+          Card
+        </h2>
+        <p class="payment-para">
+          ***********123
+        </p>
+        <ion-icon slot="end" src="assets/custom-icons/drop-right-payment.svg"></ion-icon>
+      </ion-item>
+      <ion-item lines="none" class="cash-class content-bg-becrux">
+        <h2 class="h2-title">
+          Shipping Address
+        </h2>
+        <p class="payment-para">
+          123-A, Street 2, New York, USA
+        </p>
+        <ion-icon slot="end" src="assets/custom-icons/drop-right-payment.svg"></ion-icon>
+      </ion-item>
+
+      <ion-card>
+        <ion-grid class="ion-no-padding">
+          <ion-row class="ion-no-padding row-product">
+            <ion-col size="4"class="ion-no-padding">
+              <ion-img src="assets/template-themes/lesath/images/cart/1.png" ></ion-img>
+            </ion-col>
+            <ion-col class="detail-col" size="8">
+              <p class="product-name">
+                Rose Petel Shirt
+              </p>
+              <div class="div-sizes">
+                <div class="div-size-filled">
+                  <p>L</p>
+                </div>
+                <ion-radio class="radio-filled" color="danger" checked></ion-radio>
+              </div>
+              <!-- <div id="color"></div> -->
+              <ion-row class="ion-no-padding row-btns">
+                <ion-col class="col-minus ion-align-self-center" size="4" text-left>
+                  <p class="qty-para"> Qty: 1</p>
+                </ion-col>
+                <ion-col size="8" class="ion-text-right ion-align-self-end">
+                  <p class="price">
+                    <b class="total-bold">Total= </b> $ 130
+                  </p>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="grid-sub-total ion-no-padding">
+          <h1>
+            Sub Total
+          </h1>
+          <ion-row>
+            <ion-col size="6">
+              Discount
+            </ion-col>
+            <ion-col class="item-right" text-right size="6">
+              0%
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              Delivery
+            </ion-col>
+            <ion-col class="item-right" text-right size="6">
+              Free
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="t-price" size="6">
+              <b>Total Price</b>
+            </ion-col>
+            <ion-col class="item-right" text-right size="6">
+              <b>$ 130</b>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+      <ion-grid class="ion-no-padding">
+        <ion-row class="ion-no-padding btn-center-row">
+          <div class="ion-text-center div-btn">
+            <ion-button (click)="goToThankYou()" class="cnfrm-order" shape="round">Confirm Order</ion-button>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

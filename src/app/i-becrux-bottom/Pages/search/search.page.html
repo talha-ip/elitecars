@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="ip_white" style="padding-right:10px; padding-left:10px; position: relative; top:10px;">
+    <ion-button fill="clear" routerLink="/bb-home" routerDirection="backward">
+        <ion-icon class="back-icon" slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+    </ion-button>
+    
+    <ion-buttons slot="end" class="header_right_buttons">
+      <ion-button fill="clear" class="search_button">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content content-bg-becrux">
+  <div class="inner_content_elite" style="margin-top:20px; height:100%; padding-left: 15px; padding-right: 15px;">
+    <h3 class="home_headings">Conditions</h3>
+    <ion-row>
+      <ion-col size="4"><ion-checkbox></ion-checkbox> <ion-label class="checkbox_labels">All</ion-label></ion-col>
+      <ion-col size="4"><ion-checkbox></ion-checkbox> <ion-label class="checkbox_labels">Used</ion-label></ion-col>
+      <ion-col size="4"><ion-checkbox></ion-checkbox> <ion-label class="checkbox_labels">New</ion-label></ion-col>
+    </ion-row>
+    <h3 class="home_headings">Price</h3>
+    <ion-range min="500" max="50000" color="secondary" dual-knobs="true" step="2" [(ngModel)]="priceKnobValues" >
+      <ion-label slot="start">500 OMR</ion-label>
+      <ion-label slot="end">50,000 OMR</ion-label>
+    </ion-range>
+    <ion-row>
+      <ion-col size="6" style="padding-left: 0px;">
+        <div class="search_input">
+          <ion-select placeholder="Select One" style="width: 100%;">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+      <ion-col size="6" style="padding-right: 0px;">
+        <div class="search_input">
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" style="padding-left: 0px;">
+        <div class="search_input">
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+      <ion-col size="6" style="padding-right: 0px;">
+        <div class="search_input">
+          <ion-select placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h3 class="home_headings">Mileage</h3>
+    <ion-range min="10000" max="200000" color="secondary" dual-knobs="true" step="2" [(ngModel)]="mileageKnobValues" >
+      <ion-label slot="start">10,000 km</ion-label>
+      <ion-label slot="end">200,000 km</ion-label>
+    </ion-range>
+    <div class="search_input">
+      <ion-input color="primary" placeholder="State, Zip, Town"></ion-input>
+    </div>
+    
+    
+  </div>
+
+  <ion-button class="full_search_button">Find My Car<ion-ripple-effect></ion-ripple-effect></ion-button>
+
+</ion-content>

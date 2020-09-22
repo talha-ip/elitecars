@@ -1,0 +1,128 @@
+<ion-header class="cart-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">{{'My Cart'|translate}}
+      <ion-icon src="assets/CustomIcons/Bag.svg"></ion-icon>
+    </ion-title>
+    <ion-button slot="end" fill="clear" (click)="edit()" *ngIf="products.length!=0">
+      <ion-icon src="assets/CustomIcons/edit.svg"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-content-cart">
+  <div *ngIf="products.length==0 && loadingServerData">
+    <div class="div-img">
+      <ion-img src="assets/images/bucket.png"></ion-img>
+    </div>
+    <ion-text>
+      <h1>
+        {{'Your cart is empty'|translate}}
+      </h1>
+      <p>
+        {{'Press select products to add them in cart'|translate}}
+      </p>
+    </ion-text>
+    <div class="shop-btn">
+      <ion-button shape=round (click)="openProductsPage()"> {{'continue shopping'|translate}}</ion-button>
+    </div>
+  </div>
+  <div>
+    <ion-card *ngFor="let product of products">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="ion-align-self-center ion-text-center" *ngIf="visibleCheck==true" size="1">
+            <ion-checkbox [(ngModel)]="product.isChecked"></ion-checkbox>
+          </ion-col>
+          <ion-col size="4">
+            <img src="{{product.image}}" />
+          </ion-col>
+          <ion-col class="detail-col" size="7">
+            <p>
+              {{product.name}}
+            </p>
+            <p class="price-under-name" style="padding-bottom: 10px;">
+              <b class="total-bold"> {{'Price' |translate}}= </b>{{product.price | curency}}
+            </p>
+            <div class="div-sizes">
+              <span *ngFor="let att of product.meta_data">
+                <div class="div-size-filled" *ngIf="!showColors(att.key)">
+                  <p>{{att.value}}</p>
+                </div>
+                <ion-icon name="radio-button-on" *ngIf="showColors(att.key)" style.color="{{att.value}}">
+                </ion-icon>
+              </span>
+            </div>
+            <!-- <div id="color"></div> -->
+            <ion-row class="ion-no-padding row-btns">
+              <ion-col class="ion-text-left ion-no-padding ion-align-self-center">
+                <ion-button (click)="qunatityMinus(product)" *ngIf="!product.sold_individually" class="qty-btn"
+                  size="small" fill="clear">
+                  <ion-icon class='minus-icon' name="remove-circle-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col class="ion-text-center ion-no-padding ion-align-self-center">
+                <p class="count-para">{{product.quantity}}</p>
+              </ion-col>
+              <ion-col class="ion-text-right ion-no-padding ion-align-self-center">
+                <ion-button (click)="qunatityPlus(product);" *ngIf="!product.sold_individually" class="qty-btn "
+                  size="small" fill="clear">
+                  <ion-icon name="add-circle-outline"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="7" class="ion-text-right ion-align-self-end">
+                <p class="price">
+                  <b class="total-bold"> {{'Total'|translate}}= </b>{{product.subtotal | curency}}
+                </p>
+              </ion-col>
+
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-grid *ngIf="products.length!=0">
+      <h1>
+        {{'Your Price'|translate}}
+      </h1>
+      <ion-row>
+        <ion-col size="6" class="col-left">
+          {{'SubTotal'|translate}}
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          {{subtotal| curency}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="col-left">
+          <b>
+            {{'Total'|translate}}
+          </b>
+        </ion-col>
+        <ion-col class="ion-text-right" size="6">
+          <b>
+            {{total| curency}}
+          </b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<div class="ion-footer-custom">
+  <div class="div-inline-btn">
+    <ion-button (click)="proceedToCheckOut()" *ngIf="visibleCheck==false && products.length!=0" shape="round">
+      {{'Proceed'|translate}}
+    </ion-button>
+    <ion-button (click)="RemoveItem()" shape="round" *ngIf="visibleCheck==true && products.length!=0">
+      {{'Delete'|translate}}</ion-button>
+    <ion-button (click)="cancel()" class="other-button" shape="round" *ngIf="visibleCheck==true && products.length!=0">
+      {{'Cancel'|translate}}
+    </ion-button>
+  </div>
+</div>

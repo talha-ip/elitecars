@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 8
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-seven-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+
+  <app-banner></app-banner>
+  <!-- categories component -->
+  <app-categories [type]="'name&count'"></app-categories>
+
+  <ion-segment [(ngModel)]="segments">
+    <ion-segment-button value="topSeller">{{ 'Newest' | translate }}</ion-segment-button>
+    <ion-segment-button value="deals">{{ 'On Sale' | translate }} </ion-segment-button>
+    <ion-segment-button value="mostLiked"> {{ 'Featured' | translate }}</ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="segments">
+
+    <!-- first swipe slider -->
+    <ion-slides *ngSwitchCase="'topSeller'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab1">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('latest')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 2nd swipe slider -->
+    <ion-slides *ngSwitchCase="'deals'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab2">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('latest')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+
+    <!-- 3rd swipe slider -->
+    <ion-slides *ngSwitchCase="'mostLiked'" [options]="sliderConfig">
+      <ion-slide *ngFor="let p of shared.tab3">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-slide>
+      <ion-slide>
+        <ion-button fill="clear" (click)="openProducts('featured')"> {{'Shop More'| translate}}
+          <ion-icon name="play"></ion-icon>
+        </ion-button>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+
+
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="albums"></ion-icon>
+      {{'All Products' | translate }}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('newest')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col *ngFor="let p of products" size="6" class="ion-no-padding">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- infinite scroll -->
+  <ion-infinite-scroll #infinite (ionInfinite)="getProducts()">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>
+<ion-fab vertical="bottom" horizontal="end" *ngIf="scrollTopButton">
+  <ion-fab-button color="secondary" (click)="scrollToTop()">
+    <ion-icon name="arrow-up-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

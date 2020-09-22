@@ -1,0 +1,66 @@
+  .content-forgot {
+    form {
+      text-align: center;
+      ion-item {
+        padding-top: 8px;
+        --padding-start: 0;
+        margin-left: 16px;
+        margin-right: 16px;
+        ion-label {
+          font-family: "roboto-regular";
+          font-size: 14px;
+          margin-top: 10px;
+        }
+        --padding-start: 0;
+        ion-input {
+          --padding-top: 8px;
+          --padding-bottom: 8px;
+          --padding-start: 0;
+          font-size: 12px;
+          font-family: "roboto-regular";
+        }
+      }
+      .item-has-focus.label-floating.sc-ion-label-md-h,
+      .item-has-focus .label-floating.sc-ion-label-md-h,
+      .item-has-placeholder.label-floating.sc-ion-label-md-h,
+      .item-has-placeholder .label-floating.sc-ion-label-md-h,
+      .item-has-value.label-floating.sc-ion-label-md-h,
+      .item-has-value .label-floating.sc-ion-label-md-h {
+        color: gray;
+        font-size: 19px !important;
+      }
+  
+      ion-button {
+        --color: white;
+        text-transform: capitalize;
+        font-family: "roboto-light";
+        margin-top: 40px;
+        height: 43.05px;
+      }
+    }
+  }
+  ion-action-sheet {
+    .action-sheet-group.sc-ion-action-sheet-md {
+      background: white;
+    }
+    .action-sheet-title.sc-ion-action-sheet-md {
+      font-family: "roboto-medium";
+      font-size: 18px;
+      color: #000000;
+      height: 100px;
+      text-align: center;
+    }
+    .action-sheet-button-inner.sc-ion-action-sheet-md {
+      background: var(--ion-color-primary);
+      justify-content: center;
+      border-radius: 50px;
+      height: 43.05px;
+      width: 129.15px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: "roboto-light";
+    }
+  }
+  

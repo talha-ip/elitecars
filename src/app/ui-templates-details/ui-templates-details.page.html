@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" (click)="goToHome()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      UI Templates
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="ion-no-padding" *ngFor="let comp of mainArr">
+    <ion-row class="ion-no-padding">
+      <ion-col class="ion-no-padding col-heading-para animated fadeInRight" size="12">
+        <div>
+          <p>
+            <span>{{comp.category}}</span>
+            <small>({{comp.Number}})</small>
+          </p>
+        </div>
+        <div>
+        </div>
+        <!-- custom icon color applied from custom-theme service -->
+        <div [ngStyle]="{'background':itemColor}"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col *ngFor="let prod of comp.products" size="12" class="ion-no-padding">
+        <ion-card class="ion-no-padding" [routerLink]="prod.url" routerDirection="forward">
+          <img src="{{prod.image_bg}}" />
+          <div [ngStyle]="{'background':itemColor}" class="ion-no-padding">
+          </div>
+          <div>
+            <img src="{{prod.image}}">
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

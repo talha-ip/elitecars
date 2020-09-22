@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+          <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Search Six</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-item class="item-searcbar" lines="none">
+      <ion-searchbar name="search" placeholder="Search Restaurants">
+      </ion-searchbar>
+  </ion-item>
+  <h2 class="header-text">Restaurants by Keywords</h2>
+  <div class="div-card-search">
+      <p *ngFor="let item of cardItems">{{item}}</p>
+  </div>
+  <h2 class="header-text">Trending Restaurants Near You</h2>
+  <ion-slides pager="true" class="slideRest animated fadeInRight" [options]="sliderConfigRest">
+      <ion-slide *ngFor="let item of restaurentName">
+          <ion-img class="animated fadeIn" src="{{item.img}}"></ion-img>
+          <div class="div-bottom">
+              <p>{{item.name}}</p>
+              <div>
+                  <ion-icon *ngFor="let itemStar of [1,2,3,4,5]" name="star"></ion-icon>
+              </div>
+          </div>
+      </ion-slide>
+  </ion-slides>
+  <ion-item class="item-heading">
+      <h2 class="header-text">Trending Restaurants Near You</h2>
+      <ion-button slot="end" fill="clear">View all</ion-button>
+  </ion-item>
+  <ion-slides class="slideCat animated fadeInRight" [options]="sliderConfigCat">
+      <ion-slide *ngFor="let item of catName">
+          <ion-img class="animated fadeInRight" src="{{item.img}}"></ion-img>
+          <div class="div-bottom">
+              <p>{{item.name}}</p>
+              <div></div>
+          </div>
+      </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,30 @@
+.content {
+  ion-item {
+    ion-label {
+      p {
+        font-family: "roboto-regular";
+      }
+      .para-name {
+        font-size: 16px;
+        color: black;
+      }
+      .para-date {
+        font-size: 14px;
+        color: #707070;
+      }
+    }
+  }
+
+  .div-empty {
+    text-align: center;
+    margin-top: 30%;
+    h2 {
+      font-family: "roboto-bold";
+      margin-top: -10px;
+    }
+  }
+}
+.footer {
+  margin: 0;
+  --border-radius: 0;
+}

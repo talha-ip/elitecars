@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/youtube-chanels" routerDirection="backward">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Playlist Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="ion-no-padding">
+    <ion-row (click)="openVideo(video)" *ngFor="let video of videos">
+      <ion-col class="ion-no-padding">
+        <img [src]="video.snippet.thumbnails.default.url" />
+        <ion-icon src="assets/images/plugin-images/custom-icons/play-youtube.svg"></ion-icon>
+        <p>{{ video.snippet.title }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- <ion-list>
+    <ion-item (click)="openVideo(video)" *ngFor="let video of videos">
+      <ion-thumbnail slot="start">
+        <img [src]="video.snippet.thumbnails.default.url">
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ video.snippet.title }}</h3>
+        <p>{{ video.snippet.publishedAt }}</p>
+      </ion-label>
+      <ion-icon mode="ios" name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-list> -->
+</ion-content>

@@ -1,0 +1,775 @@
+@import "../theme/font.scss";
+.listHelpItem {
+  // --background: var(--ion-background-color);
+  --inner-padding-start: 6%;
+}
+
+ion-icon.globeIcon {
+  zoom: 1.5;
+  color: white;
+}
+ion-toolbar.toolbar {
+  --background: var(--ion-color-standard);
+  color: white;
+}
+.icon-uiux {
+  font-size: 20px;
+  color: var(--ion-color-primary);
+}
+.menuText {
+  margin-left: 5%;
+}
+.avatar {
+  --border-radius: 50px;
+  height: 40px;
+  width: 58px;
+}
+h5 {
+  font-size: 18px;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  font-weight: bold;
+}
+p {
+  font-size: 14px;
+}
+.backgroundImg {
+  height: 100%;
+  width: 100%;
+}
+.background {
+  background: var(--ion-color-standard);
+}
+img.bgImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  opacity: 0.1;
+}
+.frontContent {
+  position: absolute;
+  margin-bottom: 10px;
+}
+.itemBgImg {
+  position: absolute;
+  width: 110%;
+  margin-top: -106px;
+  --background: var(--ion-color-standard);
+}
+.menuText {
+  color: white;
+}
+img.avatarImg {
+  filter: brightness(114%);
+}
+.toggleicon {
+  zoom: 1.3;
+  margin-top: 3px;
+}
+.expandableText {
+  font-size: 16px;
+}
+//list design
+.btnList {
+  margin-left: 50%;
+  margin-top: 20%;
+  --color: black;
+  --color-activated: black;
+}
+.categoryText {
+  margin-top: 2%;
+}
+.homeDivText {
+  margin-top: 2%;
+  margin-left: -18%;
+}
+.shopDivText {
+  margin-top: 2%;
+  margin-left: -10%;
+}
+.categoryDivText {
+  margin-top: 2%;
+  margin-left: -6%;
+}
+
+.homeIcon {
+  margin-top: 44%;
+}
+.categoryIcon {
+  margin-top: 44%;
+}
+.itemIcon{
+  --background: var(--ion-background-color) !important;
+  --inner-padding-end: 0;
+}
+ion-icon.iconHome {
+  zoom: 1.5;
+  margin-top: 6px;
+  margin-left: -145%;
+}
+ion-icon.iconCategory {
+  zoom: 1.5;
+  margin-top: 5px;
+  margin-left: -60%;
+}
+.company-text {
+  color: black !important;
+}
+ion-icon.iconShop {
+  zoom: 1.5;
+  margin-top: 10px;
+  margin-left: -90%;
+}
+
+ion-icon.otherIcons {
+  zoom: 1.5;
+}
+.otherIconsDiv {
+  margin-top: 30%;
+  margin-left: 30%;
+}
+.otherDivCol {
+  width: 100px;
+}
+.otherDivText {
+  margin-top: 2%;
+  margin-left: -14%;
+  width: 250px;
+  height: 45px;
+}
+.othersItems {
+  border-bottom: solid lightgray;
+  border-width: 0.8px;
+}
+.shopItem {
+  border-bottom: solid lightgray;
+  border-width: 0.8px;
+  margin-top: 0%;
+}
+.avatarItem {
+  --background: var(--ion-color-standard);
+}
+/*component list design*/
+.helpIcon {
+  zoom: 1.7;
+  color: black;
+  margin-left: -25%;
+}
+.HelpDivText {
+  margin-left: -5%;
+  margin-top: -2%;
+}
+.paraExpandList {
+  font-size: 17px;
+  color: black;
+  margin-left: 10%;
+}
+.toggleicon {
+  zoom: 1.8;
+}
+.helpItem {
+  width: 140%;
+  margin-left: 12%;
+  --background: lightgray;
+}
+.helpItemSlider {
+  width: 140%;
+  margin-left: 16%;
+  --background: lightgray;
+}
+.helpItemSegment {
+  width: 140%;
+  margin-left: 9%;
+  --background: lightgray;
+}
+.helpItemCheckbox {
+  width: 140%;
+  margin-left: 14%;
+  --background: lightgray;
+}
+.helpItemBadge {
+  width: 140%;
+  margin-left: 26%;
+  --background: lightgray;
+}
+.helpItemToggle {
+  width: 140%;
+  margin-left: 17%;
+  --background: lightgray;
+}
+.helpItemSearchbar {
+  width: 140%;
+  margin-left: 19%;
+  --background: lightgray;
+}
+.helpItemFAB {
+  width: 140%;
+  margin-left: 22%;
+  --background: lightgray;
+}
+.helpItemAlert {
+  width: 140%;
+  margin-left: 24%;
+  --background: lightgray;
+}
+.helpItemToast {
+  width: 140%;
+  margin-left: 18%;
+  --background: lightgray;
+}
+.helpItemActionsheet {
+  width: 140%;
+  margin-left: 19%;
+  --background: lightgray;
+}
+.helpItemParallex {
+  width: 140%;
+  margin-left: 21%;
+  --background: lightgray;
+}
+.helpItemForm {
+  width: 140%;
+  margin-left: 21%;
+  --background: lightgray;
+}
+
+.toggleInnericon {
+  zoom: 1;
+  width: 18px;
+}
+.parainnerList {
+  font-size: 16px;
+  margin-left: 22px;
+  width: 100%;
+}
+/*component item design*/
+.listItem {
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: var(--ion-border-color);
+  --inner-padding-end: 0;
+}
+.listGrid {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 150%;
+}
+.btnListHelp {
+  margin-left: 40%;
+  margin-top: 10px;
+  color: black;
+}
+.listRow {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.listCol {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.expandDiv {
+  width: 130%;
+  //margin-left: 12%;
+}
+.textLabel {
+  margin-top: 15px;
+  margin-left: 5%;
+  float: left;
+}
+.comp-col{
+  text-align: center;
+}
+.listLabel {
+  margin-top: 15px;
+  margin-left: 5%;
+  float: left;
+}
+.gridLabel {
+  margin-top: 15px;
+  margin-left: 5%;
+  float: left;
+}
+.cardLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.sliderLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.tabLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.segmentLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.buttonLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.radioLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.checkboxLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.badgeLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.toggleLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.searchbarLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.fabLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.alertLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.toastLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.actionsheetLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.parallaxLabel {
+  margin-top: 15px;
+  margin-left: 10%;
+  float: left;
+}
+.divListItem {
+  width: 200%;
+}
+.expandList {
+  width: 130%;
+}
+.listIcon {
+  zoom: 1.5;
+  margin-top: 3px;
+  color: red;
+}
+.textPara {
+  // margin-top: 5px;
+  float: left;
+  font-size: 16px;
+}
+.textParaComponents {
+  // margin-top: 5px;
+  float: left;
+  font-weight: bold;
+}
+.divPara {
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttonList {
+  --border-radius: 100%;
+}
+.divCount {
+  border: solid lightblue;
+  border-radius: 100%;
+  height: 80%;
+  width: 50%;
+  color: lightblue;
+}
+.contentClass {
+  --background: #eee;
+}
+.mainComponent {
+  --background: var(--ion-color-primary) !important;
+}
+.listClass {
+  padding-top:0;
+  padding-bottom: 0;
+}
+.LogoImg {
+  height: 100%;
+  width: 100%;
+}
+.logoDiv {
+  padding-top: 15px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.textDiv {
+  text-align: center;
+  color: white;
+  h3{
+    color: var(--ion-text-color) ;
+  }
+}
+.allColPos {
+  position: static;
+  width: 100px;
+}
+.div-badge {
+  text-align: center;
+  margin-top: 5px;
+}
+.comp-header {
+  opacity: 0.5;
+  height: 50px;
+}
+
+.parainnerScreen {
+  margin-top: 5px;
+  float: left;
+  font-size: 16px;
+  padding-left: 4px;
+}
+.parainnerScreenuiux {
+  float: left;
+  font-size: 16px;
+  padding-left: 0;
+}
+
+// For Becrux Side Menu
+ion-app {
+  ion-split-pane {
+    ion-menu {
+      &:nth-child(2) {
+        ion-header {
+          ion-toolbar {
+            // --background: black;
+            --color: white;
+            ion-icon {
+              color: white;
+            }
+            ion-menu-toggle {
+              width: 100%;
+            }
+          }
+        }
+        ion-content {
+          ion-range {
+            --bar-background: lightgray;
+            padding-left: 0;
+            padding-right: 0;
+          }
+          ion-checkbox {
+            --background: #fafafa;
+            --checkmark-color: white !important;
+            // --background-checked: #a4a4a4;
+            // --border-color-checked: #707070;
+          }
+          ion-list {
+            ion-item {
+              --inner-padding-end: 0;
+              ion-menu-toggle {
+                width: 100%;
+              }
+              &:first-child {
+                --inner-padding-end: 0;
+                --padding-start: 0;
+                height: 100px;
+                ion-img {
+                  position: fixed;
+                  opacity: 0.1;
+                }
+                div {
+                  background: var(--ion-color-primary);
+                  width: 100%;
+                  height: 100px;
+                }
+                ion-item {
+                  position: absolute;
+                  --background: transparent;
+                  --color: white;
+                  ion-label {
+                    h2 {
+                      font-weight: bold;
+                    }
+                    p {
+                      color: white;
+                      white-space: normal;
+                    }
+                  }
+                }
+              }
+              ion-grid {
+                ion-row {
+                  border-bottom: solid lightgray;
+                  border-width: 0.4px;
+                  height: 47px;
+                  ion-icon {
+                    zoom: 1.2;
+                    color: var(--ion-color-primary);
+                  }
+                  ion-col {
+                    p {
+                      margin-top: 6px !important;
+                      margin-bottom: 6px !important;
+                    }
+                    &:first-child {
+                      text-align: right;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .item-inner-list {
+          height: 52px !important;
+          margin-left: -3px !important;
+          --inner-padding-end: 0 !important;
+          --padding-start: 0 !important;
+          --background: white;
+          ion-row {
+            padding-left: 0 !important;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        .col-text {
+          padding-left: 16px !important;
+        }
+        .usd-icon {
+          font-size: 20px !important;
+        }
+        .price-heading {
+          margin-top: 10px !important;
+          font-size: 20px !important;
+          padding-left: 10px !important;
+        }
+      }
+      // For Lesath Side Menu
+      &:nth-child(3) {
+        ion-content {
+          h1 {
+            width: 100%;
+            text-align: center;
+            font-size: 33px;
+            font-family: "great-vibes";
+            margin-bottom: 40px;
+            margin-top: 40px;
+          }
+          ion-list {
+            background: #fafafa;
+            ion-item {
+              --background: #fafafa;
+              border: none !important;
+              --inner-padding-end: 0;
+              --padding-start: 0;
+              margin: 0 !important;
+              ion-menu-toggle {
+                width: 100%;
+              }
+              &:first-child {
+                --inner-padding-end: 0;
+                --padding-start: 0;
+              }
+              ion-grid {
+                padding-left: 0;
+                padding-right: 0;
+                ion-row {
+                  padding-left: 0;
+                  border-bottom: solid lightgray;
+                  border-width: 0.4px;
+                  height: 47px;
+                  ion-icon {
+                    color: var(--ion-color-primary);
+                    margin-top: 5px;
+                    font-size: 15px;
+                  }
+                  ion-col {
+                    p {
+                      margin-top: 6px !important;
+                      margin-bottom: 6px !important;
+                      font-family: "roboto-regular" !important;
+                      font-size: 14px;
+                      text-align: center;
+                      margin-left: 40px;
+                    }
+                    .inner-para {
+                      font-size: 12px !important;
+                      margin-left: 0 !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .item-inner-list {
+          height: 52px !important;
+          margin-left: -3px !important;
+          --inner-padding-end: 0 !important;
+          --padding-start: 0 !important;
+          ion-row {
+            padding-left: 0 !important;
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        .col-text {
+          padding-left: 16px !important;
+        }
+        .item-dismiss {
+          border: none !important;
+          ion-icon {
+            font-size: 22px !important;
+            // color: var(--ion-color-primary) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// For Becrux Bottom
+ion-tab-bar {
+  --background: white;
+    box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.05);
+  ion-tab-button {
+    --color: #aaa;
+  }
+}
+//For Rigel Side
+.shoe-menu {
+    background: white;
+    .side-content {
+      --background: white !important;
+      .card-username {
+        margin: 0;
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        box-shadow: none;
+        ion-item {
+          --background: linear-gradient(to bottom right, #d5cece, white);
+          box-shadow: none;
+          ion-avatar {
+            height: 84px;
+            width: 84px;
+          }
+          .avatar-dummy {
+            background: #b5b5b5;
+          }
+          ion-label {
+            p {
+              font-family: "roboto-regular";
+              font-size: 18px;
+              color: black;
+            }
+            ion-button {
+              --background: transparent;
+              --color: black;
+              font-family: "roboto-regular";
+              font-size: 16px;
+              text-transform: capitalize;
+              width: 34%;
+              --padding-start: 0;
+              --ripple-color: black;
+              ion-icon {
+                color: black;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+      .list {
+        background: transparent;
+        padding-top: 10px;
+        padding-bottom: 0;
+        ion-item {
+          --background: white;
+          margin-bottom: 10px;
+          ion-icon {
+            font-size: 17px;
+            color: black;
+          }
+          p {
+            font-size: 16px;
+            font-family: "roboto-regular";
+            margin-top: auto;
+            margin-bottom: auto;
+            color: black;
+          }
+        }
+      }
+    }
+}
+
+.shoe-tabs {
+  background: #f3edea;
+  ion-tab-bar {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    ion-tab-button {
+      --color-selected: #582f00;
+      --color: #707070;
+    }
+  }
+}
+.tabs-becrux{
+  ion-tab-bar{
+      ion-tab-button{
+        --color: var(--ion-color-primary) !important;
+        --color-selected: green !important;
+    }
+  }
+}
+.icon-becrux{
+  margin-top: 10px;
+}
+.para-becrux{
+  margin-left: 16px;
+}
+.row-height{
+  height: 48px;
+}
+.toggle-dark{
+  --background: #333;
+  --background-checked: #333;
+  --handle-background-checked: black;
+}
+ion-segment{
+  ion-segment-button{
+      --color: #bbb;
+  }
+}
+
+.tabs-becrux ion-tab-bar ion-tab-button {
+  --color-selected: #19a5ff !important;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.4px;
+  color: #8F8F8F !important;
+}

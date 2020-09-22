@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title >Forget Password Five</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-forgot">
+  <form>
+    <ion-item class='item-input-has-focus'>
+      <ion-label class='label-md' position="floating">Email</ion-label>
+      <ion-input type="text" email name="email" [(ngModel)]="formData.email" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button shape="round"> Reset Password </ion-button>
+
+  </form>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Register Eight</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-img src="assets/images/login/uiux-icon.png"></ion-img>
+  <div *ngFor="let item of Items" class="div-item">
+    <ion-item class="animated fadeInRight item-input" lines="none">
+      <ion-input placeholder="{{item.placeHolder}}" type="{{item.type}}" [(ngModel)]="item.bindingText"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button class="btn-login">
+    Sign Up
+  </ion-button>
+  <div class="div-item-forget">
+    <ion-item class="animated fadeInRight item-input" lines="none">
+      <ion-input placeholder="Forget Password ?" type="text"></ion-input>
+    </ion-item>
+  </div>
+  <ion-button fill="clear" class="btn-forget">
+    <p class="para-acc">Have Account ?</p>
+    <p>SIGN In</p>  
+  </ion-button>
+</ion-content>

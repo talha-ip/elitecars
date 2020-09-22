@@ -1,0 +1,31 @@
+ion-content {
+  ion-grid {
+    padding-top: 20px;
+    ion-row {
+      ion-col {
+        margin: 0 16px 20px 16px;
+        img {
+          filter: brightness(50%);
+          border-radius: 20px;
+          width: 100%;
+        }
+        p {
+          font-family: "roboto-medium";
+          font-size: 16px;
+          position: absolute;
+          bottom: 10px;
+          color: white;
+          width: 100%;
+          text-align: center;
+        }
+        ion-icon {
+          position: absolute;
+          top: 40%;
+          width: 103%;
+          font-size: 39px;
+          left: 0;
+        }
+      }
+    }
+  }
+}

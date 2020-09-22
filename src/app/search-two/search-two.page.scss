@@ -1,0 +1,45 @@
+ion-header {
+    ion-toolbar {
+      ion-title {
+        color: white;
+        text-align: center;
+        padding-right: 48px;
+      }
+      ion-searchbar {
+        --background: #fafafa;
+        --color: var(--ion-color-primary);
+        --icon-color: var(--ion-color-primary);
+        zoom: 1.1;
+      }
+    }
+  }
+  ion-content {
+    ion-list {
+      margin-right: 55px;
+      margin-left: 38px;
+      ion-item {
+        border: none;
+        p {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+    h1 {
+      font-family: "roboto-medium";
+      font-size: 20px;
+      padding-left: 16px;
+    }
+    ion-grid {
+      padding-left: 12px;
+      padding-top: 0px;
+      ion-row {
+        ion-col {
+          p {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+  

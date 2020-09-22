@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="dismiss()">
+        <ion-icon src="assets/CustomIcons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title no-padding>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="ion-padding content-bg-becrux">
+  <form>
+    <ion-item class='item-input-has-focus content-bg-becrux'>
+      <ion-label class='label-md' position="floating">Email</ion-label>
+      <ion-input placeholder="abc@gmail.com" type="text" email name="email" [(ngModel)]="formData.email" required>
+      </ion-input>
+    </ion-item>
+      
+      <ion-item class='item-input-has-focus content-bg-becrux'>
+        <ion-label class='label-md' position="floating">Password</ion-label>
+        <ion-input placeholder="*******" type="password" name="password" [(ngModel)]="formData.password" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item class='item-input-has-focus content-bg-becrux'>
+        <ion-label class='label-md' position="floating">First Name</ion-label>
+        <ion-input placeholder="John" type="text" name="firstname" [(ngModel)]="formData.firstname" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item class='item-input-has-focus content-bg-becrux'>
+        <ion-label class='label-md' position="floating">Last Name</ion-label>
+        <ion-input placeholder="Adams" type="text" name="lastname" [(ngModel)]="formData.lastname" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item class='item-input-has-focus content-bg-becrux'>
+        <ion-label class='label-md' position="floating">Mobile Phone</ion-label>
+        <ion-input placeholder="0123456789" type="text" name="phone" [(ngModel)]="formData.phone" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item class='item-input-has-focus content-bg-becrux'>
+        <ion-label class='label-md' position="floating">City</ion-label>
+        <ion-input placeholder="abcd" type="text" name="phone" [(ngModel)]="formData.city" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-button shape="round"> Edit 
+        <ion-icon src="assets/CustomIcons/edit.svg"></ion-icon>
+      </ion-button>
+
+  </form>
+</ion-content>

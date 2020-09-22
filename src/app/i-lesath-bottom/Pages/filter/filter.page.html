@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" routerLink="/lb-home" routerDirection="backward">
+        <ion-icon src="assets/custom-icons/back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">Filter
+      <ion-icon name="funnel"></ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux">
+  <ion-text>
+    <h2>
+      Price Range:
+    </h2>
+  </ion-text>
+  <ion-item class="range-item content-bg-becrux" lines="none">
+    <ion-range id="dual-range" min="0" max="200" [(ngModel)]="structure" dual-knobs pin>
+    </ion-range>
+  </ion-item>
+  <ion-text>
+    <h2>
+      Colors:
+    </h2>
+  </ion-text>
+  <ion-list>
+    <ion-radio-group>
+      <ion-item lines="none" class="content-bg-becrux"> 
+        <ion-radio style="--color: blue;--color-checked: blue;" slot="start" value="blue" checked></ion-radio>
+        <ion-radio style="--color: purple;--color-checked: purple;" slot="start" value="purple"></ion-radio>
+        <ion-radio style="--color: black;--color-checked: black;" slot="start" value="black"></ion-radio>
+        <ion-radio style="--color: brown;--color-checked: brown;" slot="start" value="brown"></ion-radio>
+        <ion-radio style="--color: lightgreen;--color-checked: lightgreen;" slot="start" value="lightgreen"></ion-radio>
+      </ion-item>
+      <ion-item lines="none" class="size-item-two content-bg-becrux">
+        <ion-radio style="--color: yellow;--color-checked: yellow;" slot="start" value="yellow" checked></ion-radio>
+        <ion-radio style="--color: gray;--color-checked: gray;" slot="start" value="gray"></ion-radio>
+        <ion-radio style="--color: lightblue;--color-checked: lightblue;" slot="start" value="lightblue"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+  <ion-text>
+    <h2>
+      Sizes:
+    </h2>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="size-padding" size="1.6">
+        <div *ngIf="!small" (click)="s(0)" class="div-size">
+          <p>S</p>
+        </div>
+        <div *ngIf="small" (click)="s(1)" class="div-size-filled">
+          <p>S</p>
+        </div>
+      </ion-col>
+      <ion-col class="size-padding" size="1.6">
+        <div *ngIf="!medium" (click)="m(0)" class="div-size">
+          <p>M</p>
+        </div>
+        <div *ngIf="medium" (click)="m(1)" class="div-size-filled">
+          <p>M</p>
+        </div>
+      </ion-col>
+      <ion-col class="size-padding" size="1.6">
+        <div *ngIf="!large" (click)="l(0)" class="div-size">
+          <p>L</p>
+        </div>
+        <div *ngIf="large" (click)="l(1)" class="div-size-filled">
+          <p>L</p>
+        </div>
+      </ion-col>
+      <ion-col class="size-padding" size="1.6">
+        <div *ngIf="!extraLarge" (click)="xl(0)" class="div-size">
+          <p>XL</p>
+        </div>
+        <div *ngIf="extraLarge" (click)="xl(1)" class="div-size-filled">
+          <p>XL</p>
+        </div>
+      </ion-col>
+      <ion-col class="size-padding" size="1.6">
+        <div *ngIf="!doubleExtraLarge" (click)="xxl(0)" class="div-size">
+          <p>XXL</p>
+        </div>
+        <div *ngIf="doubleExtraLarge" (click)="xxl(1)" class="div-size-filled">
+          <p>XXL</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

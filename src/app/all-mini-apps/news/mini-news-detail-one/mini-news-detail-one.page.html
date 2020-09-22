@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-news-one" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>News Detail One</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="news-content">
+  <ion-card class="latest-img-card">
+    <ion-thumbnail>
+      <img class="animated fadeIn" src="{{item._embedded['wp:featuredmedia'][0].source_url}}" />
+    </ion-thumbnail>
+  </ion-card>
+  <p class="para-text">{{ item.date | date:'mediumDate'}}</p>
+  <h2 class="title-text">{{item.title.rendered}}</h2>
+  <p class="para-text" [innerHTML]="item.content.rendered"></p>
+</ion-content>

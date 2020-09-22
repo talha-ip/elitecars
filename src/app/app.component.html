@@ -1,0 +1,606 @@
+<ion-app *ngIf="!bb_visible && lb_visible && sb_visible" [class.dark-theme]="dark" >
+    <!-- [class.dark-theme]="dark" -->
+  <ion-split-pane contentId="main-content">
+    <ion-menu side="start" menu-id="Menu1" contentId="main-content">
+      <!-- <ion-header>
+        <ion-toolbar>
+          <ion-title>Menu</ion-title>
+          <ion-toggle class="toggle-dark" [(ngModel)]="dark" slot="end"></ion-toggle>
+        </ion-toolbar>
+      </ion-header> -->
+      <ion-content class="contaentClass">
+        <ion-list class="listClass">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item style='--background:var(--my-var)' class="itemIcon ion-no-padding">
+              <span>
+                <div class="logoDiv">
+                  <img src="assets/uiuxicon.png" class="LogoImg" />
+                </div>
+                <div class="textDiv">
+                  <h3>IONIC 5 UI Components</h3>
+                </div>
+              </span>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For Components Header -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="mainComponent" lines="full">
+              <div class="divPara">
+                <p class="">
+                  <b>COMPONENTS</b>
+                </p>
+              </div>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For Components Content -->
+          <ion-item lines="full" (click)="expandItems(item)" class="listItem ion-no-padding" *ngFor="let item of components">
+            <ion-grid class="listGrid ion-no-padding">
+              <ion-row class="row-height">
+                <ion-col size="2" class="ion-align-self-center comp-col">
+                  <ion-icon class="icon-uiux" name="{{item.icon}}"></ion-icon>
+                </ion-col>
+                <ion-col size="8" class="allColPos ion-align-self-center">
+                  <p class="parainnerScreenuiux">
+                    {{item.category}}
+                  </p>
+                </ion-col>
+                <ion-col size="2" class="ion-align-self-center">
+                  <div class="div-badge">
+                    <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="true">
+                <app-menu-component expandHeight="750px" [expanded]="item.expand" class="ion-no-padding">
+                  <ion-item routerDirection="'forward'" [routerLink]="list.url" lines="full" class="listHelpItem"
+                    *ngFor="let list of item.subCat;let i = index">
+                    <p class="parainnerList">{{list.name}}</p>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!-- For UI TEMPLATES Header -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="mainComponent" lines="full">
+              <div class="divPara">
+                <p class="textParaComponents">
+                  <b>UI TEMPLATES</b>
+                </p>
+              </div>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For UI TEMPLATES Content -->
+          <ion-item lines="full" (click)="expandItems(item)" class="listItem ion-no-padding" *ngFor="let item of templates">
+            <ion-grid class="listGrid">
+              <ion-row>
+                <ion-col size="10" class="allColPos ion-align-self-center">
+                  <p class="parainnerScreen">
+                    {{item.category}}
+                  </p>
+                </ion-col>
+                <ion-col size="2" class="ion-align-self-center">
+                  <div class="div-badge">
+                    <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="true">
+                <app-menu-component expandHeight="650px" [expanded]="item.expand" class="ion-no-padding">
+                  <ion-item routerDirection="'forward'" [routerLink]="list.url" lines="full" class="listHelpItem"
+                    *ngFor="let list of item.subCat;let i = index">
+                    <p class="parainnerList">{{list.name}}</p>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!-- For MIni Apps  Header -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="mainComponent" lines="full">
+              <div class="divPara">
+                <p class="textParaComponents">
+                  <b>Mini Apps</b>
+                </p>
+              </div>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- For Mini Apps  -->
+          <ion-item lines="full" (click)="expandItems(item)" class="listItem ion-no-padding" *ngFor="let item of miniApps">
+            <ion-grid class="listGrid">
+              <ion-row>
+                <ion-col size="10" class="allColPos ion-align-self-center">
+                  <p class="parainnerScreen">
+                    {{item.category}}
+                  </p>
+                </ion-col>
+                <ion-col size="2" class="ion-align-self-center">
+                  <div class="div-badge">
+                    <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="true">
+                <app-menu-component expandHeight="650px" [expanded]="item.expand" class="ion-no-padding">
+                  <ion-item routerDirection="'forward'" [routerLink]="list.url" lines="full" class="listHelpItem"
+                    *ngFor="let list of item.subCat;let i = index">
+                    <p class="parainnerList">{{list.name}}</p>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!-- For Plugins/Code Scripts Header -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="mainComponent" lines="full">
+              <div class="divPara">
+                <p class="textParaComponents">
+                  <b>PLUGINS/CODE SCRIPTS</b>
+                </p>
+              </div>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For Plugins/Code Scripts Content -->
+          <ion-menu-toggle auto-hide="true">
+            <ion-item lines="full" class="listItem ion-no-padding" *ngFor="let item of scripts">
+              <ion-grid class="listGrid" routerDirection="'forward'" [routerLink]="item.url">
+                <ion-row>
+                  <ion-col size="10" class="allColPos">
+                    <p class="parainnerScreen">
+                      {{item.category}}
+                    </p>
+                  </ion-col>
+                  <ion-col size="2">
+                    <div class="div-badge">
+                      <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For Screens Header -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item class="mainComponent" lines="full">
+              <div class="divPara">
+                <p class="textParaComponents">
+                  <b>SCREENS</b>
+                </p>
+              </div>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- For Screens Content -->
+          <ion-item lines="full" (click)="expandItems(item)" class="listItem ion-no-padding" *ngFor="let item of screens">
+            <ion-grid class="listGrid">
+              <ion-row>
+                <ion-col size="10" class="allColPos ion-align-self-center">
+                  <p class="parainnerScreen">
+                    {{item.category}}
+                  </p>
+                </ion-col>
+                <ion-col size="2" class="ion-align-self-center">
+                  <div class="div-badge">
+                    <ion-badge class="buttonList">{{item.Number}}</ion-badge>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="true">
+                <app-menu-component expandHeight="750px" [expanded]="item.expand" class="ion-no-padding">
+                  <ion-item routerDirection="'forward'" [routerLink]="list.url" lines="full" class="listHelpItem"
+                    *ngFor="let list of item.subCat;let i = index">
+                    <p class="parainnerList">{{list.name}}</p>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <!-- For Becrux Side Menu -->
+    <ion-menu menu-id="Menu2" side="start" type="overlay" contentId="main-content">
+      <ion-header>
+        <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+          <ion-toolbar>
+            <ion-title>Menu</ion-title>
+            <ion-buttons slot="end">
+              <ion-button fill="clear" routerLink="/bs-currency-list" routerDirection="forward">
+                <ion-icon slot="icon-only" class="usd-icon" name="logo-usd"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" routerLink="/bs-language" routerDirection="forward">
+                <ion-icon name="globe"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" routerLink="/bs-color-theme" routerDirection="forward">
+                <ion-icon src="assets/custom-icon-tc-shop/color-brush.svg"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-menu-toggle>
+      </ion-header>
+      <ion-content>
+        <ion-list class="ion-no-padding">
+          <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+            <ion-item lines="full">
+              <ion-img src="assets/icons_stripe.svg"></ion-img>
+              <div class="login-item"></div>
+              <ion-item lines="none" routerLink="/bs-login" routerDirection="forward">
+                <ion-avatar>
+                  <img src="assets/avatar.png" />
+                </ion-avatar>
+                <ion-label class="ion-padding">
+                  <h2>{{ 'Login & Register' | translate }}</h2>
+                  <p>{{ 'Please login or create an account for free' | translate }}</p>
+                </ion-label>
+              </ion-item>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- for home -->
+          <ion-item lines="none" (click)="expandItemHome(item)" *ngFor="let item of itemsHome" class="ion-no-padding content-bg-becrux">
+            <ion-grid class="ion-no-padding">
+              <ion-row class="ion-no-padding">
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon class="icon-becrux" name="home"></ion-icon>
+                </ion-col>
+                <ion-col class="col-text ion-align-self-center" size="8">
+                  <p>
+                    {{'Home' | translate}}
+                  </p>
+                </ion-col>
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon name="add" *ngIf="!visibleHome"></ion-icon>
+                  <ion-icon name="remove" *ngIf="visibleHome"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+                <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+                  <ion-item class="item-inner-list" lines="full" *ngFor="let list of bs_Home; let i = index" routerLink="{{list.url}}"
+                    routerDirection="forward">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="ion-align-self-center" size="2">
+                          <ion-icon class="icon-becrux" name="remove"></ion-icon>
+                        </ion-col>
+                        <ion-col class="col-text ion-align-self-center" size="10">
+                          <p>{{list.name}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!-- for category -->
+          <ion-item lines="none" (click)="expandItemCategory(item)" *ngFor="let item of itemsCategory" class="ion-no-padding content-bg-becrux">
+            <ion-grid class="ion-no-padding">
+              <ion-row class="ion-no-padding">
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon class="icon-becrux" name="apps"></ion-icon>
+                </ion-col>
+                <ion-col class="col-text ion-align-self-center" size="8">
+                  <p>
+                    {{'Category' | translate}}
+                  </p>
+                </ion-col>
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon name="add" *ngIf="!visibleCategory"></ion-icon>
+                  <ion-icon name="remove" *ngIf="visibleCategory"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+                <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+                  <ion-item class="item-inner-list" lines="full" *ngFor="let list of bs_Category;let i = index"
+                    [routerLink]="list.url" routerDirection="forward">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="ion-align-self-center" size="2">
+                          <ion-icon name="remove"></ion-icon>
+                        </ion-col>
+                        <ion-col class="col-text ion-align-self-center" size="10">
+                          <p>{{list.name}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!--  for shop -->
+          <ion-item lines="none" (click)="expandItemShop(item)" *ngFor="let item of itemsShop" class="ion-no-padding content-bg-becrux">
+            <ion-grid class="ion-no-padding">
+              <ion-row class="ion-no-padding">
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon class="icon-becrux" name="cash"></ion-icon>
+                </ion-col>
+                <ion-col class="col-text ion-align-self-center" size="8">
+                  <p>
+                    {{'Shop' | translate}}
+                  </p>
+                </ion-col>
+                <ion-col class="ion-align-self-center" size="2">
+                  <ion-icon name="add" *ngIf="!visibleShop"></ion-icon>
+                  <ion-icon name="remove" *ngIf="visibleShop"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+                <app-menu-component expandHeight="700px" [expanded]="item.expanded" class="ion-no-padding">
+                  <ion-item class="item-inner-list" lines="full" *ngFor="let list of bs_Shop;let i = index"
+                    [routerLink]="list.url" routerDirection="forward">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="ion-align-self-center" size="2">
+                          <ion-icon class="icon-becrux" name="remove"></ion-icon>
+                        </ion-col>
+                        <ion-col class="col-text ion-align-self-center" size="10">
+                          <p>{{list.name}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+
+          <ion-item routerDirection="'forward'" [routerLink]="item.url" lines="full" *ngFor="let item of bs_Pages"
+            class="ion-no-padding content-bg-becrux">
+            <ion-menu-toggle auto-hide="false" class="ion-no-padding">
+              <ion-grid class="ion-no-padding">
+                <ion-row class="ion-no-padding">
+                  <ion-col class="ion-align-self-center" size="2">
+                    <ion-icon class="icon-becrux" name="{{item.icon}}"></ion-icon>
+                  </ion-col>
+                  <ion-col class="col-text" class="ion-align-self-center" size="8">
+                    <p class="para-becrux">
+                      {{item.name}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-menu-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <!-- For Lesath SIde Menu -->
+    <ion-menu menu-id="Menu3" type="overlay" contentId="main-content">
+      <ion-content class="content-bg-becrux">
+        <ion-menu-toggle auto-hide="false">
+          <ion-item class="item-dismiss content-bg-becrux'" lines="none">
+            <ion-icon slot="end" src="assets/custom-icons/color-brush.svg" routerLink="/ls-color-theme" routerDirection="forward"></ion-icon>
+            <ion-icon slot="end" name="close"></ion-icon>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item class="item-dismiss content-bg-becrux'" lines="full">
+          <h1 class="company-text">Company name</h1>
+        </ion-item>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerLink="/ls-home" routerDirection="forward" lines="none">
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="col-text" class="align-self-center" size="10">
+                    <p>
+                      Home
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <!-- for my account -->
+          <ion-item lines="none" (click)="expandItemMyAccount(item)" *ngFor="let item of itemsMyAccount">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="col-text" class="align-self-center" size="10">
+                  <p>
+                    My Account
+                  </p>
+                </ion-col>
+                <ion-col class="align-self-center" size="2">
+                  <ion-icon src="assets/custom-icons/drop-right.svg" *ngIf="!visibleMyAccount"></ion-icon>
+                  <ion-icon src="assets/custom-icons/drop-down.svg" *ngIf="visibleMyAccount"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="false">
+                <app-menu-component expandHeight="700px" [expanded]="item.expanded">
+                  <ion-item class="item-inner-list" lines="full" *ngFor="let list of ls_myAccount;let i = index"
+                    [routerLink]="list.url" routerDirection="forward">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="col-text" class="align-self-center" size="12">
+                          <p class="inner-para">{{list.name}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+
+          <!-- for Wish list -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" routerLink="ls-wishlist" routerDirection="forward">
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="col-text" class="align-self-center" size="10">
+                    <p>
+                      My Wishlist
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- for about us -->
+          <ion-item lines="none" (click)="expandItemAboutUs(item)" *ngFor="let item of itemsAboutUs">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="col-text" class="align-self-center" size="10">
+                  <p>
+                    About Us
+                  </p>
+                </ion-col>
+                <ion-col class="align-self-center" size="2">
+                  <ion-icon src="assets/custom-icons/drop-right.svg" *ngIf="!visibleAboutUs"></ion-icon>
+                  <ion-icon src="assets/custom-icons/drop-down.svg" *ngIf="visibleAboutUs"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-menu-toggle auto-hide="false">
+                <app-menu-component expandHeight="700px" [expanded]="item.expanded">
+                  <ion-item class="item-inner-list" lines="full" *ngFor="let list of ls_aboutUs;let i = index"
+                    [routerLink]="list.url" routerDirection="forward">
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col class="col-text" class="align-self-center" size="12">
+                          <p class="inner-para">{{list.name}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </app-menu-component>
+              </ion-menu-toggle>
+            </ion-grid>
+          </ion-item>
+          <!-- For Last Five Items -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" *ngFor="let item of ls_Pages; let i = index">
+              <ion-grid>
+                <ion-row>
+                  <ion-col [routerLink]="item.url" routerDirection="forward" class="col-text" class="align-self-center"
+                    size="10">
+                    <p>
+                      {{item.name}}
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <!-- for rigel side -->
+    <ion-menu class="shoe-menu" type="push" menu-id="Menu4" contentId="main-content">
+      <ion-content class="side-content content-bg-becrux">
+        <ion-card class="card-username">
+          <ion-menu-toggle auto-hide="true">
+            <ion-item lines="none">
+              <ion-avatar slot="start">
+                <ion-img src="assets/template-themes/shoe/images/other/face-images/4.png"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <p>
+                  Your Name Here
+                </p>
+                <ion-button fill="clear">
+                  <ion-icon src="assets/iconIShoe/logout.svg"></ion-icon>
+                  Logout
+                </ion-button>
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-card>
+        <ion-list class="list" *ngIf="!visEditprofile">
+          <div *ngFor="let item of listItems; let i=index">
+            <ion-menu-toggle auto-hide="menuToggle">
+              <ion-item class="animated fadeInRight" lines="full" (click)="goToPage(i)" *ngIf="item.visItem">
+                <ion-icon slot="start" src={{item.icon}}></ion-icon>
+                <p>{{item.text}}</p>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+<!-- For Becrux Bottom -->
+<ion-tabs *ngIf="bb_visible" class="tabs-becrux">
+  <ion-tab-bar id="myTabBarBecrux" slot="bottom">
+    <!-- Tab buttons to navigate to specified page(page links are avaliable in tab module file) -->
+    
+    <ion-tab-button (click)="goToBbProducts()">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>
+        <b>Listing</b>
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToBbHome()">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>
+        <b>Home</b>
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToBbContactUs()">
+      <ion-icon name="paper-plane-outline"></ion-icon>
+      <ion-label>
+        <b>Contact</b>
+      </ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+<!-- For Lesath Bottom -->
+<ion-tabs *ngIf="!lb_visible" class="tabs-becrux">
+  <ion-tab-bar id="myTabBarLesath" slot="bottom">
+    <!-- tab buttons to navigate to specified page(page links are avaliable in tab module file) -->
+    <ion-tab-button (click)="goToLbHome()">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>
+        <b>Home</b>
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToLbWishlist()">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>
+        <b>Wishlist</b>
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToLbNews()">
+      <ion-icon name="newspaper"></ion-icon>
+      <ion-label>
+        <b>News</b>
+      </ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToLbAccount()">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>
+        <b>Me</b>
+      </ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+<!-- For rigel bottom -->
+<ion-tabs class="shoe-tabs" *ngIf="!sb_visible">
+  <ion-tab-bar id="shoe-tab-bar" slot="bottom" *ngIf="visTab">
+    <!-- tab buttons to navigate to specified page(page links are avaliable in tab module file) -->
+    <ion-tab-button tab="home" (click)="goToSbHome()">
+      <ion-icon src="assets/iconIShoe/home.svg"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="wishlist" (click)="goToSbWishlist()">
+      <ion-icon src="assets/iconIShoe/heart.svg"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="categories" (click)="goToSbCategories()">
+      <ion-icon src="assets/iconIShoe/list.svg"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="newspaper" (click)="goToSbNews()">
+      <ion-icon src="assets/iconIShoe/newspaper.svg"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="my-account" (click)="goToSbAccount()">
+      <ion-icon src="assets/iconIShoe/profile.svg"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/mini-apps" routerDirection="backward">
+        <ion-icon class="icon-back" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Ecommerce 9
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/mini-becrux-eight-cart" routerDirection="forward">
+        <ion-icon name="basket"></ion-icon>
+        <ion-badge class="becrux-badge" color="secondary">{{shared.cartTotalItems()}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <!-- For Categories Sliders -->
+  <app-categories [type]="'roundImage'"></app-categories>
+
+  <!-- Newest Products Heading -->
+
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="albums-outline"></ion-icon>
+      {{'Newest Products'|translate}}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('newest')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+
+  <!-- Newest Products swipe slider -->
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let p of shared.tab1">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+  </ion-slides>
+  <!-- On Sale Products Heading -->
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="bookmark"></ion-icon>
+      {{'On Sale Products'|translate}}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('sale')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+
+  <!-- On Sale Products swipe slider -->
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let p of shared.tab2">
+      <app-product [data]="p" [type]="'normal'"></app-product>
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <!-- Featured Products Heading -->
+  <ion-row class="mini-top-icon-header">
+    <ion-button fill="clear">
+      <ion-icon slot="start" name="star"></ion-icon>
+      {{'Featured Products' | translate }}
+    </ion-button>
+    <ion-button id="mini-second" fill="clear" (click)="openProducts('featured')">
+      <ion-icon slot="end" name="play"></ion-icon>
+      {{ 'Shop More' | translate }}
+    </ion-button>
+  </ion-row>
+
+  <!-- Featured Products -->
+  <ion-grid class="ion-no-padding">
+    <ion-row class="ion-no-padding">
+      <ion-col *ngFor="let p of shared.tab3" size="6" class="ion-no-padding">
+        <app-product [data]="p" [type]="'normal'"></app-product>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-icon name="help-buoy"></ion-icon>
+        <p>{{'Contact Us'|translate}}</p>
+        <p><small>123-456-789</small></p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon name="card"></ion-icon>
+        <p>{{'Safe Payment'|translate}}</p>
+        <p><small>{{'Secure Online Payment'|translate}}</small></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

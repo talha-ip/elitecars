@@ -1,0 +1,83 @@
+// For toolbar design
+ion-header {
+  ion-toolbar {
+    // --background: black;
+    --color: white;
+    ion-icon {
+      font-size: 23px;
+      margin-top: 4px;
+    }
+  }
+}
+ion-content {
+  .black-item {
+    --background: black;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .red-item {
+    --background: #f44336;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .green-item {
+    --background: #4caf50;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .blue-item {
+    --background: #008577;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .gray-item {
+    --background: #9e9e9e;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .sharppink-item {
+    --background: #e91e63;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .lightblue-item {
+    --background: #00bcd4;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .orange-item {
+    --background: #ffa500;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .brown-item {
+    --background: #735e3e;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+  .deepblue-item {
+    --background: #324b77;
+    --color: white;
+    ion-icon {
+      color: white;
+    }
+  }
+}

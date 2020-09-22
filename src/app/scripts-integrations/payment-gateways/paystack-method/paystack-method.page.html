@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/payment-integration" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>PayStack</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-img">
+    <ion-img src="assets/images/plugin-images/Payment-gateways/paystack.png"></ion-img>
+  </ion-card>
+  <h2>Email</h2>
+  <ion-item class="input-item">
+    <ion-input type="text" placeholder="abc123@gmail.com" name="cardNumber" [(ngModel)]="formData.email" required>
+    </ion-input>
+  </ion-item>
+  <h2>Pay</h2>
+  <ion-item class="input-item">
+    <ion-input type="text" placeholder="55555" name="amount" [(ngModel)]="formData.amount" required>
+    </ion-input>
+  </ion-item>
+  <h2 class="header-card-pay">Enter Your Card to Pay</h2>
+  <ion-card class="card-input">
+    <form>
+      <ion-item class="item-outter-div">
+        <ion-input type="text" placeholder="Card Number" name="cardNumber" [(ngModel)]="formData.cardNumber" required>
+        </ion-input>
+      </ion-item>
+      <ion-item class="item-outter-div">
+        <ion-input type="text" placeholder="Expiry Month" name="expiryMM" [(ngModel)]="formData.expiryMM" required>
+        </ion-input>
+      </ion-item>
+      <div class="div-input">
+        <ion-item class="item-div">
+          <ion-input type="text" placeholder="Expiry Year" name="expiryYY" [(ngModel)]="formData.expiryYY" required>
+          </ion-input>
+        </ion-item>
+        <ion-item class="item-cvv">
+          <ion-input type="text" placeholder="CVV" name="cvc" [(ngModel)]="formData.cvc" required>
+          </ion-input>
+        </ion-item>
+      </div>
+    </form>
+  </ion-card>
+  <div class="div-btn">
+    <ion-button shape="round" expand="full" (click)="Paystack()">
+      <p>Pay NGN 5555</p>
+    </ion-button>
+  </div>
+</ion-content>

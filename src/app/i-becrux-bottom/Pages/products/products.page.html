@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar style="padding-right:10px; padding-left:10px; position: relative; top:10px;">
+    <ion-button fill="clear" routerLink="/bb-home" routerDirection="backward">
+        <ion-icon class="back-icon" slot="icon-only" src="assets/custom-icon-tc-shop/back.svg"></ion-icon>
+    </ion-button>
+    <ion-buttons slot="end" class="header_right_buttons">
+      <ion-button fill="clear" class="search_button">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+
+<ion-content (pinch)="pinchEvent($event)" id="productContent" class="products-content content-bg-becrux">
+    <div class="inner_content_elite" style="margin-top:20px; min-height: 100%;">
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+          </ion-refresher>
+
+
+    <ion-segment [(ngModel)]="scrollSegments" scrollable class="main_tab_bar" >
+        <ion-segment-button class="main_tabs" value="popular">Popular</ion-segment-button>
+        <ion-segment-button class="main_tabs" value="new">New Cars </ion-segment-button>
+        <ion-segment-button class="main_tabs" value="used">Used Cars</ion-segment-button>
+        <ion-segment-button class="main_tabs" value="all"> All Cars</ion-segment-button>
+    </ion-segment>
+    <!-- scrollable segment divisions -->
+    <!-- skeleton text until data not loaded -->
+    
+    <div *ngIf="!is_loading" >
+        <ion-card class="skeleton-card" *ngFor="let skl of [1,2,3,4,5,6,7,8]">
+            <ion-col size="7" style="float: left;">
+                <ion-skeleton-text animated style="padding: 10px;">
+                </ion-skeleton-text>
+                <ion-skeleton-text animated style="padding: 10px;">
+                </ion-skeleton-text>
+                <ion-skeleton-text animated style="padding: 10px;">
+                </ion-skeleton-text>
+            </ion-col>
+            <ion-col size="5" style="float: left;">
+                <ion-skeleton-text animated style="height:100px; padding: 10px; border-radius: 10px;">
+                </ion-skeleton-text>
+            </ion-col>
+        
+        </ion-card>
+    </div>
+    <div  *ngIf="is_loading">
+        
+    <div [ngSwitch]="scrollSegments">
+
+        
+        <div *ngSwitchCase="'popular'">
+            <ion-grid *ngIf="productView=='grid'" class="animated fadeIn fast ion-no-padding">
+                <ion-row>
+                    <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                        <app-product [data]="item" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div *ngSwitchCase="'new'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                        <app-product [data]="item" [type]="'normal'" *ngIf="item.metadata._al_listing_condition == 'New'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </div>
+
+        <div *ngSwitchCase="'used'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                        <app-product [data]="item" [type]="'normal'"  *ngIf="item.metadata._al_listing_condition == 'Used'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+        <div *ngSwitchCase="'all'">
+            <ion-grid no-padding *ngIf="productView=='grid'" class="animated fadeIn fast">
+                <ion-row no-padding>
+                    <ion-col *ngFor="let item of items" size="12" class="content-bg-becrux ion-no-padding">
+                        <app-product [data]="item" [type]="'normal'"></app-product>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+
+    </div>
+    </div>
+    <!-- infinite scroll -->
+    <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    </div>
+</ion-content>

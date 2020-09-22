@@ -1,0 +1,85 @@
+ion-header{
+    ion-toolbar{
+        --color: white;
+        ion-buttons{
+            ion-button{
+                ion-icon{
+                    font-size: 16px;
+                    color: white;
+                }
+            }
+        }
+        ion-title{
+            color: white;
+            text-align: center;
+            padding-right: 48px;
+        }
+    }
+    .search_icon{
+        color: white !important;
+        font-size: 22px !important;
+        --padding-end: 0 !important;
+    }
+}
+ion-content{
+    ion-segment{
+        ion-segment-button{
+            font-family: 'roboto-light';
+            font-size: 12px;
+            text-transform: capitalize;
+        }
+    }
+    ion-grid{
+        ion-row{
+            ion-img{
+                width: 100%;
+            }
+            p{
+                width: 100%;
+                font-size: 14px;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            h2{
+                font-family: 'roboto-medium' !important;
+                text-align: center;
+                width: 100%;
+                margin-bottom: 4px;
+                margin-top: 0;
+            }
+            ion-button{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        ion-col{
+            ion-card{
+                border-radius: 0;
+                margin: 0;
+                h3{
+                    font-size: 16px !important;
+                    font-family: "roboto-regular" !important;
+                    text-align: center !important;
+                    margin-bottom: 0 !important;
+                    font-weight: 400 !important;
+                    color: black !important;
+                }
+            }
+        }
+    }
+.paragraph{
+    margin-top: 0 !important;
+    text-align: justify !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+.icon-forward{
+    margin-bottom: 1px !important;
+    font-size: 13px !important;
+    margin-left: 5px !important;
+}
+.count{
+    margin-top: 2px !important;
+}
+}

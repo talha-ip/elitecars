@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Shop Three</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-shopping-one">
+  <h1>Comfy Egg Chair</h1>
+  <p class="para-fur">Furniture</p>
+  <div class="div-star-upper">
+    <ion-icon name="star" *ngFor="let item of [1,2,3,4,5]"></ion-icon>
+  </div>
+  <ion-slides #slideBanner pager="true">
+    <ion-slide *ngFor="let item of items">
+      <ion-button fill="clear" (click)="sliderBack()">
+        <ion-icon src="assets/CustomIcons/left-arrow-shopping.svg"></ion-icon>
+      </ion-button>
+      <ion-img class="animated fadeInRight" src="{{item}}">
+      </ion-img>
+      <ion-button fill="clear" (click)="sliderForward()">
+        <ion-icon src="assets/CustomIcons/right-arrow-shopping.svg"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid class="grid-price-color">
+    <ion-row>
+      <ion-col class="price-para">
+        <p>$1700</p>
+      </ion-col>
+      <ion-col class="col-color ion-align-self-center">
+        <div class="div-upper">
+          <div class="div-color" style="background: #FF0000"></div>
+          <div class="dis"></div>
+          <div class="div-color" style="background: #535353"></div>
+          <div class="dis"></div>
+          <div class="div-color" style="background: #2000FF"></div>
+          <div class="dis"></div>
+          <div class="div-color" style="background: #FF00FF"></div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p class="desc-para-heading">Description</p>
+  <p class="desc-para">Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+    Metus dictum at tempor commodo ullamcorper a
+    lacus vestibulum sed. Lacus vestibulum sed
+    arcu non odio euismod lacinia at. Eget nunc
+    scelerisque viverra mauris in aliquam sem
+    fringilla. Nunc mi ipsum faucibus vitae.
+    Eget est lorem ipsum dolor sit. Consequat
+    mauris nunc congue nisi. Dictum sit amet
+    justo donec enim diam vulputate. Amet
+    mauris commodo quis imperdiet massa
+    tincidunt nunc </p>
+  <ion-grid class="grid-btm">
+    <ion-row>
+      <ion-col class="col-qty" size="6">
+        <ion-item lines="none">
+          <div>
+            <ion-select placeholder="Quanitity" interface="popover">
+              <ion-select-option value="men">06</ion-select-option>
+              <ion-select-option value="men">05</ion-select-option>
+              <ion-select-option value="men">04</ion-select-option>
+              <ion-select-option value="men">03</ion-select-option>
+              <ion-select-option value="men">02</ion-select-option>
+              <ion-select-option value="men">01</ion-select-option>
+            </ion-select>
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col class="col-cart ion-align-self-center">
+        <div>
+          <p>Add To Cart</p>
+          <ion-icon name="cart">
+          </ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,73 @@
+.content-cart-four {
+  .card {
+    margin: 0 25px 20px 25px;
+    box-shadow: 2px 3px 4px 1px #ccc;
+    ion-item {
+      --inner-padding-end: 10px;
+      --background: transparent;
+      ion-thumbnail {
+        height: 100px;
+        width: 100px;
+        ion-card {
+          background: white;
+          margin: 0;
+          border-radius: 0;
+        }
+      }
+      ion-label {
+        p {
+          font-family: "segoe-ui";
+          font-size: 16px;
+        }
+        .name-para {
+          color: black;
+        }
+        .brand-para {
+          color: #919191;
+        }
+        .price-para {
+          color: #374abe;
+        }
+      }
+      div {
+        display: flex;
+        border-radius: 4px;
+        width: 110px;
+        ion-button {
+          --color-activated: black;
+        }
+        p {
+          margin-left: 4px;
+          margin-right: 6px;
+          align-self: center;
+        }
+        .btn-minus {
+          margin-left: 0;
+        }
+      }
+      .cross-icon {
+        margin-bottom: auto;
+        margin-top: 5px;
+        color: #979797;
+      }
+    }
+  }
+  .cont-btn {
+    font-family: "segoe-ui";
+    font-size: 20px;
+    --background: linear-gradient(to right, #232526, #545557);
+    --color: white;
+    text-transform: capitalize;
+    width: 100%;
+    position: fixed;
+    bottom: 16px;
+    padding-left: 20px;
+    padding-right: 26px;
+    height: 55px;
+    z-index:9;
+  }
+  .div-dis{
+    width: 1px;
+    height: 30px;
+  }
+}

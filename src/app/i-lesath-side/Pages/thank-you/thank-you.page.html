@@ -1,0 +1,77 @@
+<ion-content (pinch)="pinchEvent($event)" class="content-bg-becrux'">
+  <div class="ion-text-center div-thank">
+    <ion-icon src="assets/custom-icons/icon.svg"></ion-icon>
+    <p>Congratulation your order is sucessfully placed </p>
+  </div>
+  <ion-card>
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-no-padding">
+        <ion-col text-left class="ion-no-padding">
+          <p class="order-para order-id">Order id: 123-456-789</p>
+        </ion-col>
+        <ion-col text-right class="ion-no-padding">
+          <p class="order-para item">1 item</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-no-padding row-product">
+        <ion-col size="4" class="ion-no-padding">
+          <ion-img src="assets/template-themes/lesath/images/cart/1.png"></ion-img>
+        </ion-col>
+        <ion-col class="detail-col" size="8">
+          <p class="product-name">
+            Rose Petel Shirt
+          </p>
+          <div class="div-sizes">
+            <div class="div-size-filled">
+              <p>L</p>
+            </div>
+            <ion-radio class="radio-filled" checked></ion-radio>
+          </div>
+          <!-- <div id="color"></div> -->
+          <ion-row class="ion-no-padding row-btns">
+            <ion-col class="col-minus ion-align-self-center" size="4" text-left>
+              <p class="qty-para"> Qty: 1</p>
+            </ion-col>
+            <ion-col size="8" class="ion-text-right ion-align-self-end">
+              <p class="price">
+                <b class="total-bold">Total= </b> $ 130
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="grid-sub-total ion-no-padding">
+      <h1>
+        Sub Total
+      </h1>
+      <ion-row>
+        <ion-col size="6">
+          Discount
+        </ion-col>
+        <ion-col class="item-right" text-right size="6">
+          0%
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          Delivery
+        </ion-col>
+        <ion-col class="item-right" text-right size="6">
+          Free
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="t-price" size="6">
+          <b>Total Price</b>
+        </ion-col>
+        <ion-col class="item-right" text-right size="6">
+          <b>$ 130</b>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <div class="ion-text-center">
+    <ion-button (click)="goToHome()" class="cntnue-shoping-btn" shape="round">Continue Shopping</ion-button>
+  </div>
+</ion-content>

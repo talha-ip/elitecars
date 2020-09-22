@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/payment-integration" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>BrainTree Method</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card-img">
+    <ion-img src="assets/images/plugin-images/Payment-gateways/braintree.jpg"></ion-img>
+  </ion-card>
+  <h2>BrainTree Sample</h2>
+  <ion-card class="card-pay">
+    <ion-row>
+      <ion-col class="col-pay">
+        Total Payment
+      </ion-col>
+      <ion-col class="col-pay-price">
+        {{currencyIcon}}{{paymentAmount}}
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <div id="dropin-container"></div>
+
+  <div class="div-btn">
+    <ion-button shape="round" expand="full" (click)="pay()">
+      <p>Pay with BrainTree</p>
+    </ion-button>
+  </div>
+</ion-content>

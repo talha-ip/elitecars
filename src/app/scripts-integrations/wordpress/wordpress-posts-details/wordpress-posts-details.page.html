@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/wordpress-posts" routerDirection="backward">
+        <ion-icon name="arrow-back"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Wordpress Feed Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-img src="{{item._embedded['wp:featuredmedia'][0].source_url}}"></ion-img>
+  <p class="name">{{item.title.rendered}}</p>
+  <p class="date">{{ item.date | date:'mediumDate'}}</p>
+  <p class="desc-para" [innerHTML]="item.content.rendered"></p>
+</ion-content>

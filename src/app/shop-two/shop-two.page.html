@@ -1,0 +1,121 @@
+<ion-header class="products-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon  class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ecom-title"> Shop Two </ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="segmentToolbar">
+    <ion-segment [(ngModel)]="scrollSegments" scrollable>
+      <ion-segment-button value="all">All</ion-segment-button>
+      <ion-segment-button value="tops">Tops </ion-segment-button>
+      <ion-segment-button value="bottoms">Bottoms</ion-segment-button>
+      <ion-segment-button value="Shirtss"> Shirts</ion-segment-button>
+      <ion-segment-button value="winter">Winter Wear</ion-segment-button>
+      <ion-segment-button value="shoes">Shoes</ion-segment-button>
+      <ion-segment-button value="watches">Watches</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="products-content">
+  <!-- scrollable segment divisions -->
+  <div [ngSwitch]="scrollSegments">
+    <div *ngSwitchCase="'all'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+    <div *ngSwitchCase="'tops'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'bottoms'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'Shirtss'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn fast">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'winter'">
+      <ion-grid no-paddingclass="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+    <div *ngSwitchCase="'shoes'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+    <div *ngSwitchCase="'watches'">
+      <ion-grid no-padding class="animated fadeIn fast">
+        <ion-row no-padding>
+          <ion-col *ngFor="let p of products" size="6" no-padding>
+            <app-product [data]="p" [type]="'normal'"></app-product>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-col *ngIf="products.length==0 && loadingServerData" size="12" class="animated fadeIn">
+        <h6 text-center>No Products Found!</h6>
+      </ion-col>
+    </div>
+
+  </div>
+  <!-- infinite scroll -->
+  <ion-infinite-scroll #infinite (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

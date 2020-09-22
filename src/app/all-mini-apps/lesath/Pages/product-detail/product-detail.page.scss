@@ -1,0 +1,344 @@
+.product-content {
+    --padding-bottom: 44px;
+    // --background: var(--ion-color-app-background);
+    del {
+      color: #707070;
+    }
+    .item-header-slide {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      ion-button {
+        margin-left: 0;
+        --color: white;
+        stroke: var(--ion-color-primary);
+        ion-icon {
+          font-size: 16px;
+        }
+      }
+    }
+  
+    // For Slides
+    ion-slides {
+      // For Customize Bullets
+      .swiper-pagination-bullet {
+        margin: 0 10px !important;
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 10px !important;
+        border: solid 1px var(--ion-color-primary) !important;
+        background: white;
+        opacity: 1 !important;
+      }
+      .swiper-pagination-bullet-active {
+        background: var(--ion-color-primary) !important;
+        border: none !important;
+      }
+    }
+    ion-grid {
+      padding-top: 0;
+      ion-row {
+        ion-col {
+          padding-top: 0;
+          h2 {
+            font-family: "roboto-light";
+            font-size: 4.5vw;
+          }
+          p {
+            margin-bottom: 0;
+            margin-top: 0;
+            font-family: "roboto-medium";
+            font-size: 4vw;
+          }
+          small {
+            font-family: "roboto-regular";
+            font-size: 3.2vw;
+          }
+          ion-icon {
+            color: #fca800;
+          }
+          h1 {
+            margin-top: 6px;
+            font-family: "roboto-medium";
+            font-size: 4.56vw;
+            padding-left: 16px;
+            padding-right: 16px;
+            //width: 100px;
+          }
+          h3 {
+            font-size: 16px;
+            font-family: "roboto-regular";
+          }
+        }
+      }
+    }
+    ion-list {
+      padding-top: 18.5px;
+      ion-radio-group {
+        ion-item {
+          border: none;
+          --padding-start: 0;
+          ion-radio {
+            height: 4.9vw;
+            width: 4.9vw;
+            margin: 0;
+            margin-right: 15px;
+            margin-top: -21px;
+          }
+        }
+      }
+    }
+    .item-header-slide {
+      --background: transparent !important;
+    }
+    .search_icon {
+      font-size: 22px !important;
+    }
+    .div-size {
+      border: solid 1.5px gray;
+      height: 4.9vw;
+      min-width: 4.9vw;
+      border-radius: 50px;
+      margin-left: 15px;
+      margin-top: 5px;
+      p {
+        margin-top: 1.2vw !important;
+        text-align: center;
+        font-family: "roboto-Condensed" !important;
+        font-size: 1.9vw !important;
+        padding: 0 5px;
+      }
+    }
+    .div-size-filled {
+      border: solid 1.5px gray;
+      background: gray;
+      color: white !important;
+      height: 4.9vw;
+      min-width: 4.9vw;
+      border-radius: 50px;
+      margin-left: 15px;
+      margin-top: 5px;
+      p {
+        margin-top: 1.2vw !important;
+        text-align: center;
+        font-family: "roboto-Condensed" !important;
+        font-size: 1.9vw !important;
+        padding: 0 5px;
+      }
+    }
+    .qty-btn {
+      --padding-start: 0;
+      --padding-end: 0;
+      ion-icon {
+        color: var(--ion-color-primary) !important;
+        font-size: 25px;
+      }
+    }
+  
+    .desc-para {
+      font-family: "roboto-regular" !important;
+      font-size: 16px !important;
+      margin-top: 0 !important;
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+      margin-bottom: 22px !important;
+    }
+    .count-para {
+      border-bottom: solid 1px black !important;
+      font-family: "roboto-regular" !important;
+      font-size: 4vw;
+      color: black !important;
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .grid-card {
+      background: transparent;
+      &:first-child {
+        margin-left: 16px !important;
+      }
+      height: auto;
+      margin-top: 0 !important;
+      margin-left: 4px !important;
+      margin-right: 0 !important;
+      ion-icon {
+        z-index: 1;
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        font-size: 20px;
+      }
+      .heart-filled {
+        color: var(--ion-color-primary);
+      }
+      .heart-empty {
+        color: white;
+      }
+  
+      h3 {
+        font-size: 12px;
+        font-family: "roboto-light";
+        margin-left: 6px;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      p {
+        font-family: "roboto-medium";
+        font-size: 11px;
+        margin-left: 6px;
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  
+    .badge {
+      height: 50px !important;
+      position: absolute;
+      top: 0;
+      z-index: 111;
+      width: auto !important;
+    }
+  
+    .price-col {
+      padding-top: 8px !important;
+      padding-right: 16px !important;
+      padding-left: 16px !important;
+      p {
+        font-family: "roboto-regular" !important;
+        font-family: 20px !important;
+      }
+    }
+    .price-header {
+      margin-bottom: 10px !important;
+      margin-top: 8px !important;
+      padding-left: 16px !important;
+    }
+    .star-row {
+      padding-left: 8px !important;
+    }
+    .review-col {
+      padding-left: 10px !important;
+      margin-top: -2px !important;
+    }
+    .stock-col {
+      margin-top: -3px !important;
+      padding-right: 16px !important;
+    }
+    .size-row {
+      padding-left: 15px !important;
+    }
+    .like-heading {
+      margin-top: 28px !important;
+      margin-left: 16px !important;
+      margin-right: 16px !important;
+    }
+    .like-name {
+      margin-top: 5px !important;
+      margin-bottom: 8.2px !important;
+      margin-left: 8px !important;
+    }
+    .like-para {
+      margin-top: 0 !important;
+      margin-bottom: 15px !important;
+      margin-left: 8px !important;
+    }
+    .wish-btn {
+      --border-color: #707070;
+      --border-width: 1px;
+      --box-shadow: none;
+      --border-style: solid;
+      --border-radius: 25px;
+    }
+    .custom-colors {
+      padding: 0px;
+  
+      ion-icon {
+        margin: 0;
+        margin-right: 15px;
+        font-size: 25px;
+      }
+    }
+    .custom-badges {
+      ion-badge {
+        padding: 7px;
+        font-size: 15px;
+        margin-right: 20px;
+        border-radius: 87px;
+        min-width: 32px;
+        min-height: 32px;
+        border-radius: 50px;
+      }
+    }
+  
+    .disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    .group-product-list {
+      background: transparent;
+      padding-top: 10px !important;
+      ion-item {
+        --background: transparent;
+        ion-thumbnail {
+          margin-top: 0;
+          margin-bottom: 0;
+          height: 100px;
+          width: 80px;
+        }
+        ion-label {
+          margin-top: 0;
+          h3,
+          p,
+          span {
+            font-size: 14px !important;
+          }
+          p {
+            margin-top: 10px !important;
+            padding-left: 0 !important;
+          }
+          h1 {
+            font-size: 16px !important;
+            margin-top: 8px !important;
+            padding-left: 0 !important;
+          }
+          .para-ttl {
+            margin-top: 0 !important;
+          }
+          .quantity-para {
+            margin-top: 6px !important;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+    .desc-header {
+      width: 100% !important;
+    }
+  }
+  
+  .ion-footer-custom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  
+    .div-inline-btn {
+      ion-button {
+        min-width: 134px;
+        height: 38px;
+        text-transform: capitalize;
+        --color: white;
+        --background: var(--ion-color-primary);
+      }
+      .other-button {
+        --color: var(--ion-color-primary) !important;
+        --background: white !important;
+      }
+    }
+  }
+  

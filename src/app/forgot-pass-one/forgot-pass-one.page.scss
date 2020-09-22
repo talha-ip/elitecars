@@ -1,0 +1,31 @@
+
+// For image design
+ion-img {
+  height: 150px;
+  opacity: 0.1;
+}
+
+// For Form
+form {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-top: 28px;
+  ion-item {
+    --padding-start: 0;
+    ion-label {
+      color: gray;
+    }
+    &:nth-child(2) {
+      height: 33px;
+      ion-label {
+        color: red;
+      }
+    }
+  }
+  ion-button {
+    margin-top: 25px;
+    // --background: black;
+    text-transform: uppercase;
+    --color: white;
+  }
+}

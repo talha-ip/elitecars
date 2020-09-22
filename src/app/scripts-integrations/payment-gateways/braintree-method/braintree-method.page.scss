@@ -1,0 +1,51 @@
+ion-content {
+  .card-img {
+    margin: 20px 16px 18px 16px;
+    border-radius: 20px;
+  }
+  .card-pay {
+    margin: 0 16px 0 16px;
+    border-bottom: solid 10px #062553;
+    ion-row {
+      .col-pay-price {
+        text-align: end;
+        color: var(--ion-color-primary);
+        font-size: 18px;
+        font-family: "roboto-bold";
+        padding: 20px 10px 20px 10px;
+      }
+      .col-pay {
+        color: #072654;
+        font-size: 18px;
+        font-family: "roboto-bold";
+        padding: 20px 10px 20px 10px;
+      }
+    }
+  }
+
+  #dropin-container {
+    margin-bottom: 260px;
+  }
+  h2 {
+    font-size: 20px;
+    font-family: "roboto-bold";
+    color: #072654;
+    margin-top: 0;
+    margin-left: 16px;
+    margin-bottom: 30px;
+  }
+  .div-btn {
+    position: fixed;
+    bottom: -38px;
+    width: 100%;
+    z-index: 99;
+    ion-button {
+      text-transform: capitalize;
+      height: 86px;
+      margin: 0;
+      p {
+        margin-top: -35px;
+      }
+    }
+  }
+}

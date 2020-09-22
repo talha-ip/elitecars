@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Slider One</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="slider-one-content">
+  <ion-slides class="banner-slider" pager="true" [options]="sliderConfig">
+    <ion-slide *ngFor="let item of items">
+      <img src="{{item}}" />
+    </ion-slide>
+  </ion-slides>
+  
+  <ion-button class="btn-top" fill="clear">
+    <ion-icon src="assets/CustomIcons/left-arrow-shopping.svg"></ion-icon>
+  </ion-button>
+  <ion-button class="btn-btm" fill="clear">
+    <ion-icon src="assets/CustomIcons/right-arrow-shopping.svg"></ion-icon>
+  </ion-button>
+
+  <p class="header-para">Latest Articles</p>
+  <ion-slides class="slides-header" [options]="sliderConfiglatestItems">
+    <ion-slide *ngFor="let item of latestItems">
+      <ion-card class="animated fadeInRight">
+        <ion-thumbnail>
+          <img class="person-img" src="{{item.img}}" />
+        </ion-thumbnail>
+      </ion-card>
+      <h2>{{item.header}}</h2>
+      <ion-item lines="none" class="item-header-slider">
+        <ion-avatar slot="start">
+          <img src="{{item.avatarImg}}" />
+        </ion-avatar>
+        <ion-label>
+          <p class="para-name">{{item.publisherName}}</p>
+          <div class="div-icon-text">
+            <ion-icon src="assets/CustomIcons/time-news-blog.svg"></ion-icon>
+            <p class="para-post">{{item.postTime}}</p>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <p class="header-para-trending">Trending Articles</p>
+  <ion-slides class="slides-trending" [options]="sliderConfigTrendingItems">
+    <ion-slide *ngFor="let item of trendingItems">
+      <ion-card class="animated fadeInRight">
+        <ion-thumbnail>
+          <img class="person-img" src="{{item.img}}" />
+        </ion-thumbnail>
+      </ion-card>
+      <h2>{{item.header}}</h2>
+      <ion-item lines="none" class="item-header-slider">
+        <ion-avatar slot="start">
+          <img src="{{item.avatarImg}}" />
+        </ion-avatar>
+        <ion-label>
+          <p class="para-name">{{item.publisherName}}</p>
+          <div class="div-icon-text">
+            <ion-icon src="assets/CustomIcons/time-news-blog.svg"></ion-icon>
+            <p class="para-post">{{item.postTime}}</p>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-slide>
+  </ion-slides>
+  <p class="header-para-all">All Articles</p>
+  <ion-grid class="grid-all-items ion-no-padding">
+    <ion-row *ngFor="let item of allItems">
+      <ion-col size="5" class="col-thumbnail ion-no-padding">
+        <ion-card class="animated fadeInRight">
+          <ion-thumbnail>
+            <img class="person-img" src="{{item.img}}" />
+          </ion-thumbnail>
+        </ion-card>
+      </ion-col>
+      <ion-col size="7" class="col-details ion-no-padding">
+        <h2>{{item.header}}</h2>
+        <ion-item lines="none" class="item-grid">
+          <ion-avatar slot="start">
+            <img src="{{item.avatarImg}}" />
+          </ion-avatar>
+          <ion-label>
+            <p class="para-name">{{item.publisherName}}</p>
+            <div class="div-icon-text">
+              <ion-icon src="assets/CustomIcons/time-news-blog-one-black.svg"></ion-icon>
+              <p class="para-post">{{item.postTime}}</p>
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

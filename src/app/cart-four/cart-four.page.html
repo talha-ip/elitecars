@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/multipurpose-screens-details" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cart Four</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content-cart-four">
+  <div class="div-dis"></div>
+  <ion-card class="card" *ngFor="let item of items; let i=index">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-card>
+          <img src="{{item.img}}" />
+        </ion-card>
+      </ion-thumbnail>
+      <ion-label>
+        <p class="name-para">$ {{item.name}}</p>
+        <p class="brand-para">$ {{item.brand}}</p>
+        <p class="price-para">$ {{item.price}}</p>
+        <div>
+          <ion-button class="btn-minus" fill="clear" (click)="minus(i)">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+          <p>{{item.count}}</p>
+          <ion-button (click)="add(i)" fill="clear">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-label>
+      <ion-icon class="cross-icon" name="close"></ion-icon>
+    </ion-item>
+  </ion-card>
+  <ion-button class="cont-btn">
+    Continue
+  </ion-button>
+</ion-content>

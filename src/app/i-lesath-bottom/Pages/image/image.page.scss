@@ -1,0 +1,49 @@
+.image-content {
+  ion-item {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    ion-button {
+      margin-left: 0;
+      --color: white;
+      ion-icon {
+        font-size: 16px;
+      }
+    }
+  }
+  ion-slides {
+    // For Customize Bullets
+    .swiper-pagination-bullet {
+      margin: 0 10px !important;
+      width: 8px !important;
+      height: 8px !important;
+      border-radius: 10px !important;
+      border: solid 1px var(--ion-color-primary) !important;
+      background: white;
+      opacity: 1 !important;
+    }
+    .swiper-pagination-bullet-active {
+      background: var(--ion-color-primary) !important;
+      border: none !important;
+    }
+    ion-slide {
+      ion-grid {
+        padding: 0;
+        ion-row {
+          ion-col {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.swiper-slide {
+  width: 100% !important;
+}
+.item-header-slide {
+  --background: transparent !important;
+}
+.search_icon {
+  font-size: 22px !important;
+}

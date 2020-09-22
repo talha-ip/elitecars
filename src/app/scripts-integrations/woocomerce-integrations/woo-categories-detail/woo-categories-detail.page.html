@@ -1,0 +1,138 @@
+<ion-content class="category-content">
+  <div class="header-bg">
+    <div>
+      <ion-item lines="none">
+        <ion-button routerLink="/woocomerce" routerDirection="backward" class="menu-btn" slot="start">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+        <ion-label>
+          <p>{{items[0].categories[0].name}}</p>
+        </ion-label>
+      </ion-item>
+      <!-- for slider header -->
+      <ion-grid class="grid-slider">
+        <ion-row>
+          <ion-col size="2.6" class="col-grid-list">
+            <div>
+              <ion-icon class="icon-grid-bg animated fadeIn" (click)="isGridList('gridBg')" src="assets/iconIShoe/grid-view.svg"
+                *ngIf="visiablegridBgList">
+              </ion-icon>
+              <ion-icon class="icon-grid" (click)="isGridList('grid')" src="assets/iconIShoe/grid-view.svg" *ngIf="!visiablegridBgList">
+              </ion-icon>
+              <span class="icon-inner-div"></span>
+              <ion-icon class="icon-list" (click)="isGridList('list')" src="assets/iconIShoe/list.svg" *ngIf="visiableListBgGrid">
+              </ion-icon>
+              <ion-icon class="icon-list-bg animated fadeIn" (click)="isGridList('listBg')" src="assets/iconIShoe/list.svg"
+                *ngIf="!visiableListBgGrid">
+              </ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <!-- for product detail grid -->
+  <div *ngIf="visiableGrid">
+    <ion-grid class="grid-card ion-no-padding">
+      <ion-row>
+        <ion-col size="6" *ngFor="let product of items" class="ion-no-padding">
+          <ion-card (click)="goToProductDetail()">
+            <ion-row class="card-row">
+              <ion-col *ngIf="product.featured" size="3.66" class="tag-col">
+                <div class="featured">
+                  Featured
+                </div>
+              </ion-col>
+              <ion-col *ngIf="product.new" size="3.66" class="tag-col">
+                <div class="new">
+                  New
+                </div>
+              </ion-col>
+              <ion-col *ngIf="product.on_sale" size="3.66" class="tag-col">
+                <div class="sale">
+                  On Sale
+                </div>
+              </ion-col>
+              <ion-col size="1">
+                <div class="div-height">
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-img src="{{product.images[0].src}}" class="animated fadeInUp"></ion-img>
+            <p class="para-text">{{product.name}}</p>
+            <ion-grid class="grid-price">
+              <ion-row>
+                <ion-col size="3.5">
+                  <p class="para-price-del"><del>${{product.regular_price}}</del></p>
+                </ion-col>
+                <ion-col size="3.5">
+                  <p class="para-price">${{product.price}}</p>
+                </ion-col>
+                <ion-col size="5" class="col-heart">
+                  <ion-icon *ngIf="!product.heartVis" (click)="heart(product)" class="col-heart-empty" name="heart">
+                  </ion-icon>
+                  <ion-icon *ngIf="product.heartVis" (click)="heart(product)" class="col-heart-filled" name="heart">
+                  </ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- for list view -->
+  <div *ngIf="!visiableGrid">
+    <div class="list-card" *ngFor="let product of items">
+      <ion-grid class="grid-list" (click)="goToProductDetail()">
+        <ion-row>
+          <ion-col size="9">
+            <ion-row>
+              <ion-col size="3.5" *ngIf="product.featured">
+                <div class="featured">
+                  Featured
+                </div>
+              </ion-col>
+              <ion-col size="3.5" *ngIf="product.new">
+                <div class="new">
+                  New
+                </div>
+              </ion-col>
+              <ion-col size="3.5" *ngIf="product.on_sale">
+                <div class="sale">
+                  On Sale
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="div-height-list"></div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12">
+                <h3 class="text-list">{{product.name}}</h3>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="2.5">
+                <p class="para-price-del-list"><del>${{product.regular_price}}</del></p>
+              </ion-col>
+              <ion-col size="2.5">
+                <p class="para-price-list">${{product.price}}</p>
+              </ion-col>
+              <ion-col size="5.5" class="col-heart">
+                <ion-icon *ngIf="!product.heartVis" (click)="heart(product)" class="col-heart-empty" name="heart">
+                </ion-icon>
+                <ion-icon *ngIf="product.heartVis" (click)="heart(product)" class="col-heart-filled" name="heart">
+                </ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <div class="div-img-list">
+            <ion-img class="list-img animated fadeInRight" src="{{product.images[0].src}}">
+            </ion-img>
+          </div>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button expand="block" routerLink="/scripts" routerDirection="backward">
+        <ion-icon class="multi-purpose-toolbar-icon" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Payment Gateways Integrations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-badge></ion-badge> 
+    <ion-img (click)="paypal()" src="assets/images/plugin-images/Payment-gateways/paypal-method.png" ></ion-img>
+    <ion-img (click)="stripe()" src="assets/images/plugin-images/Payment-gateways/stripe-method.png"></ion-img>
+    <ion-img (click)="paystack()" src="assets/images/plugin-images/Payment-gateways/paystack-method.png"></ion-img>
+    <ion-img (click)="razorpay()" src="assets/images/plugin-images/Payment-gateways/razorpay-method.png"></ion-img>
+    <ion-img (click)="braintree()" src="assets/images/plugin-images/Payment-gateways/braintree-method.png"></ion-img> 
+   
+</ion-content>

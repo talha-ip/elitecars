@@ -1,0 +1,35 @@
+ion-content{
+    img{
+        width: 100%;
+    }
+    ion-card{
+        background: transparent;
+        margin: 5px;
+        img{
+            width: 100%;
+            border-bottom: solid lightgray;
+            border-width: 0.5px;
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 0%;
+            margin-top: 0%;
+            padding-left: 10px;
+        }
+        ion-button{
+            height: 20px;
+        }
+    }
+    ion-grid{
+        ion-row{
+            .col-btn{
+                text-align: end;
+                padding-right: 10px;
+            }
+        }
+    }
+    ion-fab{
+        position: absolute;
+        top: 72vw;
+    }
+}
