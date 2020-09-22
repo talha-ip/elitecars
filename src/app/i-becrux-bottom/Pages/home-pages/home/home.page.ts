@@ -152,7 +152,7 @@ export class HomePage {
     }
 
   ngOnInit() {
-    
+    alert ("hello from ammar");
   }
 
   async  enableLoadingController(i) {
